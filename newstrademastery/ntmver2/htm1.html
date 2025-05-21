@@ -1,0 +1,818 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEWS HACK - Gold Trading Webinar</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&amp;family=Montserrat:wght@300;400;500;600;700&amp;display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --black: #000000;
+            --dark-gray: #111111;
+            --gold: #C28800;
+            --gold-light: #FFD700;
+            --gold-gradient: linear-gradient(135deg, var(--gold-light), var(--gold));
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--black);
+            color: #ffffff;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            line-height: 1.3;
+        }
+
+        .gold-text {
+            background: var(--gold-gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--gold-gradient);
+            color: var(--black);
+            font-weight: 700;
+            padding: 15px 40px;
+            border-radius: 30px;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 20px rgba(194, 136, 0, 0.3);
+            border: none;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(194, 136, 0, 0.4);
+        }
+
+        .btn::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(to right,
+                    rgba(255, 255, 255, 0) 0%,
+                    rgba(255, 255, 255, 0.3) 50%,
+                    rgba(255, 255, 255, 0) 100%);
+            transform: rotate(30deg);
+            animation: shimmer 3s infinite;
+        }
+
+        @keyframes shimmer {
+            0% {
+                transform: translateX(-100%) rotate(30deg);
+            }
+
+            100% {
+                transform: translateX(100%) rotate(30deg);
+            }
+        }
+
+        .section {
+            padding: 100px 0;
+            position: relative;
+        }
+
+        .gold-divider {
+            width: 100px;
+            height: 3px;
+            background: var(--gold-gradient);
+            margin: 30px auto;
+        }
+
+        .card {
+            background-color: rgba(17, 17, 17, 0.7);
+            border: 1px solid rgba(194, 136, 0, 0.3);
+            border-radius: 10px;
+            padding: 30px;
+            margin-bottom: 30px;
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(194, 136, 0, 0.2);
+        }
+
+        /* Header */
+        header {
+            padding: 20px 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background-color: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            font-weight: 700;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            padding-top: 80px;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cpath fill='%23C28800' fill-opacity='0.05' d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z'%3E%3C/path%3E%3C/svg%3E");
+            z-index: -1;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .chart-illustration {
+            position: absolute;
+            bottom: -100px;
+            right: -100px;
+            width: 600px;
+            height: 600px;
+            opacity: 0.1;
+            z-index: -1;
+        }
+
+        /* Features Section */
+        .features {
+            background-color: rgba(17, 17, 17, 0.5);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .feature-item {
+            text-align: center;
+            padding: 30px;
+        }
+
+        .feature-icon {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: var(--gold);
+        }
+
+        /* Benefits Section */
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .benefit-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+
+        .benefit-icon {
+            color: var(--gold);
+            font-size: 24px;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+
+        /* Schedule Section */
+        .schedule {
+            background-color: rgba(17, 17, 17, 0.5);
+            text-align: center;
+        }
+
+        .schedule-card {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 40px;
+            background-color: rgba(0, 0, 0, 0.7);
+            border: 1px solid rgba(194, 136, 0, 0.3);
+            border-radius: 10px;
+        }
+
+        .schedule-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .schedule-icon {
+            color: var(--gold);
+            font-size: 24px;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+
+        .price {
+            font-size: 24px;
+            font-weight: 700;
+            margin: 20px 0;
+        }
+
+        .price .original {
+            text-decoration: line-through;
+            opacity: 0.7;
+            margin-right: 10px;
+        }
+
+        .price .discount {
+            color: var(--gold-light);
+        }
+
+        /* Target Audience Section */
+        .audience-items {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .audience-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+
+        .audience-icon {
+            color: var(--gold);
+            font-size: 24px;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+
+        /* CTA Section */
+        .cta {
+            text-align: center;
+            padding: 100px 0;
+            background-color: rgba(17, 17, 17, 0.5);
+        }
+
+        .cta h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .cta p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Registration Form */
+        .registration {
+            padding: 100px 0;
+        }
+
+        .form-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: rgba(17, 17, 17, 0.7);
+            border: 1px solid rgba(194, 136, 0, 0.3);
+            border-radius: 10px;
+            padding: 40px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 12px 15px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(194, 136, 0, 0.3);
+            border-radius: 5px;
+            color: #fff;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--gold);
+        }
+
+        /* Footer */
+        footer {
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 30px 0;
+            text-align: center;
+        }
+
+        .footer-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .footer-text {
+            font-size: 14px;
+            opacity: 0.7;
+        }
+
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-in.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Parallax Effect */
+        .parallax {
+            transition: transform 0.3s ease-out;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .section {
+                padding: 60px 0;
+            }
+
+            .chart-illustration {
+                width: 300px;
+                height: 300px;
+                bottom: -50px;
+                right: -50px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Hero Section -->
+    <section class="hero section">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="fade-in active">
+                    <span class="gold-text">NEWS HACK</span><br>
+                    Master Gold Trading During News Events
+                </h1>
+                <p class="fade-in active">
+                    💬 "Market selalu menang... Saya terus kalah..."
+                </p>
+                <div class="gold-divider fade-in active"></div>
+                <p class="fade-in active">
+                    Jika itu yang Anda rasakan setiap kali trading saat berita (NEWS), kami paham betul bagaimana
+                    rasanya.
+                </p>
+                <div class="card fade-in active">
+                    <p>✅ Entry sudah pas, tapi harga malah berbalik.</p>
+                    <p>✅ SL kena terus, padahal semua indikator bilang BUY.</p>
+                    <p>✅ Profit kecil, tapi loss besar.</p>
+                    <p>✅ Sering top-up akun, tapi jarang WD.</p>
+                    <p class="mt-4"><strong>Anda tidak sendirian.</strong></p>
+                    <p>Kami pernah berada di posisi Anda.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Chart SVG Illustration -->
+        <svg class="chart-illustration" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+            <path
+                d="M0,300 L50,280 L100,320 L150,290 L200,310 L250,260 L300,240 L350,280 L400,220 L450,240 L500,200 L550,180 L600,220 L650,190 L700,150 L750,170 L800,130"
+                stroke="#C28800" stroke-width="3" fill="none"></path>
+            <path
+                d="M0,350 L50,370 L100,340 L150,380 L200,350 L250,390 L300,370 L350,400 L400,360 L450,380 L500,340 L550,370 L600,330 L650,350 L700,310 L750,340 L800,300"
+                stroke="#C28800" stroke-width="3" fill="none" opacity="0.5"></path>
+
+            <!-- Candlesticks -->
+            <rect x="100" y="250" width="10" height="40" fill="#C28800" opacity="0.7"></rect>
+            <line x1="105" y1="240" x2="105" y2="250" stroke="#C28800" stroke-width="2"></line>
+            <line x1="105" y1="290" x2="105" y2="300" stroke="#C28800" stroke-width="2"></line>
+
+            <rect x="200" y="270" width="10" height="30" fill="#C28800" opacity="0.7"></rect>
+            <line x1="205" y1="260" x2="205" y2="270" stroke="#C28800" stroke-width="2"></line>
+            <line x1="205" y1="300" x2="205" y2="310" stroke="#C28800" stroke-width="2"></line>
+
+            <rect x="300" y="220" width="10" height="40" fill="#C28800" opacity="0.7"></rect>
+            <line x1="305" y1="210" x2="305" y2="220" stroke="#C28800" stroke-width="2"></line>
+            <line x1="305" y1="260" x2="305" y2="270" stroke="#C28800" stroke-width="2"></line>
+
+            <rect x="400" y="200" width="10" height="50" fill="#C28800" opacity="0.7"></rect>
+            <line x1="405" y1="190" x2="405" y2="200" stroke="#C28800" stroke-width="2"></line>
+            <line x1="405" y1="250" x2="405" y2="260" stroke="#C28800" stroke-width="2"></line>
+
+            <rect x="500" y="180" width="10" height="40" fill="#C28800" opacity="0.7"></rect>
+            <line x1="505" y1="170" x2="505" y2="180" stroke="#C28800" stroke-width="2"></line>
+            <line x1="505" y1="220" x2="505" y2="230" stroke="#C28800" stroke-width="2"></line>
+
+            <rect x="600" y="200" width="10" height="50" fill="#C28800" opacity="0.7"></rect>
+            <line x1="605" y1="190" x2="605" y2="200" stroke="#C28800" stroke-width="2"></line>
+            <line x1="605" y1="250" x2="605" y2="260" stroke="#C28800" stroke-width="2"></line>
+
+            <rect x="700" y="140" width="10" height="30" fill="#C28800" opacity="0.7"></rect>
+            <line x1="705" y1="130" x2="705" y2="140" stroke="#C28800" stroke-width="2"></line>
+            <line x1="705" y1="170" x2="705" y2="180" stroke="#C28800" stroke-width="2"></line>
+        </svg>
+    </section>
+
+    <!-- Introduction Section -->
+    <section class="section">
+        <div class="container">
+            <div class="text-center fade-in active">
+                <h2>✨ Saatnya Bangkit dengan Strategi yang Terbukti</h2>
+                <div class="gold-divider"></div>
+                <p class="text-xl mb-8">
+                    Selamat datang di <span class="gold-text">NEWS HACK</span>
+                </p>
+                <p class="max-w-2xl mx-auto">
+                    Webinar eksklusif yang mengajarkan Anda cara membaca pergerakan market GOLD saat NEWS—tanpa
+                    tebak-tebakan.
+                </p>
+                <img class="mx-auto block"
+                    src="https://newstrademastery.com/wp-content/uploads/2024/11/Flyer-News-Hack-no-date-LP.jpg"
+                    alt="Flyer News Hack">
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Features Section -->
+    <section class="features section">
+        <div class="container">
+            <div class="text-center fade-in active">
+                <h2>🔥 Kenapa NEWS HACK Beda?</h2>
+                <div class="gold-divider"></div>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-item card fade-in active">
+                    <div class="feature-icon">📍</div>
+                    <h3>Data &amp; Backtest Real</h3>
+                    <p>Berdasarkan data dan backtest real yang telah terbukti berhasil</p>
+                </div>
+
+                <div class="feature-item card fade-in active">
+                    <div class="feature-icon">📍</div>
+                    <h3>Teknik Magic Range</h3>
+                    <p>Teknik Magic Range untuk membaca arah pergerakan dengan akurat</p>
+                </div>
+
+                <div class="feature-item card fade-in active">
+                    <div class="feature-icon">📍</div>
+                    <h3>Tanpa Indikator Ribet</h3>
+                    <p>Tidak butuh indikator ribet yang membingungkan</p>
+                </div>
+
+                <div class="feature-item card fade-in">
+                    <div class="feature-icon">📍</div>
+                    <h3>Untuk Semua Level</h3>
+                    <p>Cocok untuk pemula maupun trader yang ingin naik level</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="section">
+        <div class="container">
+            <div class="text-center fade-in">
+                <h2>📘 Di Webinar Ini Anda Akan Belajar:</h2>
+                <div class="gold-divider"></div>
+            </div>
+
+            <div class="benefits-grid">
+                <div class="card fade-in">
+                    <div class="benefit-item">
+                        <div class="benefit-icon">✔️</div>
+                        <div>
+                            <h3>Scalping GOLD Saat News</h3>
+                            <p>Cara scalping GOLD saat news dengan success rate 80%</p>
+                        </div>
+                    </div>
+
+                    <div class="benefit-item">
+                        <div class="benefit-icon">✔️</div>
+                        <div>
+                            <h3>Risk Management</h3>
+                            <p>Risk management anti Margin Call yang terbukti efektif</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card fade-in">
+                    <div class="benefit-item">
+                        <div class="benefit-icon">✔️</div>
+                        <div>
+                            <h3>Pola Pergerakan</h3>
+                            <p>Pola pergerakan khas setiap news besar yang bisa diprediksi</p>
+                        </div>
+                    </div>
+
+                    <div class="benefit-item">
+                        <div class="benefit-icon">✔️</div>
+                        <div>
+                            <h3>Rumus Entry &amp; SL/TP</h3>
+                            <p>Rumus entry &amp; SL/TP yang siap dipakai langsung</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card fade-in">
+                    <div class="benefit-item">
+                        <div class="benefit-icon">✔️</div>
+                        <div>
+                            <h3>Studi Kasus &amp; Live Praktek</h3>
+                            <p>Studi kasus &amp; live praktek di akhir sesi untuk pemahaman lebih dalam</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Schedule Section -->
+<section class="schedule section">
+    <div class="container">
+        <div class="text-center fade-in">
+            <h2>📅 Jadwal Webinar:</h2>
+            <div class="gold-divider"></div>
+        </div>
+
+        <div class="schedule-card fade-in text-center">
+
+            <!-- Informasi Jadwal -->
+            <div class="mb-6">
+                <strong>Jadwal Webinar</strong>
+                <mark style="background-color:#de1414" class="has-inline-color has-contrastcolor-color">
+                    <strong>LIVE</strong>
+                </mark>
+                <div class="mt-2">
+                    Selasa, 20 Mei 2025<br>19:00 WIB – selesai
+                </div>
+
+                <!-- Logo Zoom -->
+                <div class="mt-4">
+                    <img 
+                        src="https://newstrademastery.com/wp-content/uploads/2024/05/Zoom-Logo-Free-PNG-Image-300x183-1.png"
+                        alt="Zoom Logo"
+                        width="300"
+                        height="183"
+                        style="display: block; margin: 0 auto;">
+                </div>
+            </div>
+
+            <!-- Investasi -->
+            <div class="schedule-item mt-6">
+                <div class="schedule-icon">💸</div>
+                <div>
+                    <h3>Investasi</h3>
+                    <div class="price">
+                        <span class="original">350k</span>
+                        <span class="discount">Promo hanya 100k</span>
+                    </div>
+                    <p>(untuk 30 pendaftar pertama)</p>
+                </div>
+            </div>
+
+            <!-- Bonus -->
+            <div class="schedule-item mt-6">
+                <div class="schedule-icon">🎁</div>
+                <div>
+                    <h3>BONUS:</h3>
+                    <p>✅ Garansi Uang Kembali 100% jika Anda merasa tidak mendapatkan manfaat.</p>
+                </div>
+            </div>
+
+            <!-- Tombol Daftar -->
+            <div class="mt-8">
+                <a href="https://newstrademastery.com/checkout" class="btn">DAFTAR SEKARANG</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    <!-- Target Audience Section -->
+    <section class="section">
+        <div class="container">
+            <div class="text-center fade-in">
+                <h2>📌 Anda Cocok Ikut Jika:</h2>
+                <div class="gold-divider"></div>
+            </div>
+
+            <div class="audience-items">
+                <div class="card fade-in">
+                    <div class="audience-item">
+                        <div class="audience-icon">🔰</div>
+                        <div>
+                            <p>Anda pemula dan ingin tahu cara aman entry saat NEWS</p>
+                        </div>
+                    </div>
+
+                    <div class="audience-item">
+                        <div class="audience-icon">🔰</div>
+                        <div>
+                            <p>Anda sudah pernah loss dan ingin trading lebih tenang</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card fade-in">
+                    <div class="audience-item">
+                        <div class="audience-icon">🔰</div>
+                        <div>
+                            <p>Anda ingin strategi real, bukan teori kosong</p>
+                        </div>
+                    </div>
+
+                    <div class="audience-item">
+                        <div class="audience-icon">🔰</div>
+                        <div>
+                            <p>Anda ingin belajar langsung dari praktisi</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta section">
+        <div class="container">
+            <div class="fade-in">
+                <h2>⚠️ Kesempatan Terbatas!</h2>
+                <p>Hanya untuk 30 peserta pertama, setelah itu kembali ke harga normal.</p>
+                <p>🎯 Jangan tunggu margin call lagi baru belajar.</p>
+                <p>🚀 AYO DAFTAR SEKARANG!</p>
+                <div class="mt-8">
+                    <a href="https://newstrademastery.com/checkout" class="btn">DAFTAR SEKARANG</a>
+                </div>
+                <p class="mt-4">📍 Klik tombol di atas untuk mengamankan kursi Anda.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-logo">
+                <span class="gold-text">NEWS HACK</span>
+            </div>
+            <p class="footer-text">© 2025 NEWS HACK. All rights reserved.</p>
+            <p class="footer-text mt-2">Trading memiliki risiko. Hasil di masa lalu tidak menjamin hasil di masa depan.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Fade-in animation on scroll
+        document.addEventListener('DOMContentLoaded', function () {
+            const fadeElements = document.querySelectorAll('.fade-in');
+
+            function checkFade() {
+                fadeElements.forEach(element => {
+                    const elementTop = element.getBoundingClientRect().top;
+                    const elementVisible = 150;
+
+                    if (elementTop < window.innerHeight - elementVisible) {
+                        element.classList.add('active');
+                    }
+                });
+            }
+
+            // Initial check
+            checkFade();
+
+            // Check on scroll
+            window.addEventListener('scroll', checkFade);
+
+            // Parallax effect
+            const parallaxElements = document.querySelectorAll('.parallax');
+
+            window.addEventListener('mousemove', function (e) {
+                const x = e.clientX / window.innerWidth;
+                const y = e.clientY / window.innerHeight;
+
+                parallaxElements.forEach(element => {
+                    const speed = element.getAttribute('data-speed') || 20;
+                    const moveX = (x - 0.5) * speed;
+                    const moveY = (y - 0.5) * speed;
+
+                    element.style.transform = `translate(${moveX}px, ${moveY}px)`;
+                });
+            });
+
+            // Smooth scroll for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+
+            // Form submission
+            const form = document.getElementById('registration-form');
+
+            form.addEventListener('submit', function (e) {
+                e.preventDefault();
+
+                // In a real implementation, you would send this data to your server
+                const formData = new FormData(form);
+                const formValues = Object.fromEntries(formData.entries());
+
+                // Show success message
+                alert('Terima kasih! Pendaftaran Anda berhasil. Kami akan mengirimkan detail webinar ke email Anda segera.');
+
+                // Reset form
+                form.reset();
+            });
+        });
+    </script>
+    <script>(function () { function c() { var b = a.contentDocument || a.contentWindow.document; if (b) { var d = b.createElement('script'); d.innerHTML = "window.__CF$cv$params={r:'942d7b1bb6a12e7a',t:'MTc0Nzc2MTM3Ni4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);"; b.getElementsByTagName('head')[0].appendChild(d) } } if (document.body) { var a = document.createElement('iframe'); a.height = 1; a.width = 1; a.style.position = 'absolute'; a.style.top = 0; a.style.left = 0; a.style.border = 'none'; a.style.visibility = 'hidden'; document.body.appendChild(a); if ('loading' !== document.readyState) c(); else if (window.addEventListener) document.addEventListener('DOMContentLoaded', c); else { var e = document.onreadystatechange || function () { }; document.onreadystatechange = function (b) { e(b); 'loading' !== document.readyState && (document.onreadystatechange = e, c()) } } } })();</script>
+    <iframe height="1" width="1"
+        style="position: absolute; top: 0px; left: 0px; border: medium; visibility: hidden;"></iframe>
+
+</body>
