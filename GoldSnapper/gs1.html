@@ -1,0 +1,765 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logic System Trading</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --gold: #FFD700;
+            --gold-hover: #E5C100;
+            --black: #0A0A0A;
+            --dark-gray: #111111;
+            --light-gold: rgba(255, 215, 0, 0.1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--black);
+            color: #fff;
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .gold-text {
+            color: var(--gold);
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 15px 40px;
+            border-radius: 50px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, var(--gold) 0%, var(--gold-hover) 100%);
+            color: var(--black);
+            box-shadow: 0 4px 20px rgba(255, 215, 0, 0.3);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(255, 215, 0, 0.4);
+        }
+        
+        .section {
+            padding: 80px 0;
+            position: relative;
+        }
+        
+        .section-divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
+            margin: 0 auto;
+            width: 80%;
+            max-width: 800px;
+        }
+        
+        .card {
+            background-color: rgba(17, 17, 17, 0.7);
+            border-radius: 12px;
+            padding: 30px;
+            transition: all 0.4s ease;
+            border: 1px solid rgba(255, 215, 0, 0.1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            height: 100%;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(255, 215, 0, 0.3);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3), 0 0 15px rgba(255, 215, 0, 0.1);
+        }
+        
+        .icon-box {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: rgba(255, 215, 0, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            border: 1px solid rgba(255, 215, 0, 0.2);
+        }
+        
+        .highlight-box {
+            border-left: 3px solid var(--gold);
+            padding-left: 20px;
+            margin: 30px 0;
+        }
+        
+        .number-badge {
+            background: linear-gradient(135deg, var(--gold) 0%, var(--gold-hover) 100%);
+            color: var(--black);
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+        
+        .cta-box {
+            border: 2px solid var(--gold);
+            border-radius: 16px;
+            background: linear-gradient(135deg, rgba(10, 10, 10, 0.9) 0%, rgba(17, 17, 17, 0.9) 100%);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3), 0 0 20px rgba(255, 215, 0, 0.1);
+            padding: 40px;
+        }
+        
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background-color: rgba(10, 10, 10, 0.9);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 215, 0, 0.1);
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+        }
+        
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            padding-top: 80px;
+        }
+        
+        .hero-pattern {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(circle at 25% 25%, rgba(255, 215, 0, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 75% 75%, rgba(255, 215, 0, 0.05) 0%, transparent 50%);
+            z-index: 0;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero-title {
+            font-size: 48px;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+        
+        .hero-subtitle {
+            font-size: 24px;
+            margin-bottom: 40px;
+            color: #ccc;
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        
+        .grid-2 {
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        }
+        
+        .section-title {
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 40px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .section-title-icon {
+            margin-right: 15px;
+            color: var(--gold);
+        }
+        
+        .feature-card {
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .feature-content h3 {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        
+        .text-center {
+            text-align: center;
+        }
+        
+        .mb-20 {
+            margin-bottom: 20px;
+        }
+        
+        .mb-30 {
+            margin-bottom: 30px;
+        }
+        
+        .mb-40 {
+            margin-bottom: 40px;
+        }
+        
+        .mb-60 {
+            margin-bottom: 60px;
+        }
+        
+        .mt-40 {
+            margin-top: 40px;
+        }
+        
+        .mt-60 {
+            margin-top: 60px;
+        }
+        
+        footer {
+            padding: 40px 0;
+            border-top: 1px solid rgba(255, 215, 0, 0.1);
+        }
+        
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .copyright {
+            color: #777;
+        }
+        
+        @media (max-width: 768px) {
+            .section {
+                padding: 60px 0;
+            }
+            
+            .hero-title {
+                font-size: 36px;
+            }
+            
+            .hero-subtitle {
+                font-size: 20px;
+            }
+            
+            .section-title {
+                font-size: 28px;
+            }
+            
+            .grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .footer-content > div:first-child {
+                margin-bottom: 20px;
+            }
+            
+            .btn {
+                padding: 12px 30px;
+            }
+            
+            .cta-box {
+                padding: 30px 20px;
+            }
+        }
+        
+        /* Animation classes */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        
+        .fade-in.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .delay-100 { transition-delay: 0.1s; }
+        .delay-200 { transition-delay: 0.2s; }
+        .delay-300 { transition-delay: 0.3s; }
+        .delay-400 { transition-delay: 0.4s; }
+        .delay-500 { transition-delay: 0.5s; }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <span class="gold-text">Logic</span><span>System</span>
+                </div>
+                <a href="#daftar" class="btn btn-primary">Daftar Sekarang</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-pattern"></div>
+        <div class="container">
+            <div class="hero-content fade-in active">
+                <h1 class="hero-title">
+                    <span class="gold-text">Belajar Trading Gak Harus Rumit</span> — Mulai dengan Sistem yang Masuk Akal
+                </h1>
+                <p class="hero-subtitle">
+                    Pelajari Teknik Scalping Sederhana dengan Pola Jelas &amp; Langkah yang Terarah
+                </p>
+                <a href="#daftar" class="btn btn-primary">Daftar Sekarang</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pain Points Section -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title fade-in">
+                <span class="section-title-icon">❌</span> Capek Trading Tapi Hasilnya Gitu-gitu Aja?
+            </h2>
+            <p class="mb-40 fade-in delay-100">Kalau kamu pernah…</p>
+            
+            <div class="grid">
+                <div class="card fade-in delay-200">
+                    <div class="feature-card">
+                        <div class="icon-box">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--gold);">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <line x1="12" y1="8" x2="12" y2="12"></line>
+                                <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                            </svg>
+                        </div>
+                        <div class="feature-content">
+                            <p>Masuk market tapi bingung harus entry di mana</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card fade-in delay-300">
+                    <div class="feature-card">
+                        <div class="icon-box">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--gold);">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <line x1="12" y1="8" x2="12" y2="12"></line>
+                                <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                            </svg>
+                        </div>
+                        <div class="feature-content">
+                            <p>Ikut kelas tapi makin banyak indikator, makin pusing</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card fade-in delay-400">
+                    <div class="feature-card">
+                        <div class="icon-box">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--gold);">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <line x1="12" y1="8" x2="12" y2="12"></line>
+                                <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                            </svg>
+                        </div>
+                        <div class="feature-content">
+                            <p>Coba berbagai cara tapi hasil tetap zonk</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <p class="text-center mt-40 fade-in delay-500">Mungkin kamu belum pakai sistem yang benar-benar masuk akal.</p>
+        </div>
+    </section>
+    
+    <div class="section-divider"></div>
+
+    <!-- Solution Section -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title fade-in">
+                <span class="section-title-icon">✅</span> Solusinya: Trading Pakai <span class="gold-text">Logic System</span>
+            </h2>
+            
+            <p class="mb-30 fade-in delay-100">Di webinar ini, kamu akan belajar teknik scalping yang mudah dipahami dan langsung bisa dipraktekin, bahkan untuk pemula.</p>
+            
+            <p class="mb-40 fade-in delay-200">Bukan pakai tebak-tebakan, tapi dengan sistem yang jelas:</p>
+            
+            <div class="grid">
+                <div class="card text-center fade-in delay-300">
+                    <div class="icon-box" style="margin: 0 auto;">
+                        <span style="font-size: 24px; color: var(--gold);">🔹</span>
+                    </div>
+                    <h3 class="gold-text mb-20">Struktur Simpel</h3>
+                    <p>Baca arah market pakai struktur yang simpel</p>
+                </div>
+                
+                <div class="card text-center fade-in delay-400">
+                    <div class="icon-box" style="margin: 0 auto;">
+                        <span style="font-size: 24px; color: var(--gold);">🔹</span>
+                    </div>
+                    <h3 class="gold-text mb-20">Timing Tepat</h3>
+                    <p>Tau kapan harus masuk &amp; keluar posisi</p>
+                </div>
+                
+                <div class="card text-center fade-in delay-500">
+                    <div class="icon-box" style="margin: 0 auto;">
+                        <span style="font-size: 24px; color: var(--gold);">🔹</span>
+                    </div>
+                    <h3 class="gold-text mb-20">Komunitas Aktif</h3>
+                    <p>Latihan langsung bareng mentor dan komunitas</p>
+                </div>
+            </div>
+            
+            <div class="text-center mt-60 fade-in delay-500">
+                <a href="#daftar" class="btn btn-primary">Daftar Sekarang</a>
+            </div>
+        </div>
+    </section>
+    
+    <div class="section-divider"></div>
+
+    <!-- What You'll Learn Section -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title fade-in">
+                <span class="section-title-icon">📘</span> Kamu Akan Belajar:
+            </h2>
+            
+            <div class="grid grid-2">
+                <div class="card fade-in delay-100">
+                    <div class="feature-card">
+                        <div class="number-badge">01</div>
+                        <div class="feature-content">
+                            <p>Cara membaca arah market pakai pola HH, HL, LL</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card fade-in delay-200">
+                    <div class="feature-card">
+                        <div class="number-badge">02</div>
+                        <div class="feature-content">
+                            <p>Menggunakan grafik sederhana (line chart) biar gak mumet</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card fade-in delay-300">
+                    <div class="feature-card">
+                        <div class="number-badge">03</div>
+                        <div class="feature-content">
+                            <p>Teknik melihat market dari beberapa sudut waktu (top-down)</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card fade-in delay-400">
+                    <div class="feature-card">
+                        <div class="number-badge">04</div>
+                        <div class="feature-content">
+                            <p>Cara baca gerakan besar yang sering jebak trader kecil</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card fade-in delay-500">
+                    <div class="feature-card">
+                        <div class="number-badge">05</div>
+                        <div class="feature-content">
+                            <p>Latihan langsung baca chart &amp; backtest</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card fade-in delay-500">
+                    <div class="feature-card">
+                        <div class="number-badge">06</div>
+                        <div class="feature-content">
+                            <p>Cara atur emosi dan risiko biar gak overtrade</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card mt-40 fade-in delay-500">
+                <div class="feature-card">
+                    <div class="number-badge">07</div>
+                    <div class="feature-content">
+                        <p>Gabung komunitas buat diskusi &amp; tanya-jawab</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <div class="section-divider"></div>
+
+    <!-- Why This System Section -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title fade-in">Kenapa Sistem Ini Cocok Buat Kamu?</h2>
+            
+            <div class="grid grid-2">
+                <div class="card fade-in delay-100">
+                    <div class="feature-card">
+                        <span style="color: var(--gold); font-size: 24px; margin-right: 15px;">✔</span>
+                        <div class="feature-content">
+                            <h3>Gak ribet</h3>
+                            <p>Cocok buat pemula yang ingin belajar trading dengan cara simpel</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card fade-in delay-200">
+                    <div class="feature-card">
+                        <span style="color: var(--gold); font-size: 24px; margin-right: 15px;">✔</span>
+                        <div class="feature-content">
+                            <h3>Akses Mudah</h3>
+                            <p>Bisa diakses lewat HP aja, trading kapan saja dan di mana saja</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card fade-in delay-300">
+                    <div class="feature-card">
+                        <span style="color: var(--gold); font-size: 24px; margin-right: 15px;">✔</span>
+                        <div class="feature-content">
+                            <h3>Komunitas Aktif</h3>
+                            <p>Ada komunitas aktif yang bantu kamu terus berkembang</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card fade-in delay-400">
+                    <div class="feature-card">
+                        <span style="color: var(--gold); font-size: 24px; margin-right: 15px;">✔</span>
+                        <div class="feature-content">
+                            <h3>Sistem Jelas</h3>
+                            <p>Gak perlu tebak-tebakan lagi, cukup ikuti alurnya</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <div class="section-divider"></div>
+
+    <!-- Who Should Join Section -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title fade-in">
+                <span class="section-title-icon">🚀</span> Siapa yang Cocok Ikut?
+            </h2>
+            
+            <div class="grid">
+                <div class="card fade-in delay-100">
+                    <div class="feature-card">
+                        <div class="icon-box">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--gold);">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                        </div>
+                        <div class="feature-content">
+                            <h3>Trader yang Pernah Nyangkut</h3>
+                            <p>Kamu yang pernah nyangkut dan ingin belajar ulang dari dasar</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card fade-in delay-200">
+                    <div class="feature-card">
+                        <div class="icon-box">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--gold);">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                        </div>
+                        <div class="feature-content">
+                            <h3>Trader yang Ingin Konsisten</h3>
+                            <p>Kamu yang ingin hasil trading lebih stabil</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card fade-in delay-300">
+                    <div class="feature-card">
+                        <div class="icon-box">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--gold);">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                        </div>
+                        <div class="feature-content">
+                            <h3>Pencari Sistem Terbukti</h3>
+                            <p>Kamu yang ingin belajar langsung dari sistem yang terbukti</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card fade-in delay-400">
+                    <div class="feature-card">
+                        <div class="icon-box">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--gold);">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                        </div>
+                        <div class="feature-content">
+                            <h3>Trader yang Butuh Praktik</h3>
+                            <p>Kamu yang gak mau ikut kelas mahal tapi isinya teori semua</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <div class="section-divider"></div>
+
+    <!-- Bonus Section -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title fade-in">
+                <span class="section-title-icon">🎁</span> BONUS UNTUK PESERTA
+            </h2>
+            
+            <div class="grid">
+                <div class="card text-center fade-in delay-100">
+                    <div class="icon-box" style="margin: 0 auto;">
+                        <span style="font-size: 24px; color: var(--gold);">✅</span>
+                    </div>
+                    <h3 class="gold-text mb-20">Template</h3>
+                    <p>Template latihan backtest untuk mempercepat proses belajarmu</p>
+                </div>
+                
+                <div class="card text-center fade-in delay-200">
+                    <div class="icon-box" style="margin: 0 auto;">
+                        <span style="font-size: 24px; color: var(--gold);">✅</span>
+                    </div>
+                    <h3 class="gold-text mb-20">Panduan</h3>
+                    <p>Panduan entry &amp; exit harian untuk membantu keputusan tradingmu</p>
+                </div>
+                
+                <div class="card text-center fade-in delay-300">
+                    <div class="icon-box" style="margin: 0 auto;">
+                        <span style="font-size: 24px; color: var(--gold);">✅</span>
+                    </div>
+                    <h3 class="gold-text mb-20">Komunitas</h3>
+                    <p>Akses grup komunitas untuk diskusi bareng dan saling support</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <div class="section-divider"></div>
+
+    <!-- Final CTA Section -->
+    <section id="daftar" class="section">
+        <div class="container">
+            <div class="highlight-box mb-60 fade-in">
+                <h3 class="gold-text mb-20" style="font-size: 24px; font-weight: 700;">📌 Catat Baik-Baik!</h3>
+                <p style="font-size: 18px; margin-bottom: 10px;">Ini bukan kelas yang ngajarin teori ribet.</p>
+                <p style="font-size: 18px;">Ini sistem yang bisa kamu pakai setiap hari — praktis, logis, dan masuk akal.</p>
+            </div>
+            
+            <div class="cta-box fade-in delay-100">
+                <div class="text-center">
+                    <h2 class="gold-text mb-30" style="font-size: 36px; font-weight: 700;">🔥 Kuota Terbatas!</h2>
+                    <p style="font-size: 20px; margin-bottom: 30px;">Daftar sekarang sebelum ditutup:</p>
+                    <button class="btn btn-primary" style="font-size: 18px; padding: 15px 50px;">DAFTAR SEKARANG</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="logo">
+                    <span class="gold-text">Logic</span><span>System</span>
+                </div>
+                <div class="copyright">© 2023 Logic System Trading. All rights reserved.</div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Intersection Observer for animations
+        document.addEventListener('DOMContentLoaded', function() {
+            const fadeElements = document.querySelectorAll('.fade-in');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            fadeElements.forEach(element => {
+                observer.observe(element);
+            });
+            
+            // Smooth scroll for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'945e78545703cdd5',t:'MTc0ODI3NTA2NS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><iframe height="1" width="1" style="position: absolute; top: 0px; left: 0px; border: medium; visibility: hidden;"></iframe>
+</body>

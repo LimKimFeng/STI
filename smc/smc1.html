@@ -1,0 +1,593 @@
+<html lang="id"><div id="in-page-channel-node-id" data-channel-name="in_page_channel_XSDKwQ"></div><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trading Scalping: Memahami Trend, Logika, dan Indikator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gold: {
+                            light: '#f5d77f',
+                            DEFAULT: '#d4af37',
+                            dark: '#b8860b',
+                        },
+                        dark: {
+                            light: '#2c2c2c',
+                            DEFAULT: '#1a1a1a',
+                            darker: '#121212',
+                            darkest: '#0a0a0a',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            scroll-behavior: smooth;
+            background-color: #121212;
+            color: #e0e0e0;
+        }
+        .price-tag {
+            position: relative;
+        }
+        .price-tag::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: #d4af37;
+            transform: rotate(-8deg);
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #121212 0%, #2c2c2c 100%);
+        }
+        .gold-gradient {
+            background: linear-gradient(135deg, #b8860b 0%, #d4af37 50%, #f5d77f 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .gold-border {
+            border: 1px solid #d4af37;
+        }
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+        @keyframes floating {
+            0% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+            100% {
+                transform: translateY(0px);
+            }
+        }
+        .gold-shadow {
+            box-shadow: 0 4px 20px -2px rgba(212, 175, 55, 0.25);
+        }
+        .gold-glow {
+            filter: drop-shadow(0 0 8px rgba(212, 175, 55, 0.5));
+        }
+    </style>
+<style>*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/* ! tailwindcss v3.4.16 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.container{width:100%}@media (min-width: 640px){.container{max-width:640px}}@media (min-width: 768px){.container{max-width:768px}}@media (min-width: 1024px){.container{max-width:1024px}}@media (min-width: 1280px){.container{max-width:1280px}}@media (min-width: 1536px){.container{max-width:1536px}}.relative{position:relative}.mx-auto{margin-left:auto;margin-right:auto}.mb-1{margin-bottom:0.25rem}.mb-2{margin-bottom:0.5rem}.mb-4{margin-bottom:1rem}.mb-6{margin-bottom:1.5rem}.mb-8{margin-bottom:2rem}.mr-2{margin-right:0.5rem}.mr-3{margin-right:0.75rem}.mr-4{margin-right:1rem}.mt-2{margin-top:0.5rem}.mt-4{margin-top:1rem}.mt-6{margin-top:1.5rem}.mt-8{margin-top:2rem}.inline-block{display:inline-block}.flex{display:flex}.grid{display:grid}.h-10{height:2.5rem}.h-12{height:3rem}.h-5{height:1.25rem}.h-6{height:1.5rem}.h-auto{height:auto}.w-10{width:2.5rem}.w-12{width:3rem}.w-5{width:1.25rem}.w-6{width:1.5rem}.w-64{width:16rem}.w-full{width:100%}.max-w-3xl{max-width:48rem}.transform{transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.cursor-pointer{cursor:pointer}.grid-cols-1{grid-template-columns:repeat(1, minmax(0, 1fr))}.flex-col{flex-direction:column}.items-start{align-items:flex-start}.items-center{align-items:center}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.gap-6{gap:1.5rem}.gap-8{gap:2rem}.space-x-4 > :not([hidden]) ~ :not([hidden]){--tw-space-x-reverse:0;margin-right:calc(1rem * var(--tw-space-x-reverse));margin-left:calc(1rem * calc(1 - var(--tw-space-x-reverse)))}.space-y-3 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.75rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.75rem * var(--tw-space-y-reverse))}.space-y-4 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1rem * var(--tw-space-y-reverse))}.rounded-full{border-radius:9999px}.rounded-lg{border-radius:0.5rem}.rounded-xl{border-radius:0.75rem}.border-b{border-bottom-width:1px}.border-t{border-top-width:1px}.border-gold{--tw-border-opacity:1;border-color:rgb(212 175 55 / var(--tw-border-opacity, 1))}.border-gold-dark{--tw-border-opacity:1;border-color:rgb(184 134 11 / var(--tw-border-opacity, 1))}.bg-dark-darker{--tw-bg-opacity:1;background-color:rgb(18 18 18 / var(--tw-bg-opacity, 1))}.bg-dark-darkest{--tw-bg-opacity:1;background-color:rgb(10 10 10 / var(--tw-bg-opacity, 1))}.bg-dark-light{--tw-bg-opacity:1;background-color:rgb(44 44 44 / var(--tw-bg-opacity, 1))}.bg-gold{--tw-bg-opacity:1;background-color:rgb(212 175 55 / var(--tw-bg-opacity, 1))}.p-2{padding:0.5rem}.p-4{padding:1rem}.p-6{padding:1.5rem}.p-8{padding:2rem}.px-4{padding-left:1rem;padding-right:1rem}.px-8{padding-left:2rem;padding-right:2rem}.py-12{padding-top:3rem;padding-bottom:3rem}.py-16{padding-top:4rem;padding-bottom:4rem}.py-2{padding-top:0.5rem;padding-bottom:0.5rem}.py-4{padding-top:1rem;padding-bottom:1rem}.py-8{padding-top:2rem;padding-bottom:2rem}.text-center{text-align:center}.text-2xl{font-size:1.5rem;line-height:2rem}.text-3xl{font-size:1.875rem;line-height:2.25rem}.text-lg{font-size:1.125rem;line-height:1.75rem}.text-sm{font-size:0.875rem;line-height:1.25rem}.text-xl{font-size:1.25rem;line-height:1.75rem}.font-bold{font-weight:700}.font-medium{font-weight:500}.font-semibold{font-weight:600}.leading-relaxed{line-height:1.625}.leading-tight{line-height:1.25}.text-dark-darker{--tw-text-opacity:1;color:rgb(18 18 18 / var(--tw-text-opacity, 1))}.text-gold{--tw-text-opacity:1;color:rgb(212 175 55 / var(--tw-text-opacity, 1))}.text-gold-light{--tw-text-opacity:1;color:rgb(245 215 127 / var(--tw-text-opacity, 1))}.text-gray-300{--tw-text-opacity:1;color:rgb(209 213 219 / var(--tw-text-opacity, 1))}.text-gray-400{--tw-text-opacity:1;color:rgb(156 163 175 / var(--tw-text-opacity, 1))}.text-gray-500{--tw-text-opacity:1;color:rgb(107 114 128 / var(--tw-text-opacity, 1))}.shadow-lg{--tw-shadow:0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-md{--tw-shadow:0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.transition-all{transition-property:all;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-colors{transition-property:color, background-color, border-color, fill, stroke, -webkit-text-decoration-color;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, -webkit-text-decoration-color;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.hover\:scale-105:hover{--tw-scale-x:1.05;--tw-scale-y:1.05;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.hover\:bg-gold-dark:hover{--tw-bg-opacity:1;background-color:rgb(184 134 11 / var(--tw-bg-opacity, 1))}.hover\:text-gold-light:hover{--tw-text-opacity:1;color:rgb(245 215 127 / var(--tw-text-opacity, 1))}.hover\:shadow-md:hover{--tw-shadow:0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}@media (min-width: 768px){.md\:mb-0{margin-bottom:0px}.md\:w-1\/2{width:50%}.md\:w-2\/5{width:40%}.md\:w-3\/5{width:60%}.md\:grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.md\:grid-cols-3{grid-template-columns:repeat(3, minmax(0, 1fr))}.md\:flex-row{flex-direction:row}.md\:gap-12{gap:3rem}.md\:p-10{padding:2.5rem}.md\:px-8{padding-left:2rem;padding-right:2rem}.md\:py-16{padding-top:4rem;padding-bottom:4rem}.md\:py-24{padding-top:6rem;padding-bottom:6rem}.md\:text-2xl{font-size:1.5rem;line-height:2rem}.md\:text-3xl{font-size:1.875rem;line-height:2.25rem}.md\:text-4xl{font-size:2.25rem;line-height:2.5rem}.md\:text-5xl{font-size:3rem;line-height:1}.md\:text-xl{font-size:1.25rem;line-height:1.75rem}}@media (min-width: 1024px){.lg\:grid-cols-4{grid-template-columns:repeat(4, minmax(0, 1fr))}}</style></head>
+<body>
+    <!-- Header Section -->
+    <header class="bg-dark-darker py-16 md:py-24 border-b border-gold">
+        <div class="container mx-auto px-4 md:px-8">
+            <div class="flex flex-col md:flex-row items-center justify-between">
+                <div class="md:w-3/5 mb-8 md:mb-0">
+                    <h1 class="text-3xl md:text-5xl font-bold leading-tight mb-4 gold-gradient">Trading Scalping: Memahami Trend, Logika, dan Indikator</h1>
+                    <p class="text-xl md:text-2xl font-medium text-gold-light">Kesempatan Trading di Era Digital – Raih Cuan dengan Strategi Terbaik!</p>
+                </div>
+                <div class="md:w-2/5">
+                    <div class="floating gold-glow">
+                        <svg class="w-full h-auto" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                            <path fill="none" d="M40,120 L60,80 L80,100 L100,60 L120,90 L140,70 L160,110 L40,110 Z" stroke="#d4af37" stroke-width="2"></path>
+                            <circle cx="60" cy="80" r="3" fill="#f5d77f"></circle>
+                            <circle cx="80" cy="100" r="3" fill="#f5d77f"></circle>
+                            <circle cx="100" cy="60" r="3" fill="#f5d77f"></circle>
+                            <circle cx="120" cy="90" r="3" fill="#f5d77f"></circle>
+                            <circle cx="140" cy="70" r="3" fill="#f5d77f"></circle>
+                            <circle cx="160" cy="110" r="3" fill="#f5d77f"></circle>
+                            <rect x="30" y="40" width="140" height="120" rx="10" stroke="#d4af37" stroke-width="2" fill="none"></rect>
+                            <line x1="30" y1="60" x2="170" y2="60" stroke="#d4af37" stroke-width="1"></line>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Introduction Section -->
+    <section class="py-12 md:py-16 bg-dark-light">
+        <div class="container mx-auto px-4 md:px-8">
+            <div class="max-w-3xl mx-auto text-center">
+                <p class="text-lg md:text-xl text-gray-300 leading-relaxed">
+                    Join webinar eksklusif ini untuk mempelajari strategi scalping trading yang terbukti, memahami logika pasar, dan indikator penting untuk kesuksesan trading Anda. Dapatkan akses pasar global lewat smartphone dan potensi cuan di setiap arah pasar – naik atau turun!
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Promotional Price Section -->
+    <section class="py-12 md:py-16 bg-dark-darker">
+        <div class="container mx-auto px-4 md:px-8">
+            <div class="max-w-3xl mx-auto text-center">
+                <h2 class="text-2xl md:text-3xl font-bold text-gold mb-8">Penawaran Spesial Terbatas</h2>
+                <div class="bg-dark-light rounded-xl shadow-lg p-8 md:p-10 gold-border gold-shadow">
+                    <div class="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-12">
+                        <div>
+                            <p class="text-gray-400 mb-1">Harga Normal</p>
+                            <p class="text-2xl md:text-3xl font-bold text-gray-400 price-tag">Rp 500k</p>
+                        </div>
+                        <div class="text-3xl font-bold text-gold">→</div>
+                        <div class="pulse">
+                            <p class="text-gold-light mb-1">Harga Promo</p>
+                            <p class="text-3xl md:text-5xl font-bold text-gold">Rp 100k</p>
+                        </div>
+                    </div>
+                    <div class="mt-8">
+                        <p class="inline-block bg-gold text-dark-darker font-bold py-2 px-4 rounded-full text-lg">Spot Terbatas – Daftar Sekarang!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Topics Covered Section -->
+    <section class="py-12 md:py-16 bg-dark-light">
+        <div class="container mx-auto px-4 md:px-8">
+            <h2 class="text-2xl md:text-3xl font-bold text-gold mb-8 text-center">Materi yang Akan Dipelajari</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Topic 1 -->
+                <div class="bg-dark-darker rounded-lg p-6 transition-all hover:shadow-md gold-border">
+                    <div class="flex items-start mb-4">
+                        <div class="bg-gold p-2 rounded-lg mr-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-dark-darker" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-semibold text-gold">Market Structure</h3>
+                    </div>
+                    <p class="text-gray-300">Pola harga untuk memahami tren dan pergerakan pasar secara efektif.</p>
+                </div>
+                
+                <!-- Topic 2 -->
+                <div class="bg-dark-darker rounded-lg p-6 transition-all hover:shadow-md gold-border">
+                    <div class="flex items-start mb-4">
+                        <div class="bg-gold p-2 rounded-lg mr-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-dark-darker" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-semibold text-gold">Line Chart</h3>
+                    </div>
+                    <p class="text-gray-300">Identifikasi area supply dan demand untuk entry point yang optimal.</p>
+                </div>
+                
+                <!-- Topic 3 -->
+                <div class="bg-dark-darker rounded-lg p-6 transition-all hover:shadow-md gold-border">
+                    <div class="flex items-start mb-4">
+                        <div class="bg-gold p-2 rounded-lg mr-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-dark-darker" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-semibold text-gold">Top-Down Analysis</h3>
+                    </div>
+                    <p class="text-gray-300">Teknik analisis H1/M15/M5 dari gambaran besar ke detail untuk keputusan tepat.</p>
+                </div>
+                
+                <!-- Topic 4 -->
+                <div class="bg-dark-darker rounded-lg p-6 transition-all hover:shadow-md gold-border">
+                    <div class="flex items-start mb-4">
+                        <div class="bg-gold p-2 rounded-lg mr-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-dark-darker" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-semibold text-gold">Liquidity Sweep</h3>
+                    </div>
+                    <p class="text-gray-300">Taktik pasar untuk entry cerdas dan maksimalkan peluang profit.</p>
+                </div>
+                
+                <!-- Topic 5 -->
+                <div class="bg-dark-darker rounded-lg p-6 transition-all hover:shadow-md gold-border">
+                    <div class="flex items-start mb-4">
+                        <div class="bg-gold p-2 rounded-lg mr-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-dark-darker" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-semibold text-gold">Live Practice</h3>
+                    </div>
+                    <p class="text-gray-300">Praktik langsung strategi dengan simple backtest untuk pengalaman nyata.</p>
+                </div>
+                
+                <!-- Topic 6 -->
+                <div class="bg-dark-darker rounded-lg p-6 transition-all hover:shadow-md gold-border">
+                    <div class="flex items-start mb-4">
+                        <div class="bg-gold p-2 rounded-lg mr-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-dark-darker" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-semibold text-gold">Psikologi Trading</h3>
+                    </div>
+                    <p class="text-gray-300">Disiplin dan kontrol emosi untuk keputusan trading yang rasional.</p>
+                </div>
+                
+                <!-- Topic 7 -->
+                <div class="bg-dark-darker rounded-lg p-6 transition-all hover:shadow-md gold-border">
+                    <div class="flex items-start mb-4">
+                        <div class="bg-gold p-2 rounded-lg mr-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-dark-darker" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-semibold text-gold">Risk Management</h3>
+                    </div>
+                    <p class="text-gray-300">Batasi risiko, maksimalkan profit dengan strategi manajemen modal yang tepat.</p>
+                </div>
+                
+                <!-- Topic 8 -->
+                <div class="bg-dark-darker rounded-lg p-6 transition-all hover:shadow-md gold-border">
+                    <div class="flex items-start mb-4">
+                        <div class="bg-gold p-2 rounded-lg mr-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-dark-darker" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-semibold text-gold">Komunitas Kami</h3>
+                    </div>
+                    <p class="text-gray-300">Dukungan trader berpengalaman untuk pertumbuhan skill trading Anda.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="py-12 md:py-16 bg-dark-darker">
+        <div class="container mx-auto px-4 md:px-8">
+            <h2 class="text-2xl md:text-3xl font-bold text-gold mb-8 text-center">Mengapa Harus Ikut Webinar Ini?</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Benefit 1 -->
+                <div class="bg-dark-light rounded-lg p-6 shadow-md gold-border gold-shadow">
+                    <div class="flex justify-center mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gold text-center mb-2">Potensi Profit di Setiap Kondisi</h3>
+                    <p class="text-gray-300 text-center">Pelajari cara mendapatkan keuntungan baik saat pasar naik maupun turun.</p>
+                </div>
+                
+                <!-- Benefit 2 -->
+                <div class="bg-dark-light rounded-lg p-6 shadow-md gold-border gold-shadow">
+                    <div class="flex justify-center mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gold text-center mb-2">Trading dari Smartphone</h3>
+                    <p class="text-gray-300 text-center">Akses pasar global kapan saja dan di mana saja hanya dengan smartphone Anda.</p>
+                </div>
+                
+                <!-- Benefit 3 -->
+                <div class="bg-dark-light rounded-lg p-6 shadow-md gold-border gold-shadow">
+                    <div class="flex justify-center mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gold text-center mb-2">Strategi Teruji</h3>
+                    <p class="text-gray-300 text-center">Dapatkan akses ke strategi scalping yang sudah terbukti menghasilkan profit konsisten.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 md:py-24 bg-dark-darkest border-t border-b border-gold-dark">
+        <div class="container mx-auto px-4 md:px-8">
+            <div class="max-w-3xl mx-auto text-center">
+                <h2 class="text-2xl md:text-4xl font-bold text-gold mb-6">Siap Untuk Meningkatkan Skill Trading Anda?</h2>
+                <p class="text-lg md:text-xl text-gray-300 mb-8">Jangan lewatkan kesempatan belajar dengan harga spesial ini. Spot terbatas!</p>
+                <button class="bg-gold hover:bg-gold-dark text-dark-darker font-bold py-4 px-8 rounded-full text-xl transition-all transform hover:scale-105 pulse">
+                    Daftar Sekarang
+                </button>
+                <p class="mt-6 text-gold-light">Kesempatan terbatas! Hanya untuk 50 pendaftar pertama.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mobile Trading Section -->
+    <section class="py-12 md:py-16 bg-dark-light">
+        <div class="container mx-auto px-4 md:px-8">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-8">
+                <div class="md:w-1/2">
+                    <h2 class="text-2xl md:text-3xl font-bold text-gold mb-4">Trading di Era Digital</h2>
+                    <p class="text-lg text-gray-300 mb-6">Dengan smartphone di tangan, Anda bisa trading kapan saja dan di mana saja. Webinar ini akan mengajarkan Anda cara memanfaatkan teknologi untuk mendapatkan keuntungan maksimal dari pasar global.</p>
+                    <ul class="space-y-3">
+                        <li class="flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gold mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="text-gray-300">Akses pasar 24/7</span>
+                        </li>
+                        <li class="flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gold mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="text-gray-300">Trading sambil beraktivitas</span>
+                        </li>
+                        <li class="flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gold mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="text-gray-300">Notifikasi real-time untuk peluang trading</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="md:w-1/2 flex justify-center">
+                    <div class="relative w-64 h-auto gold-glow">
+                        <svg viewBox="0 0 320 640" xmlns="http://www.w3.org/2000/svg" class="w-full h-auto">
+                            <!-- Phone outline -->
+                            <rect x="10" y="10" width="300" height="620" rx="30" fill="#1a1a1a"></rect>
+                            <rect x="20" y="20" width="280" height="600" rx="26" fill="#2c2c2c"></rect>
+                            
+                            <!-- Screen content -->
+                            <rect x="30" y="60" width="260" height="520" fill="#121212"></rect>
+                            
+                            <!-- Chart -->
+                            <polyline points="40,400 80,380 120,420 160,300 200,340 240,280 280,320" stroke="#d4af37" stroke-width="3" fill="none"></polyline>
+                            <polyline points="40,450 80,430 120,470 160,350 200,390 240,330 280,370" stroke="#f5d77f" stroke-width="2" fill="none"></polyline>
+                            
+                            <!-- Candlesticks -->
+                            <rect x="60" y="200" width="10" height="40" fill="#22c55e"></rect>
+                            <line x1="65" y1="180" x2="65" y2="200" stroke="#22c55e" stroke-width="2"></line>
+                            <line x1="65" y1="240" x2="65" y2="260" stroke="#22c55e" stroke-width="2"></line>
+                            
+                            <rect x="100" y="220" width="10" height="60" fill="#ef4444"></rect>
+                            <line x1="105" y1="200" x2="105" y2="220" stroke="#ef4444" stroke-width="2"></line>
+                            <line x1="105" y1="280" x2="105" y2="300" stroke="#ef4444" stroke-width="2"></line>
+                            
+                            <rect x="140" y="180" width="10" height="30" fill="#22c55e"></rect>
+                            <line x1="145" y1="160" x2="145" y2="180" stroke="#22c55e" stroke-width="2"></line>
+                            <line x1="145" y1="210" x2="145" y2="230" stroke="#22c55e" stroke-width="2"></line>
+                            
+                            <rect x="180" y="240" width="10" height="50" fill="#ef4444"></rect>
+                            <line x1="185" y1="220" x2="185" y2="240" stroke="#ef4444" stroke-width="2"></line>
+                            <line x1="185" y1="290" x2="185" y2="310" stroke="#ef4444" stroke-width="2"></line>
+                            
+                            <rect x="220" y="200" width="10" height="45" fill="#22c55e"></rect>
+                            <line x1="225" y1="180" x2="225" y2="200" stroke="#22c55e" stroke-width="2"></line>
+                            <line x1="225" y1="245" x2="225" y2="265" stroke="#22c55e" stroke-width="2"></line>
+                            
+                            <!-- Phone elements -->
+                            <rect x="120" y="30" width="80" height="10" rx="5" fill="#d4af37"></rect>
+                            <circle cx="160" cy="600" r="20" fill="#2c2c2c" stroke="#d4af37" stroke-width="2"></circle>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-12 md:py-16 bg-dark-darker">
+        <div class="container mx-auto px-4 md:px-8">
+            <h2 class="text-2xl md:text-3xl font-bold text-gold mb-8 text-center">Apa Kata Mereka</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-dark-light p-6 rounded-lg gold-border">
+                    <div class="flex mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gold" viewBox="0 0 20 20" fill="currentColor">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gold" viewBox="0 0 20 20" fill="currentColor">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gold" viewBox="0 0 20 20" fill="currentColor">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gold" viewBox="0 0 20 20" fill="currentColor">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gold" viewBox="0 0 20 20" fill="currentColor">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                        </svg>
+                    </div>
+                    <p class="text-gray-300 mb-4">"Webinar ini mengubah cara saya melihat pasar. Strategi scalping yang diajarkan sangat praktis dan mudah diikuti. Profit saya meningkat 30% dalam sebulan!"</p>
+                    <div class="flex items-center">
+                        <div class="w-10 h-10 rounded-full bg-gold flex items-center justify-center mr-3">
+                            <span class="text-dark-darker font-bold">AS</span>
+                        </div>
+                        <div>
+                            <p class="font-semibold text-gold-light">Andi Saputra</p>
+                            <p class="text-sm text-gray-400">Trader, Jakarta</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="bg-dark-light p-6 rounded-lg gold-border">
+                    <div class="flex mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gold" viewBox="0 0 20 20" fill="currentColor">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gold" viewBox="0 0 20 20" fill="currentColor">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gold" viewBox="0 0 20 20" fill="currentColor">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gold" viewBox="0 0 20 20" fill="currentColor">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gold" viewBox="0 0 20 20" fill="currentColor">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                        </svg>
+                    </div>
+                    <p class="text-gray-300 mb-4">"Materi risk management sangat berharga. Saya belajar cara membatasi kerugian dan memaksimalkan profit. Investasi terbaik untuk skill trading saya!"</p>
+                    <div class="flex items-center">
+                        <div class="w-10 h-10 rounded-full bg-gold flex items-center justify-center mr-3">
+                            <span class="text-dark-darker font-bold">DP</span>
+                        </div>
+                        <div>
+                            <p class="font-semibold text-gold-light">Dewi Pratiwi</p>
+                            <p class="text-sm text-gray-400">Trader, Surabaya</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="bg-dark-light p-6 rounded-lg gold-border">
+                    <div class="flex mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gold" viewBox="0 0 20 20" fill="currentColor">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gold" viewBox="0 0 20 20" fill="currentColor">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gold" viewBox="0 0 20 20" fill="currentColor">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gold" viewBox="0 0 20 20" fill="currentColor">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gold" viewBox="0 0 20 20" fill="currentColor">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                        </svg>
+                    </div>
+                    <p class="text-gray-300 mb-4">"Saya pemula dalam trading, tapi webinar ini membuat saya paham dasar-dasar scalping dengan jelas. Komunitas supportnya juga sangat membantu!"</p>
+                    <div class="flex items-center">
+                        <div class="w-10 h-10 rounded-full bg-gold flex items-center justify-center mr-3">
+                            <span class="text-dark-darker font-bold">BW</span>
+                        </div>
+                        <div>
+                            <p class="font-semibold text-gold-light">Budi Wibowo</p>
+                            <p class="text-sm text-gray-400">Trader, Bandung</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-12 md:py-16 bg-dark-light">
+        <div class="container mx-auto px-4 md:px-8">
+            <h2 class="text-2xl md:text-3xl font-bold text-gold mb-8 text-center">Pertanyaan Umum</h2>
+            <div class="max-w-3xl mx-auto space-y-4">
+                <div class="bg-dark-darker p-4 rounded-lg gold-border">
+                    <h3 class="text-lg font-semibold text-gold mb-2">Apakah webinar ini cocok untuk pemula?</h3>
+                    <p class="text-gray-300">Ya, webinar ini dirancang untuk semua level trader. Materi akan dijelaskan secara bertahap dari dasar hingga strategi lanjutan.</p>
+                </div>
+                <div class="bg-dark-darker p-4 rounded-lg gold-border">
+                    <h3 class="text-lg font-semibold text-gold mb-2">Berapa lama durasi webinar?</h3>
+                    <p class="text-gray-300">Webinar berlangsung selama 3 jam dengan sesi tanya jawab di akhir. Rekaman akan tersedia bagi peserta selama 30 hari setelah acara.</p>
+                </div>
+                <div class="bg-dark-darker p-4 rounded-lg gold-border">
+                    <h3 class="text-lg font-semibold text-gold mb-2">Apakah ada materi tambahan yang diberikan?</h3>
+                    <p class="text-gray-300">Ya, peserta akan mendapatkan e-book panduan trading dan template analisis teknikal yang bisa langsung digunakan.</p>
+                </div>
+                <div class="bg-dark-darker p-4 rounded-lg gold-border">
+                    <h3 class="text-lg font-semibold text-gold mb-2">Bagaimana cara mengakses webinar?</h3>
+                    <p class="text-gray-300">Setelah pendaftaran, Anda akan menerima email berisi link untuk mengakses webinar pada waktu yang ditentukan.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section class="py-12 md:py-16 bg-dark-darkest">
+        <div class="container mx-auto px-4 md:px-8">
+            <div class="max-w-3xl mx-auto text-center">
+                <h2 class="text-2xl md:text-3xl font-bold text-gold mb-4">Jangan Lewatkan Kesempatan Ini!</h2>
+                <p class="text-lg text-gray-300 mb-8">Harga promo Rp 100k hanya berlaku untuk waktu terbatas. Tingkatkan skill trading Anda sekarang!</p>
+                <div class="inline-block bg-gold hover:bg-gold-dark text-dark-darker font-bold py-4 px-8 rounded-full text-xl transition-all transform hover:scale-105 pulse cursor-pointer">
+                    Daftar Sekarang
+                </div>
+                <p class="mt-4 text-gold-light text-sm">* Trading melibatkan risiko. Pastikan Anda memahami sebelum mulai.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark-darkest text-gray-300 py-8 border-t border-gold-dark">
+        <div class="container mx-auto px-4 md:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <h3 class="text-xl font-bold text-gold">Trading Scalping Webinar</h3>
+                    <p class="text-gray-400">Hubungi kami di info@tradingscalping.com untuk info lebih lanjut.</p>
+                </div>
+                <div class="flex space-x-4">
+                    <a href="#" class="text-gold hover:text-gold-light transition-colors">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.325-1.325-1.325z"></path>
+                        </svg>
+                    </a>
+                    <a href="#" class="text-gold hover:text-gold-light transition-colors">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"></path>
+                        </svg>
+                    </a>
+                    <a href="#" class="text-gold hover:text-gold-light transition-colors">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <div class="mt-6 text-center">
+                <p class="text-sm text-gray-400">Trading melibatkan risiko. Pastikan Anda memahami sebelum mulai.</p>
+                <p class="text-sm text-gray-500 mt-2">© 2023 Trading Scalping Webinar. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Registration button functionality
+        document.querySelectorAll('button, .cursor-pointer').forEach(button => {
+            button.addEventListener('click', function() {
+                alert('Terima kasih! Kami akan menghubungi Anda untuk informasi pendaftaran lebih lanjut.');
+            });
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9495abb5178da081',t:'MTc0ODg1Mzg4Ni4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><iframe height="1" width="1" style="position: absolute; top: 0px; left: 0px; border: none; visibility: hidden;"></iframe>
+
+</body></html>

@@ -1,0 +1,1143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gold Snapper Trading</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1E293B;
+            --gold: #D4AF37;
+            --gold-light: #F2D675;
+            --gold-dark: #9E7C1F;
+            --dark: #0F172A;
+            --darker: #020617;
+            --text: #F8FAFC;
+            --text-muted: #94A3B8;
+            --gradient-gold: linear-gradient(135deg, #F2D675 0%, #D4AF37 50%, #9E7C1F 100%);
+            --gradient-dark: linear-gradient(145deg, rgba(30, 41, 59, 0.9), rgba(15, 23, 42, 0.95));
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--darker);
+            color: var(--text);
+            line-height: 1.7;
+            background-image: 
+                radial-gradient(circle at 15% 50%, rgba(212, 175, 55, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 85% 30%, rgba(212, 175, 55, 0.08) 0%, transparent 50%);
+            background-attachment: fixed;
+            overflow-x: hidden;
+        }
+        
+        .row {
+            width: 100%;
+            max-width: 375px;
+            margin: 0 auto;
+            padding: 0 16px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 100%;
+            padding: 0;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            border-radius: 50px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-decoration: none;
+            cursor: pointer;
+            border: none;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            width: fit-content;
+            margin: 0 auto;
+        }
+        
+        .btn-primary {
+            background: var(--gradient-gold);
+            color: var(--darker);
+            box-shadow: 0 10px 25px rgba(212, 175, 55, 0.3);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(212, 175, 55, 0.4);
+        }
+        
+        .btn-primary::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--gradient-gold);
+            z-index: -1;
+            transition: opacity 0.3s ease;
+            opacity: 0;
+        }
+        
+        .btn-primary:hover::after {
+            opacity: 0.6;
+        }
+        
+        .section {
+            padding: 60px 0;
+            width: 100%;
+            position: relative;
+        }
+        
+        .section-divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
+            margin: 0 auto;
+            width: 80%;
+            max-width: 800px;
+            opacity: 0.6;
+        }
+        
+        .card {
+            background: var(--gradient-dark);
+            border-radius: 20px;
+            padding: 20px;
+            border: 1px solid rgba(212, 175, 55, 0.15);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            width: 100%;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--gradient-gold);
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+        }
+        
+        .gold-text {
+            background: var(--gradient-gold);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            display: inline-block;
+            font-weight: 700;
+        }
+        
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(2, 6, 23, 0.9);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+            transition: all 0.3s ease;
+            display: flex;
+            justify-content: center;
+        }
+        
+        header.scrolled {
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px 0;
+        }
+        
+        .logo {
+            font-size: 28px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .hero {
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            padding-top: 80px;
+            background: 
+                radial-gradient(circle at 20% 20%, rgba(30, 41, 59, 0.4), transparent 70%),
+                radial-gradient(circle at 80% 80%, rgba(30, 41, 59, 0.4), transparent 70%);
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23d4af37' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.5;
+            z-index: -1;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+        }
+        
+        .hero-title {
+            font-size: 28px;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 30px;
+            text-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            text-align: center;
+        }
+        
+        .hero-subtitle {
+            font-size: 16px;
+            margin-bottom: 50px;
+            color: var(--text-muted);
+            text-align: center;
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+        
+        .section-title {
+            font-size: 24px;
+            font-weight: 800;
+            margin-bottom: 60px;
+            position: relative;
+            text-align: center;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: var(--gradient-gold);
+            border-radius: 2px;
+        }
+        
+        .feature-card {
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .text-center {
+            text-align: center;
+        }
+        
+        .mb-20 {
+            margin-bottom: 20px;
+        }
+        
+        .mb-30 {
+            margin-bottom: 30px;
+        }
+        
+        .mb-40 {
+            margin-bottom: 40px;
+        }
+        
+        .mt-40 {
+            margin-top: 40px;
+        }
+        
+        footer {
+            padding: 80px 0 40px;
+            border-top: 1px solid rgba(212, 175, 55, 0.15);
+            background: linear-gradient(to top, var(--darker), rgba(2, 6, 23, 0.9));
+            position: relative;
+            width: 100%;
+        }
+        
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23d4af37' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.1;
+            z-index: -1;
+        }
+        
+        .footer-content {
+            flex-direction: column;
+            text-align: center;
+            gap: 20px;
+        }
+        
+        .copyright {
+            color: var(--text-muted);
+            font-size: 14px;
+        }
+        
+        .icon-box {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: var(--gradient-dark);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 24px;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            flex-shrink: 0;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .icon-box::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--gradient-gold);
+            opacity: 0.1;
+            z-index: 0;
+        }
+        
+        .icon-box svg, .icon-box span {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .number-badge {
+            background: var(--gradient-gold);
+            color: var(--darker);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            margin-right: 24px;
+            flex-shrink: 0;
+            font-size: 24px;
+            box-shadow: 0 10px 20px rgba(212, 175, 55, 0.3);
+        }
+        
+        .cta-box {
+            border-radius: 24px;
+            background: var(--gradient-dark);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+            padding: 40px;
+            position: relative;
+            overflow: hidden;
+            border: 2px solid rgba(212, 175, 55, 0.2);
+        }
+        
+        .cta-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23d4af37' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.1;
+            z-index: 0;
+        }
+        
+        .cta-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .highlight-box {
+            border-left: 5px solid var(--gold);
+            padding: 25px 20px 25px 25px;
+            margin: 50px 0;
+            position: relative;
+            background: rgba(212, 175, 55, 0.05);
+            border-radius: 0 16px 16px 0;
+        }
+        
+        .testimonial-card {
+            padding: 20px;
+            border-radius: 20px;
+            background: var(--gradient-dark);
+            border: 1px solid rgba(212, 175, 55, 0.15);
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+        
+        .testimonial-card::before {
+            content: '"';
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 80px;
+            line-height: 1;
+            font-family: Georgia, serif;
+            color: rgba(212, 175, 55, 0.1);
+            z-index: 0;
+        }
+        
+        .testimonial-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .testimonial-author {
+            margin-top: 20px;
+            display: flex;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--gradient-gold);
+            margin-right: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            color: var(--darker);
+            font-size: 18px;
+            box-shadow: 0 10px 20px rgba(212, 175, 55, 0.2);
+        }
+        
+        .author-info h4 {
+            font-size: 16px;
+            margin-bottom: 5px;
+        }
+        
+        .author-info p {
+            font-size: 14px;
+            color: var(--text-muted);
+        }
+        
+        .price-tag {
+            font-size: 28px;
+            font-weight: 800;
+            margin: 30px 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+        
+        .price-original {
+            text-decoration: line-through;
+            color: var(--text-muted);
+            font-size: 20px;
+            position: relative;
+        }
+        
+        .price-original::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: rgba(212, 175, 55, 0.5);
+            transform: rotate(-10deg);
+        }
+        
+        .price-current {
+            color: var(--text);
+            position: relative;
+            padding: 0 10px;
+        }
+        
+        .price-current::before {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: var(--gradient-gold);
+        }
+        
+        .price-discount {
+            background: rgba(212, 175, 55, 0.2);
+            color: var(--gold);
+            padding: 8px 15px;
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: 700;
+            margin-top: 10px;
+            letter-spacing: 1px;
+        }
+        
+        .countdown-container {
+            margin: 40px 0;
+            text-align: center;
+        }
+        
+        .countdown-timer {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 25px;
+            flex-wrap: wrap;
+        }
+        
+        .countdown-item {
+            background: var(--gradient-dark);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            border-radius: 16px;
+            padding: 10px 5px;
+            min-width: 60px;
+            text-align: center;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .countdown-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--gradient-gold);
+        }
+        
+        .countdown-number {
+            font-size: 20px;
+            font-weight: 800;
+            color: var(--gold);
+            line-height: 1;
+            margin-bottom: 10px;
+        }
+        
+        .countdown-label {
+            font-size: 12px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 500;
+        }
+        
+        .guarantee-badge {
+            display: flex;
+            align-items: center;
+            background: var(--gradient-dark);
+            border: 1px solid rgba(212, 175, 55, 0.15);
+            border-radius: 16px;
+            padding: 20px;
+            margin: 40px 0;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+            position: relative;
+            overflow: hidden;
+            flex-direction: column;
+            text-align: center;
+        }
+        
+        .guarantee-badge::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--gradient-gold);
+        }
+        
+        .guarantee-icon {
+            font-size: 40px;
+            color: var(--gold);
+            margin-bottom: 20px;
+            background: rgba(212, 175, 55, 0.1);
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        
+        .guarantee-content h4 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: var(--gold-light);
+        }
+        
+        .guarantee-content p {
+            font-size: 14px;
+            color: var(--text-muted);
+        }
+        
+        .gold-line {
+            width: 60px;
+            height: 4px;
+            background: var(--gradient-gold);
+            margin: 20px auto;
+            border-radius: 2px;
+        }
+        
+        .hero-badge {
+            background: rgba(212, 175, 55, 0.15);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            color: var(--gold);
+            padding: 10px 25px;
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 30px;
+            display: inline-block;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            backdrop-filter: blur(5px);
+        }
+        
+        .feature-icon {
+            font-size: 32px;
+            color: var(--gold);
+            margin-bottom: 20px;
+        }
+        
+        .feature-title {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+        
+        .feature-description {
+            color: var(--text-muted);
+            font-size: 14px;
+        }
+        
+        .glow {
+            display: none;
+        }
+        
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+        
+        @media (min-width: 375px) and (max-width: 428px) {
+            .row {
+                max-width: 400px;
+            }
+        }
+        
+        @media (max-width: 374px) {
+            .row {
+                max-width: 320px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <div class="row">
+            <div class="header-content flex justify-center">
+                <div class="logo">
+                    <img class="w-[80px]" src="https://goldsnapper.id/wp-content/uploads/2024/05/Logo-Gold-Snapper-300x.png" alt="Gold Snapper Logo">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="row">
+            <div class="hero-content">
+                <div class="hero-badge">SISTEM TRADING TERBARU</div>
+                <h1 class="hero-title">
+                    <span class="gold-text">Belajar Trading Gak Harus Rumit</span> — Mulai dengan Sistem yang Masuk Akal
+                </h1>
+                <p class="hero-subtitle">
+                    Pelajari Teknik Scalping Sederhana dengan Pola Jelas & Langkah yang Terarah
+                </p>
+                <a href="#daftar" class="btn btn-primary">DAFTAR SEKARANG</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pain Points Section -->
+    <section class="section">
+        <div class="row">
+            <h2 class="section-title">
+                Capek Trading Tapi Hasilnya Gitu-gitu Aja?
+            </h2>
+            <img class="mb-30" src="https://goldsnapper.id/wp-content/uploads/2025/05/orang-stress.jpg" alt="">
+            
+            <div class="grid">
+                <div class="card">
+                    <div class="feature-card">
+                        <div class="icon-box">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--gold);">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <line x1="12" y1="8" x2="12" y2="12"></line>
+                                <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                            </svg>
+                        </div>
+                        <div class="feature-content">
+                            <h3 class="gold-text feature-title">Bingung Entry</h3>
+                            <p class="feature-description">Masuk market tapi bingung harus entry di mana dan kapan harus keluar</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="feature-card">
+                        <div class="icon-box">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--gold);">
+                                <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path>
+                                <line x1="12" y1="9" x2="12" y2="13"></line>
+                                <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                            </svg>
+                        </div>
+                        <div class="feature-content">
+                            <h3 class="gold-text feature-title">Terlalu Kompleks</h3>
+                            <p class="feature-description">Ikut kelas tapi makin banyak indikator, makin pusing dan tidak fokus</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="feature-card">
+                        <div class="icon-box">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--gold);">
+                                <polyline points="23 18 13.5 8.5 8.5 13.5 1 6"></polyline>
+                                <polyline points="17 18 23 18 23 12"></polyline>
+                            </svg>
+                        </div>
+                        <div class="feature-content">
+                            <h3 class="gold-text feature-title">Hasil Tidak Konsisten</h3>
+                            <p class="feature-description">Coba berbagai cara tapi hasil tetap zonk dan tidak konsisten</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <p class="text-center mt-40" style="font-size: 24px; font-weight: 700;">
+                <span class="gold-text">Mungkin kamu belum pakai sistem yang benar-benar masuk akal.</span>
+            </p>
+        </div>
+    </section>
+    
+    <div class="section-divider"></div>
+
+    <!-- Solution Section -->
+    <section class="section">
+        <div class="row">
+            <h2 class="section-title">
+                Solusinya: Trading Pakai <span class="gold-text">Logic System</span>
+            </h2>
+            
+            <p class="text-center mb-10" style="font-size: 20px;">Di webinar ini, kamu akan belajar teknik scalping yang mudah dipahami dan langsung bisa dipraktekin, bahkan untuk pemula.</p>
+            
+            <div class="grid">
+                <div class="card text-center">
+                    <div class="icon-box" style="margin: 0 auto;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--gold);">
+                            <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                            <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                            <line x1="12" y1="22.08" x2="12" y2="12"></line>
+                        </svg>
+                    </div>
+                    <h3 class="gold-text mb-2">Struktur Simpel</h3>
+                    <div class="gold-line"></div>
+                    <p>Baca arah market pakai struktur yang simpel dan mudah dipahami</p>
+                </div>
+                
+                <div class="card text-center">
+                    <div class="icon-box" style="margin: 0 auto;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--gold);">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <polyline points="12 6 12 12 16 14"></polyline>
+                        </svg>
+                    </div>
+                    <h3 class="gold-text mb-2">Timing Tepat</h3>
+                    <div class="gold-line"></div>
+                    <p>Tau kapan harus masuk & keluar posisi dengan timing yang presisi</p>
+                </div>
+                
+                <div class="card text-center">
+                    <div class="icon-box" style="margin: 0 auto;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--gold);">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="9" cy="7" r="4"></circle>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                        </svg>
+                    </div>
+                    <h3 class="gold-text mb-2">Komunitas Aktif</h3>
+                    <div class="gold-line"></div>
+                    <p>Latihan langsung bareng mentor dan komunitas yang supportif</p>
+                </div>
+            </div>
+            
+            <div class="text-center mt-5">
+                <a href="#daftar" class="btn btn-primary">DAFTAR SEKARANG</a>
+            </div>
+        </div>
+    </section>
+    
+    <div class="section-divider"></div>
+
+    <!-- What You'll Learn Section -->
+    <section class="section">
+        <div class="row">
+            <h2 class="section-title">
+                Kamu Akan Belajar:
+            </h2>
+            
+            <div class="grid">
+                <div class="card">
+                    <div class="feature-card">
+                        <div class="number-badge">1</div>
+                        <div class="feature-content">
+                            <h3 class="gold-text">Pola Struktur Market</h3>
+                            <p>Cara membaca arah market pakai pola HH, HL, LL dengan akurat</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="feature-card">
+                        <div class="number-badge">2</div>
+                        <div class="feature-content">
+                            <h3 class="gold-text">Grafik Sederhana</h3>
+                            <p>Menggunakan grafik sederhana (line chart) biar gak mumet dan lebih fokus</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="feature-card">
+                        <div class="number-badge">3</div>
+                        <div class="feature-content">
+                            <h3 class="gold-text">Analisis Top-Down</h3>
+                            <p>Teknik melihat market dari beberapa sudut waktu untuk konfirmasi arah</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="feature-card">
+                        <div class="number-badge">4</div>
+                        <div class="feature-content">
+                            <h3 class="gold-text">Menghindari Jebakan</h3>
+                            <p>Cara baca gerakan besar yang sering jebak trader kecil dan menghindarinya</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="feature-card">
+                        <div class="number-badge">5</div>
+                        <div class="feature-content">
+                            <h3 class="gold-text">Praktik Langsung</h3>
+                            <p>Latihan langsung baca chart & backtest dengan panduan mentor</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="feature-card">
+                        <div class="number-badge">6</div>
+                        <div class="feature-content">
+                            <h3 class="gold-text">Komunitas Eksklusif</h3>
+                            <p>Gabung komunitas eksklusif untuk diskusi & tanya-jawab langsung dengan mentor</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <div class="section-divider"></div>
+
+    <!-- SS Bukti Profit Section -->
+    <section class="section">
+        <div class="row">
+            <h2 class="section-title">
+                SS Bukti Profit
+            </h2>
+            <img class="mb-10" src="https://goldsnapper.id/wp-content/uploads/2025/04/300_11zon-1-1.webp" alt="">
+            <img class="mb-10" src="https://goldsnapper.id/wp-content/uploads/2025/04/300-1_11zon-1-1.webp" alt="">
+            <p class="text-center text-xl">dan masih banyak lagi...</p>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="section">
+        <div class="row">
+            <h2 class="section-title">
+                Apa Kata Mereka?
+            </h2>
+            
+            <div class="grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"Sebelumnya saya pakai banyak indikator tapi malah bikin pusing. Setelah ikut Gold Snapper, trading jadi lebih simpel dan profit lebih konsisten."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">RA</div>
+                        <div class="author-info">
+                            <h4>Rudi A.</h4>
+                            <p>Trader 2 Tahun</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"Awalnya skeptis karena udah coba banyak sistem. Tapi Gold Snapper bener-bener bikin trading jadi masuk akal. Sekarang saya tau kapan harus masuk dan keluar."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">DS</div>
+                        <div class="author-info">
+                            <h4>Dina S.</h4>
+                            <p>Trader Pemula</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"Komunitas supportnya luar biasa. Setiap kali bingung, selalu ada yang bantu. Sistem tradingnya juga simpel tapi powerful. Recommended!"</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">BP</div>
+                        <div class="author-info">
+                            <h4>Budi P.</h4>
+                            <p>Trader 1 Tahun</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Suitable Section -->
+    <section class="section">
+        <div class="row">
+            <h2 class="section-title">
+                Kenapa Sistem ini Cocok untuk Anda:
+            </h2>
+            <div class="grid">
+                <div class="card">
+                    <div class="feature-card">
+                        <div class="feature-content">
+                            <h3 class="text-xl mb-3">✔ Gak ribet — cocok buat pemula</h3>
+                            <h3 class="text-xl mb-3">✔ Bisa diakses lewat HP aja</h3>
+                            <h3 class="text-xl mb-3">✔ Ada komunitas aktif yang bantu kamu terus berkembang</h3>
+                            <h3 class="text-xl mb-3">✔ Gak perlu tebak-tebakan lagi, cukup ikuti alurnya</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Who Should Join Section -->
+    <section class="section">
+        <div class="row">
+            <h2 class="section-title">
+                Siapa yang Cocok Ikut?
+            </h2>
+            <div class="grid">
+                <div class="card">
+                    <div class="feature-card">
+                        <div class="feature-content">
+                            <h3 class="text-xl mb-3">→ Kamu yang pernah nyangkut dan ingin belajar ulang dari dasar</h3>
+                            <h3 class="text-xl mb-3">→ Kamu yang ingin hasil trading lebih stabil</h3>
+                            <h3 class="text-xl mb-3">→ Kamu yang ingin belajar langsung dari sistem yang terbukti</h3>
+                            <h3 class="text-xl mb-3">→ Kamu yang gak mau ikut kelas mahal tapi isinya teori semua</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <div class="section-divider"></div>
+
+    <!-- Final CTA Section -->
+    <section id="daftar" class="section">
+        <div class="row">
+            <div class="highlight-box mb-30">
+                <h3 class="gold-text mb-20" style="font-size: 24px; font-weight: 800;">📌 Catat Baik-Baik!</h3>
+                <p style="font-size: 18px;">Ini bukan kelas yang ngajarin teori ribet. Ini sistem yang bisa kamu pakai setiap hari — praktis, logis, dan masuk akal.</p>
+            </div>
+            
+            <div class="cta-box">
+                <div class="cta-content text-center">
+                    <h2 class="gold-text mb-30" style="font-size: 32px; font-weight: 800;">🔥 KUOTA TERBATAS!</h2>
+                    
+                    <div class="price-tag">
+                        <span class="price-original">Rp 350.000</span>
+                        <span class="price-current">Rp 100.000</span>
+                        <span class="price-discount">HEMAT 70%</span>
+                    </div>
+                    
+                    <div class="countdown-container">
+                        <p style="font-size: 18px; color: var(--text-muted); font-weight: 500;">Promo berakhir dalam:</p>
+                        <div class="countdown-timer" id="countdown">
+                            <div class="countdown-item">
+                                <div class="countdown-number" id="days">02</div>
+                                <div class="countdown-label">Hari</div>
+                            </div>
+                            <div class="countdown-item">
+                                <div class="countdown-number" id="hours">00</div>
+                                <div class="countdown-label">Jam</div>
+                            </div>
+                            <div class="countdown-item">
+                                <div class="countdown-number" id="minutes">59</div>
+                                <div class="countdown-label">Menit</div>
+                            </div>
+                            <div class="countdown-item">
+                                <div class="countdown-number" id="seconds">48</div>
+                                <div class="countdown-label">Detik</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <p style="font-size: 18px; margin-bottom: 40px; font-weight: 500;">Daftar sekarang sebelum harga naik:</p>
+                    <button class="btn btn-primary" style="font-size: 16px; padding: 16px 40px;">DAFTAR SEKARANG</button>
+                    
+                    <div class="guarantee-badge mt-40">
+                        <div class="guarantee-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <path d="M8 14s1.5 2 4 2 4-2 4-2"></path>
+                                <line x1="9" y1="9" x2="9.01" y2="9"></line>
+                                <line x1="15" y1="9" x2="15.01" y2="9"></line>
+                            </svg>
+                        </div>
+                        <div class="guarantee-content">
+                            <h4>Garansi 100% Puas</h4>
+                            <p>Jika dalam 7 hari kamu merasa sistem ini tidak cocok, kami akan mengembalikan investasi kamu sepenuhnya. Tanpa syarat!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="row">
+            <div class="footer-content flex justify-center">
+                <div class="logo">
+                    <img class="w-[80px]" src="https://goldsnapper.id/wp-content/uploads/2024/05/Logo-Gold-Snapper-300x.png" alt="Gold Snapper Logo">
+                </div>
+                <div class="copyright">© 2023 Gold Snapper Trading. All rights reserved.</div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Countdown timer
+        function updateCountdown() {
+            const now = new Date();
+            const targetDate = new Date();
+            targetDate.setDate(now.getDate() + 2);
+            targetDate.setHours(23, 59, 59);
+            
+            const diff = targetDate - now;
+            
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+            
+            document.getElementById('days').innerText = days.toString().padStart(2, '0');
+            document.getElementById('hours').innerText = hours.toString().padStart(2, '0');
+            document.getElementById('minutes').innerText = minutes.toString().padStart(2, '0');
+            document.getElementById('seconds').innerText = seconds.toString().padStart(2, '0');
+        }
+        
+        // Header scroll effect
+        function handleScroll() {
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        }
+        
+        // Smooth scroll for anchor links
+        document.addEventListener('DOMContentLoaded', function() {
+            updateCountdown();
+            setInterval(updateCountdown, 1000);
+            
+            window.addEventListener('scroll', handleScroll);
+            
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
