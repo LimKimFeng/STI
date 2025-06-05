@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detektor Aktivitas Tab - Status Tetap</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(45deg, #1a237e, #4a148c, #880e4f);
+            padding: 20px;
+            overflow: hidden;
+        }
+        
+        .container {
+            background: rgba(25, 25, 35, 0.85);
+            backdrop-filter: blur(12px);
+            border-radius: 20px;
+            padding: 40px;
+            width: 90%;
+            max-width: 600px;
+            text-align: center;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+            z-index: 10;
+        }
+        
+        .header {
+            margin-bottom: 30px;
+            position: relative;
+        }
+        
+        h1 {
+            color: #fff;
+            font-size: 2.8rem;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            margin-bottom: 10px;
+            background: linear-gradient(to right, #4fc3f7, #e91e63);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .subtitle {
+            color: #e0e0e0;
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        
+        .status-container {
+            background: rgba(10, 10, 20, 0.7);
+            border-radius: 15px;
+            padding: 30px;
+            margin: 30px 0;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .status-label {
+            color: #aaa;
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+        }
+        
+        .status {
+            font-size: 3rem;
+            font-weight: bold;
+            padding: 25px;
+            border-radius: 15px;
+            transition: all 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            margin: 0 auto;
+            max-width: 400px;
+            position: relative;
+            overflow: hidden;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+        
+        .status::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.1);
+            z-index: -1;
+        }
+        
+        .ketahuan {
+            background: linear-gradient(45deg, #f44336, #d32f2f);
+            color: white;
+            box-shadow: 0 0 30px rgba(244, 67, 54, 0.6);
+            animation: pulseDanger 2s infinite;
+        }
+        
+        .belum-ketahuan {
+            background: linear-gradient(45deg, #4CAF50, #2E7D32);
+            color: white;
+            box-shadow: 0 0 30px rgba(76, 175, 80, 0.6);
+            animation: pulseSafe 2s infinite;
+        }
+        
+        .btn-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+        
+        button {
+            padding: 15px 30px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            min-width: 220px;
+            justify-content: center;
+        }
+        
+        #refreshBtn {
+            background: linear-gradient(to right, #2196F3, #0D47A1);
+            color: white;
+            box-shadow: 0 5px 15px rgba(33, 150, 243, 0.4);
+        }
+        
+        #simulateBtn {
+            background: linear-gradient(to right, #FF9800, #F57C00);
+            color: white;
+            box-shadow: 0 5px 15px rgba(255, 152, 0, 0.4);
+        }
+        
+        button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        button:active {
+            transform: translateY(2px);
+        }
+        
+        .instructions {
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 15px;
+            padding: 25px;
+            margin-top: 40px;
+            color: #e0e0e0;
+            text-align: left;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        .instructions h3 {
+            color: #4fc3f7;
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .instructions ul {
+            padding-left: 25px;
+        }
+        
+        .instructions li {
+            margin-bottom: 12px;
+            line-height: 1.6;
+        }
+        
+        .instructions li strong {
+            color: #FFD700;
+        }
+        
+        .footer {
+            margin-top: 30px;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.9rem;
+        }
+        
+        .bubbles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            overflow: hidden;
+        }
+        
+        .bubble {
+            position: absolute;
+            bottom: -100px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            animation: bubbleAnim 15s infinite ease-in;
+        }
+        
+        .bubble:nth-child(1) {
+            width: 40px;
+            height: 40px;
+            left: 10%;
+            animation-duration: 15s;
+        }
+        
+        .bubble:nth-child(2) {
+            width: 70px;
+            height: 70px;
+            left: 25%;
+            animation-duration: 12s;
+            animation-delay: 2s;
+        }
+        
+        .bubble:nth-child(3) {
+            width: 30px;
+            height: 30px;
+            left: 50%;
+            animation-duration: 18s;
+            animation-delay: 1s;
+        }
+        
+        .bubble:nth-child(4) {
+            width: 60px;
+            height: 60px;
+            left: 70%;
+            animation-duration: 14s;
+            animation-delay: 3s;
+        }
+        
+        .bubble:nth-child(5) {
+            width: 50px;
+            height: 50px;
+            left: 85%;
+            animation-duration: 16s;
+            animation-delay: 0.5s;
+        }
+        
+        @keyframes bubbleAnim {
+            0% {
+                bottom: -100px;
+                transform: translateX(0);
+            }
+            50% {
+                transform: translateX(100px);
+            }
+            100% {
+                bottom: 100vh;
+                transform: translateX(-100px);
+            }
+        }
+        
+        @keyframes pulseSafe {
+            0% {
+                box-shadow: 0 0 30px rgba(76, 175, 80, 0.6);
+            }
+            50% {
+                box-shadow: 0 0 50px rgba(76, 175, 80, 0.9);
+            }
+            100% {
+                box-shadow: 0 0 30px rgba(76, 175, 80, 0.6);
+            }
+        }
+        
+        @keyframes pulseDanger {
+            0% {
+                box-shadow: 0 0 30px rgba(244, 67, 54, 0.6);
+            }
+            50% {
+                box-shadow: 0 0 50px rgba(244, 67, 54, 0.9);
+            }
+            100% {
+                box-shadow: 0 0 30px rgba(244, 67, 54, 0.6);
+            }
+        }
+        
+        .icon {
+            font-size: 1.5rem;
+        }
+        
+        @media (max-width: 600px) {
+            .container {
+                padding: 25px;
+            }
+            
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            .status {
+                font-size: 2.2rem;
+                padding: 20px;
+            }
+            
+            .btn-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            button {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="bubbles">
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+    </div>
+    
+    <div class="container">
+        <div class="header">
+            <h1><i class="fas fa-user-secret"></i> DETEKTOR AKTIVITAS TAB</h1>
+            <p class="subtitle">Status tetap "KETAHUAN" setelah Anda berpindah tab</p>
+        </div>
+        
+        <div class="status-container">
+            <div class="status-label">STATUS ANDA SAAT INI:</div>
+            <div id="status" class="status belum-ketahuan">BELUM KETAHUAN</div>
+        </div>
+        
+        <div class="btn-container">
+            <button id="refreshBtn">
+                <i class="fas fa-sync-alt icon"></i> REFRESH STATUS
+            </button>
+            <button id="simulateBtn">
+                <i class="fas fa-exchange-alt icon"></i> SIMULASI PINDAH TAB
+            </button>
+        </div>
+        
+        <div class="instructions">
+            <h3><i class="fas fa-info-circle"></i> Cara Penggunaan:</h3>
+            <ul>
+                <li><strong>Buka tab lain/aplikasi lain</strong> - Status akan berubah menjadi "KETAHUAN"</li>
+                <li><strong>Kembali ke tab ini</strong> - Status tetap "KETAHUAN" (tidak berubah otomatis)</li>
+                <li><strong>Klik "REFRESH STATUS"</strong> untuk mengembalikan status ke "BELUM KETAHUAN"</li>
+                <li><strong>Klik "SIMULASI PINDAH TAB"</strong> untuk menguji tanpa benar-benar berpindah tab</li>
+            </ul>
+        </div>
+        
+        <div class="footer">
+            <p>Website ini menggunakan Page Visibility API untuk mendeteksi aktivitas tab | Status tetap setelah terdeteksi</p>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const statusElement = document.getElementById('status');
+            const refreshBtn = document.getElementById('refreshBtn');
+            const simulateBtn = document.getElementById('simulateBtn');
+            
+            // Variabel untuk menyimpan status terakhir
+            let isDetected = false;
+            
+            // Fungsi untuk memperbarui tampilan status
+            function updateStatus() {
+                if (isDetected) {
+                    statusElement.textContent = 'KETAHUAN';
+                    statusElement.className = 'status ketahuan';
+                } else {
+                    statusElement.textContent = 'BELUM KETAHUAN';
+                    statusElement.className = 'status belum-ketahuan';
+                }
+            }
+            
+            // Deteksi ketika pengguna berpindah tab
+            document.addEventListener('visibilitychange', function() {
+                if (document.visibilityState === 'hidden') {
+                    // Ketika pengguna berpindah tab, set status menjadi ketahuan
+                    isDetected = true;
+                    updateStatus();
+                }
+            });
+            
+            // Event listener untuk tombol refresh
+            refreshBtn.addEventListener('click', function() {
+                // Reset status ke belum ketahuan
+                isDetected = false;
+                updateStatus();
+                
+                // Animasi tombol
+                this.innerHTML = '<i class="fas fa-spinner fa-spin icon"></i> MEMPROSES...';
+                setTimeout(() => {
+                    this.innerHTML = '<i class="fas fa-sync-alt icon"></i> REFRESH STATUS';
+                }, 800);
+            });
+            
+            // Event listener untuk simulasi pindah tab
+            simulateBtn.addEventListener('click', function() {
+                // Simulasi pindah tab
+                isDetected = true;
+                updateStatus();
+                
+                // Animasi tombol
+                this.innerHTML = '<i class="fas fa-check icon"></i> TERDETEKSI!';
+                setTimeout(() => {
+                    this.innerHTML = '<i class="fas fa-exchange-alt icon"></i> SIMULASI PINDAH TAB';
+                }, 1500);
+            });
+            
+            // Inisialisasi status
+            updateStatus();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,1483 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Big Boy Concept - Rahasia Trading Emas ala Bandar</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap');
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            scroll-behavior: smooth;
+            background-color: #000;
+            color: #fff;
+        }
+
+        .gold-text {
+            color: #D4AF37;
+        }
+
+        .gold-gradient {
+            background: linear-gradient(135deg, #D4AF37 0%, #F2D675 50%, #D4AF37 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-gradient {
+            background: linear-gradient(135deg, #0A2647 0%, #144272 40%, #000 100%);
+        }
+
+        .btn-gold {
+            background: linear-gradient(135deg, #D4AF37 0%, #F2D675 50%, #D4AF37 100%);
+            color: #000;
+            transition: all 0.3s ease;
+        }
+
+        .btn-gold:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(212, 175, 55, 0.3);
+        }
+
+        .accent-line {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.8), transparent);
+        }
+
+        .dark-blue {
+            background-color: #0A2647;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .success-rate {
+            text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+        }
+
+        .chart-container {
+            position: relative;
+            height: 200px;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .candlestick {
+            position: absolute;
+            width: 8px;
+            bottom: 40px;
+            border-radius: 1px;
+        }
+
+        .candlestick::before,
+        .candlestick::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            width: 1px;
+            background-color: currentColor;
+            transform: translateX(-50%);
+        }
+
+        .green {
+            background-color: #4CAF50;
+            color: #4CAF50;
+        }
+
+        .red {
+            background-color: #F44336;
+            color: #F44336;
+        }
+
+        .section-transition {
+            height: 50px;
+            background: linear-gradient(to bottom, #000 0%, #0A2647 100%);
+        }
+
+        .section-transition-reverse {
+            height: 50px;
+            background: linear-gradient(to bottom, #0A2647 0%, #000 100%);
+        }
+    </style>
+    <style>
+        *,
+        ::before,
+        ::after {
+            --tw-border-spacing-x: 0;
+            --tw-border-spacing-y: 0;
+            --tw-translate-x: 0;
+            --tw-translate-y: 0;
+            --tw-rotate: 0;
+            --tw-skew-x: 0;
+            --tw-skew-y: 0;
+            --tw-scale-x: 1;
+            --tw-scale-y: 1;
+            --tw-pan-x: ;
+            --tw-pan-y: ;
+            --tw-pinch-zoom: ;
+            --tw-scroll-snap-strictness: proximity;
+            --tw-gradient-from-position: ;
+            --tw-gradient-via-position: ;
+            --tw-gradient-to-position: ;
+            --tw-ordinal: ;
+            --tw-slashed-zero: ;
+            --tw-numeric-figure: ;
+            --tw-numeric-spacing: ;
+            --tw-numeric-fraction: ;
+            --tw-ring-inset: ;
+            --tw-ring-offset-width: 0px;
+            --tw-ring-offset-color: #fff;
+            --tw-ring-color: rgb(59 130 246 / 0.5);
+            --tw-ring-offset-shadow: 0 0 #0000;
+            --tw-ring-shadow: 0 0 #0000;
+            --tw-shadow: 0 0 #0000;
+            --tw-shadow-colored: 0 0 #0000;
+            --tw-blur: ;
+            --tw-brightness: ;
+            --tw-contrast: ;
+            --tw-grayscale: ;
+            --tw-hue-rotate: ;
+            --tw-invert: ;
+            --tw-saturate: ;
+            --tw-sepia: ;
+            --tw-drop-shadow: ;
+            --tw-backdrop-blur: ;
+            --tw-backdrop-brightness: ;
+            --tw-backdrop-contrast: ;
+            --tw-backdrop-grayscale: ;
+            --tw-backdrop-hue-rotate: ;
+            --tw-backdrop-invert: ;
+            --tw-backdrop-opacity: ;
+            --tw-backdrop-saturate: ;
+            --tw-backdrop-sepia: ;
+            --tw-contain-size: ;
+            --tw-contain-layout: ;
+            --tw-contain-paint: ;
+            --tw-contain-style:
+        }
+
+        ::backdrop {
+            --tw-border-spacing-x: 0;
+            --tw-border-spacing-y: 0;
+            --tw-translate-x: 0;
+            --tw-translate-y: 0;
+            --tw-rotate: 0;
+            --tw-skew-x: 0;
+            --tw-skew-y: 0;
+            --tw-scale-x: 1;
+            --tw-scale-y: 1;
+            --tw-pan-x: ;
+            --tw-pan-y: ;
+            --tw-pinch-zoom: ;
+            --tw-scroll-snap-strictness: proximity;
+            --tw-gradient-from-position: ;
+            --tw-gradient-via-position: ;
+            --tw-gradient-to-position: ;
+            --tw-ordinal: ;
+            --tw-slashed-zero: ;
+            --tw-numeric-figure: ;
+            --tw-numeric-spacing: ;
+            --tw-numeric-fraction: ;
+            --tw-ring-inset: ;
+            --tw-ring-offset-width: 0px;
+            --tw-ring-offset-color: #fff;
+            --tw-ring-color: rgb(59 130 246 / 0.5);
+            --tw-ring-offset-shadow: 0 0 #0000;
+            --tw-ring-shadow: 0 0 #0000;
+            --tw-shadow: 0 0 #0000;
+            --tw-shadow-colored: 0 0 #0000;
+            --tw-blur: ;
+            --tw-brightness: ;
+            --tw-contrast: ;
+            --tw-grayscale: ;
+            --tw-hue-rotate: ;
+            --tw-invert: ;
+            --tw-saturate: ;
+            --tw-sepia: ;
+            --tw-drop-shadow: ;
+            --tw-backdrop-blur: ;
+            --tw-backdrop-brightness: ;
+            --tw-backdrop-contrast: ;
+            --tw-backdrop-grayscale: ;
+            --tw-backdrop-hue-rotate: ;
+            --tw-backdrop-invert: ;
+            --tw-backdrop-opacity: ;
+            --tw-backdrop-saturate: ;
+            --tw-backdrop-sepia: ;
+            --tw-contain-size: ;
+            --tw-contain-layout: ;
+            --tw-contain-paint: ;
+            --tw-contain-style:
+        }
+
+        /* ! tailwindcss v3.4.16 | MIT License | https://tailwindcss.com */
+        *,
+        ::after,
+        ::before {
+            box-sizing: border-box;
+            border-width: 0;
+            border-style: solid;
+            border-color: #e5e7eb
+        }
+
+        ::after,
+        ::before {
+            --tw-content: ''
+        }
+
+        :host,
+        html {
+            line-height: 1.5;
+            -webkit-text-size-adjust: 100%;
+            -moz-tab-size: 4;
+            tab-size: 4;
+            font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+            font-feature-settings: normal;
+            font-variation-settings: normal;
+            -webkit-tap-highlight-color: transparent
+        }
+
+        body {
+            margin: 0;
+            line-height: inherit
+        }
+
+        hr {
+            height: 0;
+            color: inherit;
+            border-top-width: 1px
+        }
+
+        abbr:where([title]) {
+            -webkit-text-decoration: underline dotted;
+            text-decoration: underline dotted
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-size: inherit;
+            font-weight: inherit
+        }
+
+        a {
+            color: inherit;
+            text-decoration: inherit
+        }
+
+        b,
+        strong {
+            font-weight: bolder
+        }
+
+        code,
+        kbd,
+        pre,
+        samp {
+            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+            font-feature-settings: normal;
+            font-variation-settings: normal;
+            font-size: 1em
+        }
+
+        small {
+            font-size: 80%
+        }
+
+        sub,
+        sup {
+            font-size: 75%;
+            line-height: 0;
+            position: relative;
+            vertical-align: baseline
+        }
+
+        sub {
+            bottom: -.25em
+        }
+
+        sup {
+            top: -.5em
+        }
+
+        table {
+            text-indent: 0;
+            border-color: inherit;
+            border-collapse: collapse
+        }
+
+        button,
+        input,
+        optgroup,
+        select,
+        textarea {
+            font-family: inherit;
+            font-feature-settings: inherit;
+            font-variation-settings: inherit;
+            font-size: 100%;
+            font-weight: inherit;
+            line-height: inherit;
+            letter-spacing: inherit;
+            color: inherit;
+            margin: 0;
+            padding: 0
+        }
+
+        button,
+        select {
+            text-transform: none
+        }
+
+        button,
+        input:where([type=button]),
+        input:where([type=reset]),
+        input:where([type=submit]) {
+            -webkit-appearance: button;
+            background-color: transparent;
+            background-image: none
+        }
+
+        :-moz-focusring {
+            outline: auto
+        }
+
+        :-moz-ui-invalid {
+            box-shadow: none
+        }
+
+        progress {
+            vertical-align: baseline
+        }
+
+        ::-webkit-inner-spin-button,
+        ::-webkit-outer-spin-button {
+            height: auto
+        }
+
+        [type=search] {
+            -webkit-appearance: textfield;
+            outline-offset: -2px
+        }
+
+        ::-webkit-search-decoration {
+            -webkit-appearance: none
+        }
+
+        ::-webkit-file-upload-button {
+            -webkit-appearance: button;
+            font: inherit
+        }
+
+        summary {
+            display: list-item
+        }
+
+        blockquote,
+        dd,
+        dl,
+        figure,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        hr,
+        p,
+        pre {
+            margin: 0
+        }
+
+        fieldset {
+            margin: 0;
+            padding: 0
+        }
+
+        legend {
+            padding: 0
+        }
+
+        menu,
+        ol,
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 0
+        }
+
+        dialog {
+            padding: 0
+        }
+
+        textarea {
+            resize: vertical
+        }
+
+        input::placeholder,
+        textarea::placeholder {
+            opacity: 1;
+            color: #9ca3af
+        }
+
+        [role=button],
+        button {
+            cursor: pointer
+        }
+
+        :disabled {
+            cursor: default
+        }
+
+        audio,
+        canvas,
+        embed,
+        iframe,
+        img,
+        object,
+        svg,
+        video {
+            display: block;
+            vertical-align: middle
+        }
+
+        img,
+        video {
+            max-width: 100%;
+            height: auto
+        }
+
+        [hidden]:where(:not([hidden=until-found])) {
+            display: none
+        }
+
+        .absolute {
+            position: absolute
+        }
+
+        .relative {
+            position: relative
+        }
+
+        .inset-0 {
+            inset: 0px
+        }
+
+        .bottom-0 {
+            bottom: 0px
+        }
+
+        .bottom-10 {
+            bottom: 2.5rem
+        }
+
+        .bottom-20 {
+            bottom: 5rem
+        }
+
+        .bottom-4 {
+            bottom: 1rem
+        }
+
+        .bottom-\[130px\] {
+            bottom: 130px
+        }
+
+        .bottom-\[40px\] {
+            bottom: 40px
+        }
+
+        .bottom-\[85px\] {
+            bottom: 85px
+        }
+
+        .left-0 {
+            left: 0px
+        }
+
+        .left-10 {
+            left: 2.5rem
+        }
+
+        .left-4 {
+            left: 1rem
+        }
+
+        .left-\[15\%\] {
+            left: 15%
+        }
+
+        .left-\[55\%\] {
+            left: 55%
+        }
+
+        .left-\[95\%\] {
+            left: 95%
+        }
+
+        .right-0 {
+            right: 0px
+        }
+
+        .right-10 {
+            right: 2.5rem
+        }
+
+        .right-4 {
+            right: 1rem
+        }
+
+        .top-20 {
+            top: 5rem
+        }
+
+        .top-4 {
+            top: 1rem
+        }
+
+        .z-0 {
+            z-index: 0
+        }
+
+        .z-10 {
+            z-index: 10
+        }
+
+        .mx-auto {
+            margin-left: auto;
+            margin-right: auto
+        }
+
+        .mb-10 {
+            margin-bottom: 2.5rem
+        }
+
+        .mb-12 {
+            margin-bottom: 3rem
+        }
+
+        .mb-2 {
+            margin-bottom: 0.5rem
+        }
+
+        .mb-3 {
+            margin-bottom: 0.75rem
+        }
+
+        .mb-4 {
+            margin-bottom: 1rem
+        }
+
+        .mb-6 {
+            margin-bottom: 1.5rem
+        }
+
+        .mb-8 {
+            margin-bottom: 2rem
+        }
+
+        .mr-2 {
+            margin-right: 0.5rem
+        }
+
+        .mr-4 {
+            margin-right: 1rem
+        }
+
+        .mt-12 {
+            margin-top: 3rem
+        }
+
+        .mt-6 {
+            margin-top: 1.5rem
+        }
+
+        .flex {
+            display: flex
+        }
+
+        .grid {
+            display: grid
+        }
+
+        .h-10 {
+            height: 2.5rem
+        }
+
+        .h-12 {
+            height: 3rem
+        }
+
+        .h-32 {
+            height: 8rem
+        }
+
+        .h-4 {
+            height: 1rem
+        }
+
+        .h-40 {
+            height: 10rem
+        }
+
+        .h-60 {
+            height: 15rem
+        }
+
+        .h-64 {
+            height: 16rem
+        }
+
+        .h-\[1px\] {
+            height: 1px
+        }
+
+        .min-h-screen {
+            min-height: 100vh
+        }
+
+        .w-1\/4 {
+            width: 25%
+        }
+
+        .w-10 {
+            width: 2.5rem
+        }
+
+        .w-12 {
+            width: 3rem
+        }
+
+        .w-32 {
+            width: 8rem
+        }
+
+        .w-4 {
+            width: 1rem
+        }
+
+        .w-40 {
+            width: 10rem
+        }
+
+        .w-60 {
+            width: 15rem
+        }
+
+        .w-64 {
+            width: 16rem
+        }
+
+        .w-\[80\%\] {
+            width: 80%
+        }
+
+        .max-w-3xl {
+            max-width: 48rem
+        }
+
+        .max-w-4xl {
+            max-width: 56rem
+        }
+
+        .max-w-5xl {
+            max-width: 64rem
+        }
+
+        .max-w-md {
+            max-width: 28rem
+        }
+
+        .-translate-x-1\/2 {
+            --tw-translate-x: -50%;
+            transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))
+        }
+
+        .-translate-y-1\/2 {
+            --tw-translate-y: -50%;
+            transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))
+        }
+
+        .transform {
+            transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))
+        }
+
+        @keyframes bounce {
+
+            0%,
+            100% {
+                transform: translateY(-25%);
+                animation-timing-function: cubic-bezier(0.8, 0, 1, 1)
+            }
+
+            50% {
+                transform: none;
+                animation-timing-function: cubic-bezier(0, 0, 0.2, 1)
+            }
+        }
+
+        .animate-bounce {
+            animation: bounce 1s infinite
+        }
+
+        .flex-col {
+            flex-direction: column
+        }
+
+        .items-center {
+            align-items: center
+        }
+
+        .justify-center {
+            justify-content: center
+        }
+
+        .gap-12 {
+            gap: 3rem
+        }
+
+        .gap-8 {
+            gap: 2rem
+        }
+
+        .space-x-4> :not([hidden])~ :not([hidden]) {
+            --tw-space-x-reverse: 0;
+            margin-right: calc(1rem * var(--tw-space-x-reverse));
+            margin-left: calc(1rem * calc(1 - var(--tw-space-x-reverse)))
+        }
+
+        .space-y-2> :not([hidden])~ :not([hidden]) {
+            --tw-space-y-reverse: 0;
+            margin-top: calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));
+            margin-bottom: calc(0.5rem * var(--tw-space-y-reverse))
+        }
+
+        .overflow-hidden {
+            overflow: hidden
+        }
+
+        .rounded-full {
+            border-radius: 9999px
+        }
+
+        .rounded-lg {
+            border-radius: 0.5rem
+        }
+
+        .border-4 {
+            border-width: 4px
+        }
+
+        .border-t {
+            border-top-width: 1px
+        }
+
+        .border-\[\#D4AF37\] {
+            --tw-border-opacity: 1;
+            border-color: rgb(212 175 55 / var(--tw-border-opacity, 1))
+        }
+
+        .border-gray-700 {
+            --tw-border-opacity: 1;
+            border-color: rgb(55 65 81 / var(--tw-border-opacity, 1))
+        }
+
+        .bg-black {
+            --tw-bg-opacity: 1;
+            background-color: rgb(0 0 0 / var(--tw-bg-opacity, 1))
+        }
+
+        .bg-blue-500 {
+            --tw-bg-opacity: 1;
+            background-color: rgb(59 130 246 / var(--tw-bg-opacity, 1))
+        }
+
+        .bg-blue-700 {
+            --tw-bg-opacity: 1;
+            background-color: rgb(29 78 216 / var(--tw-bg-opacity, 1))
+        }
+
+        .bg-blue-900 {
+            --tw-bg-opacity: 1;
+            background-color: rgb(30 58 138 / var(--tw-bg-opacity, 1))
+        }
+
+        .bg-gray-700 {
+            --tw-bg-opacity: 1;
+            background-color: rgb(55 65 81 / var(--tw-bg-opacity, 1))
+        }
+
+        .bg-gray-800 {
+            --tw-bg-opacity: 1;
+            background-color: rgb(31 41 55 / var(--tw-bg-opacity, 1))
+        }
+
+        .bg-gray-900 {
+            --tw-bg-opacity: 1;
+            background-color: rgb(17 24 39 / var(--tw-bg-opacity, 1))
+        }
+
+        .bg-green-500 {
+            --tw-bg-opacity: 1;
+            background-color: rgb(34 197 94 / var(--tw-bg-opacity, 1))
+        }
+
+        .p-4 {
+            padding: 1rem
+        }
+
+        .p-6 {
+            padding: 1.5rem
+        }
+
+        .p-8 {
+            padding: 2rem
+        }
+
+        .px-10 {
+            padding-left: 2.5rem;
+            padding-right: 2.5rem
+        }
+
+        .px-4 {
+            padding-left: 1rem;
+            padding-right: 1rem
+        }
+
+        .px-8 {
+            padding-left: 2rem;
+            padding-right: 2rem
+        }
+
+        .py-20 {
+            padding-top: 5rem;
+            padding-bottom: 5rem
+        }
+
+        .py-3 {
+            padding-top: 0.75rem;
+            padding-bottom: 0.75rem
+        }
+
+        .py-4 {
+            padding-top: 1rem;
+            padding-bottom: 1rem
+        }
+
+        .py-8 {
+            padding-top: 2rem;
+            padding-bottom: 2rem
+        }
+
+        .pl-14 {
+            padding-left: 3.5rem
+        }
+
+        .pt-6 {
+            padding-top: 1.5rem
+        }
+
+        .text-center {
+            text-align: center
+        }
+
+        .text-2xl {
+            font-size: 1.5rem;
+            line-height: 2rem
+        }
+
+        .text-3xl {
+            font-size: 1.875rem;
+            line-height: 2.25rem
+        }
+
+        .text-4xl {
+            font-size: 2.25rem;
+            line-height: 2.5rem
+        }
+
+        .text-6xl {
+            font-size: 3.75rem;
+            line-height: 1
+        }
+
+        .text-lg {
+            font-size: 1.125rem;
+            line-height: 1.75rem
+        }
+
+        .text-sm {
+            font-size: 0.875rem;
+            line-height: 1.25rem
+        }
+
+        .text-xl {
+            font-size: 1.25rem;
+            line-height: 1.75rem
+        }
+
+        .text-xs {
+            font-size: 0.75rem;
+            line-height: 1rem
+        }
+
+        .font-bold {
+            font-weight: 700
+        }
+
+        .font-semibold {
+            font-weight: 600
+        }
+
+        .text-gray-300 {
+            --tw-text-opacity: 1;
+            color: rgb(209 213 219 / var(--tw-text-opacity, 1))
+        }
+
+        .text-gray-400 {
+            --tw-text-opacity: 1;
+            color: rgb(156 163 175 / var(--tw-text-opacity, 1))
+        }
+
+        .text-gray-500 {
+            --tw-text-opacity: 1;
+            color: rgb(107 114 128 / var(--tw-text-opacity, 1))
+        }
+
+        .text-gray-600 {
+            --tw-text-opacity: 1;
+            color: rgb(75 85 99 / var(--tw-text-opacity, 1))
+        }
+
+        .text-green-500 {
+            --tw-text-opacity: 1;
+            color: rgb(34 197 94 / var(--tw-text-opacity, 1))
+        }
+
+        .text-red-500 {
+            --tw-text-opacity: 1;
+            color: rgb(239 68 68 / var(--tw-text-opacity, 1))
+        }
+
+        .text-white {
+            --tw-text-opacity: 1;
+            color: rgb(255 255 255 / var(--tw-text-opacity, 1))
+        }
+
+        .opacity-10 {
+            opacity: 0.1
+        }
+
+        .blur-3xl {
+            --tw-blur: blur(64px);
+            filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)
+        }
+
+        .transition {
+            transition-property: color, background-color, border-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-text-decoration-color, -webkit-backdrop-filter;
+            transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+            transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-text-decoration-color, -webkit-backdrop-filter;
+            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+            transition-duration: 150ms
+        }
+
+        .before\:bottom-\[30px\]::before {
+            content: var(--tw-content);
+            bottom: 30px
+        }
+
+        .before\:bottom-\[40px\]::before {
+            content: var(--tw-content);
+            bottom: 40px
+        }
+
+        .before\:h-\[15px\]::before {
+            content: var(--tw-content);
+            height: 15px
+        }
+
+        .before\:h-\[60px\]::before {
+            content: var(--tw-content);
+            height: 60px
+        }
+
+        .after\:top-\[30px\]::after {
+            content: var(--tw-content);
+            top: 30px
+        }
+
+        .after\:top-\[40px\]::after {
+            content: var(--tw-content);
+            top: 40px
+        }
+
+        .after\:h-\[10px\]::after {
+            content: var(--tw-content);
+            height: 10px
+        }
+
+        .after\:h-\[40px\]::after {
+            content: var(--tw-content);
+            height: 40px
+        }
+
+        .hover\:bg-gray-700:hover {
+            --tw-bg-opacity: 1;
+            background-color: rgb(55 65 81 / var(--tw-bg-opacity, 1))
+        }
+
+        .hover\:text-gray-300:hover {
+            --tw-text-opacity: 1;
+            color: rgb(209 213 219 / var(--tw-text-opacity, 1))
+        }
+
+        @media (min-width: 768px) {
+            .md\:grid-cols-2 {
+                grid-template-columns: repeat(2, minmax(0, 1fr))
+            }
+
+            .md\:grid-cols-3 {
+                grid-template-columns: repeat(3, minmax(0, 1fr))
+            }
+
+            .md\:flex-row {
+                flex-direction: row
+            }
+
+            .md\:justify-start {
+                justify-content: flex-start
+            }
+
+            .md\:text-left {
+                text-align: left
+            }
+
+            .md\:text-4xl {
+                font-size: 2.25rem;
+                line-height: 2.5rem
+            }
+
+            .md\:text-6xl {
+                font-size: 3.75rem;
+                line-height: 1
+            }
+
+            .md\:text-xl {
+                font-size: 1.25rem;
+                line-height: 1.75rem
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Hero Section -->
+    <section
+        class="hero-gradient min-h-screen flex flex-col justify-center items-center px-4 py-20 relative overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <div class="absolute top-20 left-10 w-40 h-40 rounded-full bg-blue-500 opacity-10 blur-3xl"></div>
+            <div class="absolute bottom-20 right-10 w-60 h-60 rounded-full bg-blue-700 opacity-10 blur-3xl"></div>
+        </div>
+
+        <div class="accent-line w-1/4 mb-8"></div>
+
+        <div class="text-center z-10 max-w-4xl">
+            <h1 class="text-4xl md:text-6xl font-bold mb-4">
+                <div class="text-center">
+                    <span class="text-white block  font-bold">Big Boy Concept</span>
+                    <span
+                        class="block font-bold bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-600 text-transparent bg-clip-text">Rahasia
+                        Trading Emas ala Bandar</span>
+                </div>
+            </h1>
+
+            <p class="text-lg md:text-xl text-gray-300 mb-8">
+                Kuasai strategi trading emas yang digunakan para bandar untuk profit konsisten
+            </p>
+
+            <button class="btn-gold font-bold py-3 px-8 rounded-lg text-lg">
+                Daftar Sekarang
+            </button>
+        </div>
+
+        <div class="accent-line w-1/4 mt-12"></div>
+
+        <div class="absolute bottom-10 left-0 right-0 flex justify-center">
+            <a href="#problem" class="text-white animate-bounce">
+                <i class="fas fa-chevron-down"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section id="problem" class="bg-black py-20 px-4">
+        <div class="max-w-5xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold mb-8 text-center">
+                Kenapa Trading Emas Sering Bikin Frustrasi?
+            </h2>
+
+            <p class="text-gray-300 text-lg mb-10 text-center max-w-3xl mx-auto">
+                Banyak trader retail yang terus mengalami kerugian karena tidak memahami bagaimana pasar sebenarnya
+                bekerja.
+            </p>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="card p-6 rounded-lg">
+                    <div class="text-red-500 text-3xl mb-4">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Pergerakan Ekstrem</h3>
+                    <p class="text-gray-400">
+                        Market sering bergerak ekstrem tanpa peringatan, menyapu stop loss trader retail.
+                    </p>
+                </div>
+
+                <div class="card p-6 rounded-lg">
+                    <div class="text-red-500 text-3xl mb-4">
+                        <i class="fas fa-balance-scale"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Kalah Volume</h3>
+                    <p class="text-gray-400">
+                        Trader retail kalah volume dengan bandar, sehingga mudah terbawa arus pasar.
+                    </p>
+                </div>
+
+                <div class="card p-6 rounded-lg">
+                    <div class="text-red-500 text-3xl mb-4">
+                        <i class="fas fa-exclamation-triangle"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Margin Call</h3>
+                    <p class="text-gray-400">
+                        Tanpa strategi bandar, trader retail mudah terkena margin call dan kehilangan modal.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-transition"></div>
+
+    <!-- Solution Section -->
+    <section class="dark-blue py-20 px-4">
+        <div class="max-w-5xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold mb-8 text-center">
+                Apa Itu <span class="gold-text">Big Boy Concept</span>?
+            </h2>
+
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <p class="text-lg text-gray-300 mb-6">
+                        <span class="gold-text font-semibold">"Big Boys"</span> adalah sebutan untuk para institusi
+                        besar dan bandar yang mengendalikan pergerakan pasar dengan volume transaksi besar.
+                    </p>
+
+                    <p class="text-lg text-gray-300 mb-6">
+                        Metode <span class="gold-text font-semibold">Price Action</span> yang kami ajarkan memungkinkan
+                        Anda mengidentifikasi pola pergerakan Big Boys dan mengikuti arah transaksi mereka untuk profit
+                        konsisten.
+                    </p>
+
+                    <div class="flex items-center space-x-4 mb-6">
+                        <div class="w-12 h-12 rounded-full bg-black flex items-center justify-center">
+                            <i class="fas fa-chart-bar text-2xl gold-text"></i>
+                        </div>
+                        <p class="text-gray-300">Analisis teknikal yang digunakan para profesional</p>
+                    </div>
+
+                    <div class="flex items-center space-x-4">
+                        <div class="w-12 h-12 rounded-full bg-black flex items-center justify-center">
+                            <i class="fas fa-brain text-2xl gold-text"></i>
+                        </div>
+                        <p class="text-gray-300">Mindset trading yang benar untuk profit jangka panjang</p>
+                    </div>
+                </div>
+
+                <div class="flex justify-center">
+                    <div class="card p-8 rounded-lg text-center">
+                        <h3 class="text-xl font-semibold mb-4">Success Rate</h3>
+                        <div class="success-rate gold-text text-6xl font-bold mb-2">85%+</div>
+                        <p class="text-gray-400">Tingkat keberhasilan strategi kami</p>
+                        <div class="mt-6 pt-6 border-t border-gray-700">
+                            <p class="text-gray-300">Dibuktikan oleh ratusan trader yang telah mengikuti metode ini</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-transition-reverse"></div>
+
+    <!-- Webinar Material Section -->
+    <section class="bg-black py-20 px-4">
+        <div class="max-w-5xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center">
+                Apa yang Akan Anda Pelajari?
+            </h2>
+
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <div class="mb-6">
+                        <div class="flex items-center mb-4">
+                            <div class="w-10 h-10 rounded-full bg-blue-900 flex items-center justify-center mr-4">
+                                <span class="gold-text font-bold">1</span>
+                            </div>
+                            <h3 class="text-xl font-semibold">Kenapa Anda Loss Terus?</h3>
+                        </div>
+                        <p class="text-gray-400 pl-14">Identifikasi kesalahan umum yang membuat trader retail terus
+                            merugi</p>
+                    </div>
+
+                    <div class="mb-6">
+                        <div class="flex items-center mb-4">
+                            <div class="w-10 h-10 rounded-full bg-blue-900 flex items-center justify-center mr-4">
+                                <span class="gold-text font-bold">2</span>
+                            </div>
+                            <h3 class="text-xl font-semibold">Siapa Itu Big Boys?</h3>
+                        </div>
+                        <p class="text-gray-400 pl-14">Mengenal para pemain besar yang mengendalikan pasar</p>
+                    </div>
+
+                    <div class="mb-6">
+                        <div class="flex items-center mb-4">
+                            <div class="w-10 h-10 rounded-full bg-blue-900 flex items-center justify-center mr-4">
+                                <span class="gold-text font-bold">3</span>
+                            </div>
+                            <h3 class="text-xl font-semibold">Cara Berpikir Ala Big Boys</h3>
+                        </div>
+                        <p class="text-gray-400 pl-14">Mengubah mindset trading Anda menjadi seperti bandar</p>
+                    </div>
+
+                    <div class="mb-6">
+                        <div class="flex items-center mb-4">
+                            <div class="w-10 h-10 rounded-full bg-blue-900 flex items-center justify-center mr-4">
+                                <span class="gold-text font-bold">4</span>
+                            </div>
+                            <h3 class="text-xl font-semibold">Apa Itu Price Action?</h3>
+                        </div>
+                        <p class="text-gray-400 pl-14">Memahami pergerakan harga tanpa indikator yang membingungkan</p>
+                    </div>
+
+                    <div class="mb-6">
+                        <div class="flex items-center mb-4">
+                            <div class="w-10 h-10 rounded-full bg-blue-900 flex items-center justify-center mr-4">
+                                <span class="gold-text font-bold">5</span>
+                            </div>
+                            <h3 class="text-xl font-semibold">Cara Trading Big Boys + Strategi</h3>
+                        </div>
+                        <p class="text-gray-400 pl-14">Strategi praktis untuk mengikuti pergerakan bandar</p>
+                    </div>
+
+                    <div class="mb-6">
+                        <div class="flex items-center mb-4">
+                            <div class="w-10 h-10 rounded-full bg-blue-900 flex items-center justify-center mr-4">
+                                <span class="gold-text font-bold">6</span>
+                            </div>
+                            <h3 class="text-xl font-semibold">Praktek Live Trading</h3>
+                        </div>
+                        <p class="text-gray-400 pl-14">Melihat langsung penerapan strategi pada pasar nyata</p>
+                    </div>
+                </div>
+
+                <div class="chart-container bg-gray-900 rounded-lg p-4 relative">
+                    <div class="absolute top-4 left-4 text-sm text-gray-400">XAUUSD</div>
+                    <div class="absolute top-4 right-4 text-sm gold-text">+12.45%</div>
+
+                    <!-- Candlestick chart -->
+                    <div class="candlestick green" style="height: 40px; left: 5%;"></div>
+                    <div class="candlestick red" style="height: 30px; left: 10%;"></div>
+                    <div class="candlestick green" style="height: 50px; left: 15%;"></div>
+                    <div class="candlestick green" style="height: 45px; left: 20%;"></div>
+                    <div class="candlestick red" style="height: 25px; left: 25%;"></div>
+                    <div class="candlestick red" style="height: 35px; left: 30%;"></div>
+                    <div class="candlestick green" style="height: 55px; left: 35%;"></div>
+                    <div class="candlestick green" style="height: 60px; left: 40%;"></div>
+                    <div class="candlestick green" style="height: 65px; left: 45%;"></div>
+                    <div class="candlestick red" style="height: 40px; left: 50%;"></div>
+                    <div class="candlestick green" style="height: 70px; left: 55%;"></div>
+                    <div class="candlestick green" style="height: 75px; left: 60%;"></div>
+                    <div class="candlestick green" style="height: 80px; left: 65%;"></div>
+                    <div class="candlestick red" style="height: 50px; left: 70%;"></div>
+                    <div class="candlestick green" style="height: 90px; left: 75%;"></div>
+                    <div class="candlestick green" style="height: 100px; left: 80%;"></div>
+                    <div class="candlestick green" style="height: 110px; left: 85%;"></div>
+                    <div class="candlestick green" style="height: 120px; left: 90%;"></div>
+                    <div class="candlestick green" style="height: 130px; left: 95%;"></div>
+
+                    <!-- Wicks -->
+                    <div class="candlestick green" style="height: 0; left: 5%;">
+                        <div class="before:h-[60px] before:bottom-[40px] after:h-[10px] after:top-[40px]"></div>
+                    </div>
+                    <div class="candlestick red" style="height: 0; left: 10%;">
+                        <div class="before:h-[15px] before:bottom-[30px] after:h-[40px] after:top-[30px]"></div>
+                    </div>
+
+                    <div class="absolute bottom-0 left-0 right-0 h-[1px] bg-gray-700"></div>
+                    <div class="absolute bottom-4 left-4 text-xs text-gray-500">Entry Point</div>
+                    <div class="absolute bottom-4 right-4 text-xs text-green-500">Take Profit</div>
+
+                    <!-- Entry and TP markers -->
+                    <div
+                        class="absolute bottom-[40px] left-[15%] w-4 h-4 rounded-full bg-blue-500 transform -translate-x-1/2 -translate-y-1/2">
+                    </div>
+                    <div
+                        class="absolute bottom-[130px] left-[95%] w-4 h-4 rounded-full bg-green-500 transform -translate-x-1/2 -translate-y-1/2">
+                    </div>
+
+                    <!-- Line connecting entry to TP -->
+                    <div
+                        class="absolute bottom-[85px] left-[55%] w-[80%] h-[1px] bg-blue-500 transform -translate-x-1/2">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-transition"></div>
+
+    <!-- Speaker Section -->
+    <section class="dark-blue py-20 px-4">
+        <div class="max-w-5xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center">
+                Kenalan dengan Instruktur Anda
+            </h2>
+
+            <div class="flex flex-col md:flex-row items-center justify-center gap-8">
+                <div
+                    class="w-64 h-64 rounded-full border-4 border-[#D4AF37] overflow-hidden flex items-center justify-center bg-gray-800">
+                    <img src="" alt="">
+                </div>
+
+                <div class="max-w-md text-center md:text-left">
+                    <h3 class="text-2xl font-bold mb-2">Pak Mathias Putra</h3>
+                    <p class="text-gray-300 mb-4">Trader Profesional &amp; Mentor</p>
+                    <ul class="text-gray-400 mb-6 space-y-2">
+                        <li class="flex items-center md:justify-start justify-center">
+                            <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                            20+ tahun pengalaman trading emas &amp; forex
+                        </li>
+                        <li class="flex items-center md:justify-start justify-center">
+                            <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                            Spesialis analisis price action
+                        </li>
+                        <li class="flex items-center md:justify-start justify-center">
+                            <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                            Mantan analis di institusi keuangan terkemuka
+                        </li>
+                        <li class="flex items-center md:justify-start justify-center">
+                            <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                            Telah melatih ribuan trader sukses
+                        </li>
+                    </ul>
+
+                    <div class="flex space-x-4 justify-center md:justify-start">
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-gray-700 transition">
+                            <i class="fab fa-instagram text-white"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-gray-700 transition">
+                            <i class="fab fa-youtube text-white"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-gray-700 transition">
+                            <i class="fab fa-telegram text-white"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="hero-gradient py-20 px-4 text-center">
+        <div class="max-w-3xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">
+                Siap Mengubah Cara Trading Anda?
+            </h2>
+
+            <p class="text-lg text-gray-300 mb-8">
+                Daftar sekarang dan pelajari rahasia trading emas yang digunakan para bandar untuk profit konsisten
+            </p>
+
+            <button class="btn-gold font-bold py-4 px-10 rounded-lg text-xl">
+                Daftar Webinar Sekarang
+            </button>
+
+            <p class="mt-6 text-gray-400">
+                *Kuota terbatas untuk 100 peserta pertama
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black py-8 px-4 text-center text-gray-500">
+        <div class="max-w-5xl mx-auto">
+            <p class="mb-4">© 2023 Big Boy Concept. All Rights Reserved.</p>
+            <div class="flex justify-center space-x-4">
+                <a href="#" class="hover:text-gray-300">Syarat &amp; Ketentuan</a>
+                <a href="#" class="hover:text-gray-300">Kebijakan Privasi</a>
+                <a href="#" class="hover:text-gray-300">Kontak</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Add animation to success rate number
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateSuccessRate();
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        const successRateElement = document.querySelector('.success-rate');
+        if (successRateElement) {
+            observer.observe(successRateElement);
+        }
+
+        function animateSuccessRate() {
+            let count = 0;
+            const target = 85;
+            const duration = 2000;
+            const interval = duration / target;
+
+            const counter = setInterval(() => {
+                count++;
+                successRateElement.textContent = count + '%+';
+
+                if (count >= target) {
+                    clearInterval(counter);
+                }
+            }, interval);
+        }
+    </script>
+    <script>(function () { function c() { var b = a.contentDocument || a.contentWindow.document; if (b) { var d = b.createElement('script'); d.innerHTML = "window.__CF$cv$params={r:'94ada7bdd068fdb3',t:'MTc0OTEwNTM4Mi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);"; b.getElementsByTagName('head')[0].appendChild(d) } } if (document.body) { var a = document.createElement('iframe'); a.height = 1; a.width = 1; a.style.position = 'absolute'; a.style.top = 0; a.style.left = 0; a.style.border = 'none'; a.style.visibility = 'hidden'; document.body.appendChild(a); if ('loading' !== document.readyState) c(); else if (window.addEventListener) document.addEventListener('DOMContentLoaded', c); else { var e = document.onreadystatechange || function () { }; document.onreadystatechange = function (b) { e(b); 'loading' !== document.readyState && (document.onreadystatechange = e, c()) } } } })();</script>
+    <iframe height="1" width="1"
+        style="position: absolute; top: 0px; left: 0px; border: medium; visibility: hidden;"></iframe>
+
+</body>
