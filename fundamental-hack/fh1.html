@@ -1,0 +1,2850 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jago Saham - Strategi Saham Tanpa Ribet</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&amp;display=swap"
+        rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        darkblue: '#0a1931',
+                        navy: '#102a54',
+                        gold: '#ffc107',
+                        lightgold: '#ffe082'
+                    },
+                    fontFamily: {
+                        poppins: ['Poppins', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        .gold-gradient {
+            background: linear-gradient(90deg, #ffc107 0%, #ffe082 100%);
+        }
+
+        .blue-gradient {
+            background: linear-gradient(135deg, #0a1931 0%, #102a54 100%);
+        }
+
+        .testimonial-card {
+            transition: all 0.3s ease;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .badge {
+            text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2);
+        }
+
+        .cta-button {
+            transition: all 0.3s ease;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .feature-card {
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+    </style>
+    <style>
+        *,
+        ::before,
+        ::after {
+            --tw-border-spacing-x: 0;
+            --tw-border-spacing-y: 0;
+            --tw-translate-x: 0;
+            --tw-translate-y: 0;
+            --tw-rotate: 0;
+            --tw-skew-x: 0;
+            --tw-skew-y: 0;
+            --tw-scale-x: 1;
+            --tw-scale-y: 1;
+            --tw-pan-x: ;
+            --tw-pan-y: ;
+            --tw-pinch-zoom: ;
+            --tw-scroll-snap-strictness: proximity;
+            --tw-gradient-from-position: ;
+            --tw-gradient-via-position: ;
+            --tw-gradient-to-position: ;
+            --tw-ordinal: ;
+            --tw-slashed-zero: ;
+            --tw-numeric-figure: ;
+            --tw-numeric-spacing: ;
+            --tw-numeric-fraction: ;
+            --tw-ring-inset: ;
+            --tw-ring-offset-width: 0px;
+            --tw-ring-offset-color: #fff;
+            --tw-ring-color: rgb(59 130 246 / 0.5);
+            --tw-ring-offset-shadow: 0 0 #0000;
+            --tw-ring-shadow: 0 0 #0000;
+            --tw-shadow: 0 0 #0000;
+            --tw-shadow-colored: 0 0 #0000;
+            --tw-blur: ;
+            --tw-brightness: ;
+            --tw-contrast: ;
+            --tw-grayscale: ;
+            --tw-hue-rotate: ;
+            --tw-invert: ;
+            --tw-saturate: ;
+            --tw-sepia: ;
+            --tw-drop-shadow: ;
+            --tw-backdrop-blur: ;
+            --tw-backdrop-brightness: ;
+            --tw-backdrop-contrast: ;
+            --tw-backdrop-grayscale: ;
+            --tw-backdrop-hue-rotate: ;
+            --tw-backdrop-invert: ;
+            --tw-backdrop-opacity: ;
+            --tw-backdrop-saturate: ;
+            --tw-backdrop-sepia: ;
+            --tw-contain-size: ;
+            --tw-contain-layout: ;
+            --tw-contain-paint: ;
+            --tw-contain-style:
+        }
+
+        ::backdrop {
+            --tw-border-spacing-x: 0;
+            --tw-border-spacing-y: 0;
+            --tw-translate-x: 0;
+            --tw-translate-y: 0;
+            --tw-rotate: 0;
+            --tw-skew-x: 0;
+            --tw-skew-y: 0;
+            --tw-scale-x: 1;
+            --tw-scale-y: 1;
+            --tw-pan-x: ;
+            --tw-pan-y: ;
+            --tw-pinch-zoom: ;
+            --tw-scroll-snap-strictness: proximity;
+            --tw-gradient-from-position: ;
+            --tw-gradient-via-position: ;
+            --tw-gradient-to-position: ;
+            --tw-ordinal: ;
+            --tw-slashed-zero: ;
+            --tw-numeric-figure: ;
+            --tw-numeric-spacing: ;
+            --tw-numeric-fraction: ;
+            --tw-ring-inset: ;
+            --tw-ring-offset-width: 0px;
+            --tw-ring-offset-color: #fff;
+            --tw-ring-color: rgb(59 130 246 / 0.5);
+            --tw-ring-offset-shadow: 0 0 #0000;
+            --tw-ring-shadow: 0 0 #0000;
+            --tw-shadow: 0 0 #0000;
+            --tw-shadow-colored: 0 0 #0000;
+            --tw-blur: ;
+            --tw-brightness: ;
+            --tw-contrast: ;
+            --tw-grayscale: ;
+            --tw-hue-rotate: ;
+            --tw-invert: ;
+            --tw-saturate: ;
+            --tw-sepia: ;
+            --tw-drop-shadow: ;
+            --tw-backdrop-blur: ;
+            --tw-backdrop-brightness: ;
+            --tw-backdrop-contrast: ;
+            --tw-backdrop-grayscale: ;
+            --tw-backdrop-hue-rotate: ;
+            --tw-backdrop-invert: ;
+            --tw-backdrop-opacity: ;
+            --tw-backdrop-saturate: ;
+            --tw-backdrop-sepia: ;
+            --tw-contain-size: ;
+            --tw-contain-layout: ;
+            --tw-contain-paint: ;
+            --tw-contain-style:
+        }
+
+        /* ! tailwindcss v3.4.16 | MIT License | https://tailwindcss.com */
+        *,
+        ::after,
+        ::before {
+            box-sizing: border-box;
+            border-width: 0;
+            border-style: solid;
+            border-color: #e5e7eb
+        }
+
+        ::after,
+        ::before {
+            --tw-content: ''
+        }
+
+        :host,
+        html {
+            line-height: 1.5;
+            -webkit-text-size-adjust: 100%;
+            -moz-tab-size: 4;
+            tab-size: 4;
+            font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+            font-feature-settings: normal;
+            font-variation-settings: normal;
+            -webkit-tap-highlight-color: transparent
+        }
+
+        body {
+            margin: 0;
+            line-height: inherit
+        }
+
+        hr {
+            height: 0;
+            color: inherit;
+            border-top-width: 1px
+        }
+
+        abbr:where([title]) {
+            -webkit-text-decoration: underline dotted;
+            text-decoration: underline dotted
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-size: inherit;
+            font-weight: inherit
+        }
+
+        a {
+            color: inherit;
+            text-decoration: inherit
+        }
+
+        b,
+        strong {
+            font-weight: bolder
+        }
+
+        code,
+        kbd,
+        pre,
+        samp {
+            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+            font-feature-settings: normal;
+            font-variation-settings: normal;
+            font-size: 1em
+        }
+
+        small {
+            font-size: 80%
+        }
+
+        sub,
+        sup {
+            font-size: 75%;
+            line-height: 0;
+            position: relative;
+            vertical-align: baseline
+        }
+
+        sub {
+            bottom: -.25em
+        }
+
+        sup {
+            top: -.5em
+        }
+
+        table {
+            text-indent: 0;
+            border-color: inherit;
+            border-collapse: collapse
+        }
+
+        button,
+        input,
+        optgroup,
+        select,
+        textarea {
+            font-family: inherit;
+            font-feature-settings: inherit;
+            font-variation-settings: inherit;
+            font-size: 100%;
+            font-weight: inherit;
+            line-height: inherit;
+            letter-spacing: inherit;
+            color: inherit;
+            margin: 0;
+            padding: 0
+        }
+
+        button,
+        select {
+            text-transform: none
+        }
+
+        button,
+        input:where([type=button]),
+        input:where([type=reset]),
+        input:where([type=submit]) {
+            -webkit-appearance: button;
+            background-color: transparent;
+            background-image: none
+        }
+
+        :-moz-focusring {
+            outline: auto
+        }
+
+        :-moz-ui-invalid {
+            box-shadow: none
+        }
+
+        progress {
+            vertical-align: baseline
+        }
+
+        ::-webkit-inner-spin-button,
+        ::-webkit-outer-spin-button {
+            height: auto
+        }
+
+        [type=search] {
+            -webkit-appearance: textfield;
+            outline-offset: -2px
+        }
+
+        ::-webkit-search-decoration {
+            -webkit-appearance: none
+        }
+
+        ::-webkit-file-upload-button {
+            -webkit-appearance: button;
+            font: inherit
+        }
+
+        summary {
+            display: list-item
+        }
+
+        blockquote,
+        dd,
+        dl,
+        figure,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        hr,
+        p,
+        pre {
+            margin: 0
+        }
+
+        fieldset {
+            margin: 0;
+            padding: 0
+        }
+
+        legend {
+            padding: 0
+        }
+
+        menu,
+        ol,
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 0
+        }
+
+        dialog {
+            padding: 0
+        }
+
+        textarea {
+            resize: vertical
+        }
+
+        input::placeholder,
+        textarea::placeholder {
+            opacity: 1;
+            color: #9ca3af
+        }
+
+        [role=button],
+        button {
+            cursor: pointer
+        }
+
+        :disabled {
+            cursor: default
+        }
+
+        audio,
+        canvas,
+        embed,
+        iframe,
+        img,
+        object,
+        svg,
+        video {
+            display: block;
+            vertical-align: middle
+        }
+
+        img,
+        video {
+            max-width: 100%;
+            height: auto
+        }
+
+        [hidden]:where(:not([hidden=until-found])) {
+            display: none
+        }
+
+        .container {
+            width: 100%
+        }
+
+        @media (min-width: 640px) {
+            .container {
+                max-width: 640px
+            }
+        }
+
+        @media (min-width: 768px) {
+            .container {
+                max-width: 768px
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .container {
+                max-width: 1024px
+            }
+        }
+
+        @media (min-width: 1280px) {
+            .container {
+                max-width: 1280px
+            }
+        }
+
+        @media (min-width: 1536px) {
+            .container {
+                max-width: 1536px
+            }
+        }
+
+        .fixed {
+            position: fixed
+        }
+
+        .absolute {
+            position: absolute
+        }
+
+        .relative {
+            position: relative
+        }
+
+        .inset-0 {
+            inset: 0px
+        }
+
+        .-bottom-4 {
+            bottom: -1rem
+        }
+
+        .-right-4 {
+            right: -1rem
+        }
+
+        .bottom-0 {
+            bottom: 0px
+        }
+
+        .left-0 {
+            left: 0px
+        }
+
+        .z-10 {
+            z-index: 10
+        }
+
+        .z-50 {
+            z-index: 50
+        }
+
+        .mx-auto {
+            margin-left: auto;
+            margin-right: auto
+        }
+
+        .mx-1 {
+            margin-left: 0.25rem;
+            margin-right: 0.25rem
+        }
+
+        .mb-10 {
+            margin-bottom: 2.5rem
+        }
+
+        .mb-16 {
+            margin-bottom: 4rem
+        }
+
+        .mb-3 {
+            margin-bottom: 0.75rem
+        }
+
+        .mb-4 {
+            margin-bottom: 1rem
+        }
+
+        .mb-6 {
+            margin-bottom: 1.5rem
+        }
+
+        .mb-8 {
+            margin-bottom: 2rem
+        }
+
+        .mr-2 {
+            margin-right: 0.5rem
+        }
+
+        .mt-0\.5 {
+            margin-top: 0.125rem
+        }
+
+        .mt-1 {
+            margin-top: 0.25rem
+        }
+
+        .mt-16 {
+            margin-top: 4rem
+        }
+
+        .mt-4 {
+            margin-top: 1rem
+        }
+
+        .mt-8 {
+            margin-top: 2rem
+        }
+
+        .mr-4 {
+            margin-right: 1rem
+        }
+
+        .mt-20 {
+            margin-top: 5rem
+        }
+
+        .mt-6 {
+            margin-top: 1.5rem
+        }
+
+        .inline-block {
+            display: inline-block
+        }
+
+        .flex {
+            display: flex
+        }
+
+        .grid {
+            display: grid
+        }
+
+        .hidden {
+            display: none
+        }
+
+        .aspect-video {
+            aspect-ratio: 16 / 9
+        }
+
+        .aspect-square {
+            aspect-ratio: 1 / 1
+        }
+
+        .h-10 {
+            height: 2.5rem
+        }
+
+        .h-16 {
+            height: 4rem
+        }
+
+        .h-20 {
+            height: 5rem
+        }
+
+        .h-3 {
+            height: 0.75rem
+        }
+
+        .h-5 {
+            height: 1.25rem
+        }
+
+        .h-8 {
+            height: 2rem
+        }
+
+        .h-auto {
+            height: auto
+        }
+
+        .h-full {
+            height: 100%
+        }
+
+        .h-12 {
+            height: 3rem
+        }
+
+        .h-6 {
+            height: 1.5rem
+        }
+
+        .h-80 {
+            height: 20rem
+        }
+
+        .w-10 {
+            width: 2.5rem
+        }
+
+        .w-16 {
+            width: 4rem
+        }
+
+        .w-20 {
+            width: 5rem
+        }
+
+        .w-3 {
+            width: 0.75rem
+        }
+
+        .w-5 {
+            width: 1.25rem
+        }
+
+        .w-8 {
+            width: 2rem
+        }
+
+        .w-full {
+            width: 100%
+        }
+
+        .w-12 {
+            width: 3rem
+        }
+
+        .w-6 {
+            width: 1.5rem
+        }
+
+        .min-w-\[300px\] {
+            min-width: 300px
+        }
+
+        .max-w-2xl {
+            max-width: 42rem
+        }
+
+        .max-w-4xl {
+            max-width: 56rem
+        }
+
+        .snap-x {
+            scroll-snap-type: x var(--tw-scroll-snap-strictness)
+        }
+
+        .snap-center {
+            scroll-snap-align: center
+        }
+
+        .grid-cols-1 {
+            grid-template-columns: repeat(1, minmax(0, 1fr))
+        }
+
+        .grid-cols-2 {
+            grid-template-columns: repeat(2, minmax(0, 1fr))
+        }
+
+        .flex-col {
+            flex-direction: column
+        }
+
+        .flex-wrap {
+            flex-wrap: wrap
+        }
+
+        .items-start {
+            align-items: flex-start
+        }
+
+        .items-center {
+            align-items: center
+        }
+
+        .justify-center {
+            justify-content: center
+        }
+
+        .justify-between {
+            justify-content: space-between
+        }
+
+        .gap-2 {
+            gap: 0.5rem
+        }
+
+        .gap-3 {
+            gap: 0.75rem
+        }
+
+        .gap-4 {
+            gap: 1rem
+        }
+
+        .gap-8 {
+            gap: 2rem
+        }
+
+        .gap-6 {
+            gap: 1.5rem
+        }
+
+        .space-x-2> :not([hidden])~ :not([hidden]) {
+            --tw-space-x-reverse: 0;
+            margin-right: calc(0.5rem * var(--tw-space-x-reverse));
+            margin-left: calc(0.5rem * calc(1 - var(--tw-space-x-reverse)))
+        }
+
+        .space-x-6> :not([hidden])~ :not([hidden]) {
+            --tw-space-x-reverse: 0;
+            margin-right: calc(1.5rem * var(--tw-space-x-reverse));
+            margin-left: calc(1.5rem * calc(1 - var(--tw-space-x-reverse)))
+        }
+
+        .space-y-2> :not([hidden])~ :not([hidden]) {
+            --tw-space-y-reverse: 0;
+            margin-top: calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));
+            margin-bottom: calc(0.5rem * var(--tw-space-y-reverse))
+        }
+
+        .space-y-3> :not([hidden])~ :not([hidden]) {
+            --tw-space-y-reverse: 0;
+            margin-top: calc(0.75rem * calc(1 - var(--tw-space-y-reverse)));
+            margin-bottom: calc(0.75rem * var(--tw-space-y-reverse))
+        }
+
+        .overflow-hidden {
+            overflow: hidden
+        }
+
+        .overflow-x-auto {
+            overflow-x: auto
+        }
+
+        .rounded-full {
+            border-radius: 9999px
+        }
+
+        .rounded-lg {
+            border-radius: 0.5rem
+        }
+
+        .rounded-xl {
+            border-radius: 0.75rem
+        }
+
+        .border {
+            border-width: 1px
+        }
+
+        .border-4 {
+            border-width: 4px
+        }
+
+        .border-b {
+            border-bottom-width: 1px
+        }
+
+        .border-gold\/10 {
+            border-color: rgb(255 193 7 / 0.1)
+        }
+
+        .border-gold\/20 {
+            border-color: rgb(255 193 7 / 0.2)
+        }
+
+        .border-gold\/30 {
+            border-color: rgb(255 193 7 / 0.3)
+        }
+
+        .bg-darkblue {
+            --tw-bg-opacity: 1;
+            background-color: rgb(10 25 49 / var(--tw-bg-opacity, 1))
+        }
+
+        .bg-darkblue\/90 {
+            background-color: rgb(10 25 49 / 0.9)
+        }
+
+        .bg-gold {
+            --tw-bg-opacity: 1;
+            background-color: rgb(255 193 7 / var(--tw-bg-opacity, 1))
+        }
+
+        .bg-gold\/10 {
+            background-color: rgb(255 193 7 / 0.1)
+        }
+
+        .bg-gold\/20 {
+            background-color: rgb(255 193 7 / 0.2)
+        }
+
+        .bg-green-500 {
+            --tw-bg-opacity: 1;
+            background-color: rgb(34 197 94 / var(--tw-bg-opacity, 1))
+        }
+
+        .bg-navy {
+            --tw-bg-opacity: 1;
+            background-color: rgb(16 42 84 / var(--tw-bg-opacity, 1))
+        }
+
+        .bg-white {
+            --tw-bg-opacity: 1;
+            background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1))
+        }
+
+        .bg-gold\/30 {
+            background-color: rgb(255 193 7 / 0.3)
+        }
+
+        .bg-\[url\(\'data\:image\/svg\+xml\;base64\2c PHN2ZyB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB4PSIwIiB5PSIwIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIyIiBoZWlnaHQ9IjIiIGZpbGw9IiNmZmMxMDciIG9wYWNpdHk9IjAuMSIvPjwvcGF0dGVybj48L2RlZnM\+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNwYXR0ZXJuKSIvPjwvc3ZnPg\=\=\'\)\] {
+            background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB4PSIwIiB5PSIwIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIyIiBoZWlnaHQ9IjIiIGZpbGw9IiNmZmMxMDciIG9wYWNpdHk9IjAuMSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNwYXR0ZXJuKSIvPjwvc3ZnPg==')
+        }
+
+        .bg-gradient-to-t {
+            background-image: linear-gradient(to top, var(--tw-gradient-stops))
+        }
+
+        .from-darkblue {
+            --tw-gradient-from: #0a1931 var(--tw-gradient-from-position);
+            --tw-gradient-to: rgb(10 25 49 / 0) var(--tw-gradient-to-position);
+            --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to)
+        }
+
+        .to-transparent {
+            --tw-gradient-to: transparent var(--tw-gradient-to-position)
+        }
+
+        .p-4 {
+            padding: 1rem
+        }
+
+        .p-6 {
+            padding: 1.5rem
+        }
+
+        .p-8 {
+            padding: 2rem
+        }
+
+        .px-3 {
+            padding-left: 0.75rem;
+            padding-right: 0.75rem
+        }
+
+        .px-4 {
+            padding-left: 1rem;
+            padding-right: 1rem
+        }
+
+        .px-5 {
+            padding-left: 1.25rem;
+            padding-right: 1.25rem
+        }
+
+        .px-8 {
+            padding-left: 2rem;
+            padding-right: 2rem
+        }
+
+        .py-1 {
+            padding-top: 0.25rem;
+            padding-bottom: 0.25rem
+        }
+
+        .py-2 {
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem
+        }
+
+        .py-20 {
+            padding-top: 5rem;
+            padding-bottom: 5rem
+        }
+
+        .py-3 {
+            padding-top: 0.75rem;
+            padding-bottom: 0.75rem
+        }
+
+        .py-4 {
+            padding-top: 1rem;
+            padding-bottom: 1rem
+        }
+
+        .pb-20 {
+            padding-bottom: 5rem
+        }
+
+        .pl-0 {
+            padding-left: 0px
+        }
+
+        .pt-28 {
+            padding-top: 7rem
+        }
+
+        .pb-8 {
+            padding-bottom: 2rem
+        }
+
+        .text-center {
+            text-align: center
+        }
+
+        .text-right {
+            text-align: right
+        }
+
+        .text-2xl {
+            font-size: 1.5rem;
+            line-height: 2rem
+        }
+
+        .text-3xl {
+            font-size: 1.875rem;
+            line-height: 2.25rem
+        }
+
+        .text-4xl {
+            font-size: 2.25rem;
+            line-height: 2.5rem
+        }
+
+        .text-lg {
+            font-size: 1.125rem;
+            line-height: 1.75rem
+        }
+
+        .text-sm {
+            font-size: 0.875rem;
+            line-height: 1.25rem
+        }
+
+        .text-xl {
+            font-size: 1.25rem;
+            line-height: 1.75rem
+        }
+
+        .font-bold {
+            font-weight: 700
+        }
+
+        .font-medium {
+            font-weight: 500
+        }
+
+        .font-semibold {
+            font-weight: 600
+        }
+
+        .leading-tight {
+            line-height: 1.25
+        }
+
+        .text-white {
+            --tw-text-opacity: 1;
+            color: rgb(255 255 255 / var(--tw-text-opacity, 1))
+        }
+
+        .text-darkblue {
+            --tw-text-opacity: 1;
+            color: rgb(10 25 49 / var(--tw-text-opacity, 1))
+        }
+
+        .text-gold {
+            --tw-text-opacity: 1;
+            color: rgb(255 193 7 / var(--tw-text-opacity, 1))
+        }
+
+        .text-gray-200 {
+            --tw-text-opacity: 1;
+            color: rgb(229 231 235 / var(--tw-text-opacity, 1))
+        }
+
+        .text-gray-300 {
+            --tw-text-opacity: 1;
+            color: rgb(209 213 219 / var(--tw-text-opacity, 1))
+        }
+
+        .text-gray-400 {
+            --tw-text-opacity: 1;
+            color: rgb(156 163 175 / var(--tw-text-opacity, 1))
+        }
+
+        .text-green-500 {
+            --tw-text-opacity: 1;
+            color: rgb(34 197 94 / var(--tw-text-opacity, 1))
+        }
+
+        .opacity-20 {
+            opacity: 0.2
+        }
+
+        .opacity-60 {
+            opacity: 0.6
+        }
+
+        .shadow-2xl {
+            --tw-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+            --tw-shadow-colored: 0 25px 50px -12px var(--tw-shadow-color);
+            box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)
+        }
+
+        .shadow-lg {
+            --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+            --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);
+            box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)
+        }
+
+        .shadow-xl {
+            --tw-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+            --tw-shadow-colored: 0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);
+            box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)
+        }
+
+        .backdrop-blur-md {
+            --tw-backdrop-blur: blur(12px);
+            -webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+            backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)
+        }
+
+        .transition {
+            transition-property: color, background-color, border-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-text-decoration-color, -webkit-backdrop-filter;
+            transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+            transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-text-decoration-color, -webkit-backdrop-filter;
+            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+            transition-duration: 150ms
+        }
+
+        .transition-all {
+            transition-property: all;
+            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+            transition-duration: 150ms
+        }
+
+        .transition-transform {
+            transition-property: transform;
+            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+            transition-duration: 150ms
+        }
+
+        .duration-300 {
+            transition-duration: 300ms
+        }
+
+        .hover\:scale-110:hover {
+            --tw-scale-x: 1.1;
+            --tw-scale-y: 1.1;
+            transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))
+        }
+
+        .hover\:border-gold\/30:hover {
+            border-color: rgb(255 193 7 / 0.3)
+        }
+
+        .hover\:bg-lightgold:hover {
+            --tw-bg-opacity: 1;
+            background-color: rgb(255 224 130 / var(--tw-bg-opacity, 1))
+        }
+
+        .hover\:text-gold:hover {
+            --tw-text-opacity: 1;
+            color: rgb(255 193 7 / var(--tw-text-opacity, 1))
+        }
+
+        .focus\:outline-none:focus {
+            outline: 2px solid transparent;
+            outline-offset: 2px
+        }
+
+        @media (min-width: 640px) {
+            .sm\:flex-row {
+                flex-direction: row
+            }
+        }
+
+        @media (min-width: 768px) {
+            .md\:mb-0 {
+                margin-bottom: 0px
+            }
+
+            .md\:flex {
+                display: flex
+            }
+
+            .md\:w-1\/2 {
+                width: 50%
+            }
+
+            .md\:w-1\/3 {
+                width: 33.333333%
+            }
+
+            .md\:w-2\/3 {
+                width: 66.666667%
+            }
+
+            .md\:min-w-\[400px\] {
+                min-width: 400px
+            }
+
+            .md\:grid-cols-2 {
+                grid-template-columns: repeat(2, minmax(0, 1fr))
+            }
+
+            .md\:grid-cols-3 {
+                grid-template-columns: repeat(3, minmax(0, 1fr))
+            }
+
+            .md\:flex-row {
+                flex-direction: row
+            }
+
+            .md\:pl-10 {
+                padding-left: 2.5rem
+            }
+
+            .md\:pr-8 {
+                padding-right: 2rem
+            }
+
+            .md\:text-4xl {
+                font-size: 2.25rem;
+                line-height: 2.5rem
+            }
+
+            .md\:text-5xl {
+                font-size: 3rem;
+                line-height: 1
+            }
+
+            .md\:text-xl {
+                font-size: 1.25rem;
+                line-height: 1.75rem
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .lg\:text-6xl {
+                font-size: 3.75rem;
+                line-height: 1
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-darkblue text-white">
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 bg-darkblue/90 backdrop-blur-md border-b border-gold/20">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center">
+                <span class="text-gold font-bold text-2xl">Jago<span class="text-white"> Saham</span></span>
+            </div>
+            <div class="hidden md:flex space-x-6">
+                <a href="#masalah" class="text-white hover:text-gold transition">Masalah</a>
+                <a href="#solusi" class="text-white hover:text-gold transition">Solusi</a>
+                <a href="#testimoni" class="text-white hover:text-gold transition">Testimoni</a>
+                <a href="#mentor" class="text-white hover:text-gold transition">Mentor</a>
+                <a href="#harga" class="text-white hover:text-gold transition">Harga</a>
+                <a href="#faq" class="text-white hover:text-gold transition">FAQ</a>
+            </div>
+            <div>
+                <a href="#daftar"
+                    class="bg-gold text-darkblue font-semibold px-5 py-2 rounded-full hover:bg-lightgold transition">Daftar</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-28 pb-20 blue-gradient relative overflow-hidden">
+        <div
+            class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB4PSIwIiB5PSIwIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIyIiBoZWlnaHQ9IjIiIGZpbGw9IiNmZmMxMDciIG9wYWNpdHk9IjAuMSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNwYXR0ZXJuKSIvPjwvc3ZnPg==')] opacity-20">
+        </div>
+
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="w-full md:w-1/2 mb-10 md:mb-0">
+                    <div class="inline-block px-4 py-1 bg-gold/20 rounded-full mb-4">
+                        <span class="text-gold font-medium">Webinar Eksklusif</span>
+                    </div>
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
+                        <span class="text-white">CUAN </span>
+                        <span class="text-gold">70–80% PER BULAN</span>
+                        <span class="text-white"> DARI SAHAM TANPA RIBET!</span>
+                    </h1>
+                    <p class="text-lg md:text-xl text-gray-300 mb-8">Pelajari strategi big investor untuk membangun
+                        portofolio saham yang solid dan untung besar!</p>
+
+                    <div class="space-y-3 mb-8">
+                        <div class="flex items-center">
+                            <span class="badge text-gold text-xl mr-2">✅</span>
+                            <span class="text-gray-200">Cukup 5 Menit Sehari</span>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="badge text-gold text-xl mr-2">✅</span>
+                            <span class="text-gray-200">Tanpa mantengin market</span>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="badge text-gold text-xl mr-2">✅</span>
+                            <span class="text-gray-200">Teknik Warren Buffett</span>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="#video"
+                            class="cta-button bg-gold text-darkblue font-bold px-8 py-4 rounded-full text-center">
+                            <span class="flex items-center justify-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20"
+                                    fill="currentColor">
+                                    <path fill-rule="evenodd"
+                                        d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
+                                Tonton Video
+                            </span>
+                        </a>
+                        <a href="https://jagosaham.id/checkout/"
+                            class="cta-button bg-white text-darkblue font-bold px-8 py-4 rounded-full text-center">
+                            Join Pelatihan Sekarang
+                        </a>
+                    </div>
+                </div>
+
+                <div class="w-full md:w-1/2 pl-0 md:pl-10">
+                    <div class="relative">
+                        <svg class="w-full h-auto" viewBox="0 0 500 400" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <linearGradient id="chartGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                                    <stop offset="0%" stop-color="#ffc107" stop-opacity="0.8"></stop>
+                                    <stop offset="100%" stop-color="#ffc107" stop-opacity="0.1"></stop>
+                                </linearGradient>
+                            </defs>
+                            <!-- Background grid -->
+                            <g stroke="#ffffff" stroke-width="0.5" opacity="0.1">
+                                <line x1="50" y1="50" x2="50" y2="350"></line>
+                                <line x1="150" y1="50" x2="150" y2="350"></line>
+                                <line x1="250" y1="50" x2="250" y2="350"></line>
+                                <line x1="350" y1="50" x2="350" y2="350"></line>
+                                <line x1="450" y1="50" x2="450" y2="350"></line>
+
+                                <line x1="50" y1="50" x2="450" y2="50"></line>
+                                <line x1="50" y1="125" x2="450" y2="125"></line>
+                                <line x1="50" y1="200" x2="450" y2="200"></line>
+                                <line x1="50" y1="275" x2="450" y2="275"></line>
+                                <line x1="50" y1="350" x2="450" y2="350"></line>
+                            </g>
+
+                            <!-- Chart lines -->
+                            <polyline fill="none" stroke="#ffc107" stroke-width="3" points="
+                                    50,300
+                                    100,280
+                                    150,290
+                                    200,250
+                                    250,220
+                                    300,180
+                                    350,150
+                                    400,100
+                                    450,80
+                                "></polyline>
+
+                            <!-- Area under the chart -->
+                            <path fill="url(#chartGradient)" d="
+                                    M50,300
+                                    L100,280
+                                    L150,290
+                                    L200,250
+                                    L250,220
+                                    L300,180
+                                    L350,150
+                                    L400,100
+                                    L450,80
+                                    L450,350
+                                    L50,350
+                                    Z
+                                " opacity="0.5"></path>
+
+                            <!-- Data points -->
+                            <circle cx="50" cy="300" r="5" fill="#ffc107"></circle>
+                            <circle cx="100" cy="280" r="5" fill="#ffc107"></circle>
+                            <circle cx="150" cy="290" r="5" fill="#ffc107"></circle>
+                            <circle cx="200" cy="250" r="5" fill="#ffc107"></circle>
+                            <circle cx="250" cy="220" r="5" fill="#ffc107"></circle>
+                            <circle cx="300" cy="180" r="5" fill="#ffc107"></circle>
+                            <circle cx="350" cy="150" r="5" fill="#ffc107"></circle>
+                            <circle cx="400" cy="100" r="5" fill="#ffc107"></circle>
+                            <circle cx="450" cy="80" r="5" fill="#ffc107"></circle>
+
+                            <!-- Annotations -->
+                            <g font-family="Poppins, sans-serif" font-size="12" fill="#ffffff">
+                                <text x="50" y="40" text-anchor="middle">Jan</text>
+                                <text x="150" y="40" text-anchor="middle">Mar</text>
+                                <text x="250" y="40" text-anchor="middle">May</text>
+                                <text x="350" y="40" text-anchor="middle">Jul</text>
+                                <text x="450" y="40" text-anchor="middle">Sep</text>
+
+                                <text x="40" y="350" text-anchor="end">0%</text>
+                                <text x="40" y="275" text-anchor="end">20%</text>
+                                <text x="40" y="200" text-anchor="end">40%</text>
+                                <text x="40" y="125" text-anchor="end">60%</text>
+                                <text x="40" y="50" text-anchor="end">80%</text>
+                            </g>
+
+                            <!-- Highlight area -->
+                            <circle cx="450" cy="80" r="10" fill="none" stroke="#ffc107" stroke-width="2" opacity="0.8">
+                                <animate attributeName="r" values="10;15;10" dur="2s" repeatCount="indefinite">
+                                </animate>
+                                <animate attributeName="opacity" values="0.8;0.4;0.8" dur="2s" repeatCount="indefinite">
+                                </animate>
+                            </circle>
+
+                            <!-- Growth indicator -->
+                            <g transform="translate(380, 60)">
+                                <rect x="0" y="0" width="80" height="30" rx="15" fill="#ffc107"></rect>
+                                <text x="40" y="20" text-anchor="middle" font-family="Poppins, sans-serif"
+                                    font-size="14" font-weight="bold" fill="#0a1931">+78%</text>
+                            </g>
+                        </svg>
+
+                        <div class="absolute -bottom-4 -right-4 bg-navy p-4 rounded-lg border border-gold/30 shadow-xl">
+                            <div class="flex items-center space-x-2">
+                                <div class="w-3 h-3 bg-green-500 rounded-full"></div>
+                                <span class="text-sm text-gray-300">IHSG</span>
+                            </div>
+                            <div class="text-xl font-bold text-gold mt-1">7,250.35</div>
+                            <div class="text-green-500 text-sm font-medium">+2.35%</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Wave divider -->
+        <div class="absolute bottom-0 left-0 w-full">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 100" fill="#0a1931">
+                <path
+                    d="M0,64L80,69.3C160,75,320,85,480,80C640,75,800,53,960,48C1120,43,1280,53,1360,58.7L1440,64L1440,100L1360,100C1280,100,1120,100,960,100C800,100,640,100,480,100C320,100,160,100,80,100L0,100Z">
+                </path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Masalah Section -->
+    <section id="masalah" class="py-20 bg-navy">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 text-white">Bosan belajar teori saham tapi tetap <span
+                        class="text-gold">Gak Ngerti?</span></h2>
+
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div
+                    class="bg-darkblue p-8 rounded-xl border border-gold/10 shadow-lg hover:border-gold/30 transition-all duration-300">
+                    <div class="w-16 h-16 bg-gold/10 rounded-full flex items-center justify-center mb-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-gold" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z">
+                            </path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-white">Bingung Pilih Saham</h3>
+                    <p class="text-gray-400">Terlalu banyak pilihan saham di market membuat kamu pusing dan akhirnya
+                        salah pilih saham yang malah turun terus.</p>
+                </div>
+
+                <div
+                    class="bg-darkblue p-8 rounded-xl border border-gold/10 shadow-lg hover:border-gold/30 transition-all duration-300">
+                    <div class="w-16 h-16 bg-gold/10 rounded-full flex items-center justify-center mb-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-gold" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z">
+                            </path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-white">Pusing Lihat Laporan Keuangan</h3>
+                    <p class="text-gray-400">Laporan keuangan yang tebal dan penuh angka membuat kamu frustasi dan tidak
+                        tahu harus fokus ke mana.</p>
+                </div>
+
+                <div
+                    class="bg-darkblue p-8 rounded-xl border border-gold/10 shadow-lg hover:border-gold/30 transition-all duration-300">
+                    <div class="w-16 h-16 bg-gold/10 rounded-full flex items-center justify-center mb-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-gold" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-white">Tidak Punya Waktu</h3>
+                    <p class="text-gray-400">Kesibukan sehari-hari membuatmu tidak punya waktu untuk mantau chart dan
+                        berita saham sepanjang hari.</p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
+                <div
+                    class="bg-darkblue p-8 rounded-xl border border-gold/10 shadow-lg hover:border-gold/30 transition-all duration-300">
+                    <div class="w-16 h-16 bg-gold/10 rounded-full flex items-center justify-center mb-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-gold" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z">
+                            </path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-white">Takut Rugi Besar</h3>
+                    <p class="text-gray-400">Pengalaman rugi di masa lalu atau cerita horror investor lain membuatmu
+                        takut untuk mulai investasi saham.</p>
+                </div>
+
+                <div
+                    class="bg-darkblue p-8 rounded-xl border border-gold/10 shadow-lg hover:border-gold/30 transition-all duration-300">
+                    <div class="w-16 h-16 bg-gold/10 rounded-full flex items-center justify-center mb-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-gold" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-white">Terlalu Banyak Strategi</h3>
+                    <p class="text-gray-400">Kebanyakan informasi dari sosmed, YouTube, dan grup trading membuat kamu
+                        bingung harus ikut strategi yang mana.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solusi Section -->
+    <section id="solusi" class="py-20 bg-darkblue relative">
+        <div
+            class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB4PSIwIiB5PSIwIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIyIiBoZWlnaHQ9IjIiIGZpbGw9IiNmZmMxMDciIG9wYWNpdHk9IjAuMSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNwYXR0ZXJuKSIvPjwvc3ZnPg==')] opacity-20">
+        </div>
+
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="text-center mb-16">
+                <div class="inline-block px-4 py-1 bg-gold/20 rounded-full mb-4">
+                    <span class="text-gold font-medium">Solusi Tepat</span>
+                </div>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 text-white">Apa yang Akan Anda Pelajari di <span
+                        class="text-gold">Fundamental Hack</span></h2>
+
+
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="feature-card bg-navy p-8 rounded-xl border border-gold/10 shadow-lg">
+                    <div class="w-16 h-16 bg-gold/10 rounded-full flex items-center justify-center mb-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-gold" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z">
+                            </path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-white">Stock Picking Warren Buffett</h3>
+                    <p class="text-gray-400 mb-4">Pelajari cara memilih saham berkualitas dengan metode yang digunakan
+                        investor terkaya di dunia.</p>
+                    <ul class="space-y-2">
+                        <li class="flex items-start">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gold mr-2 mt-0.5"
+                                viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd"
+                                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                            <span class="text-gray-300">Identifikasi moat bisnis</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gold mr-2 mt-0.5"
+                                viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd"
+                                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                            <span class="text-gray-300">Analisa margin of safety</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gold mr-2 mt-0.5"
+                                viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd"
+                                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                            <span class="text-gray-300">Valuasi intrinsik saham</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="feature-card bg-navy p-8 rounded-xl border border-gold/10 shadow-lg">
+                    <div class="w-16 h-16 bg-gold/10 rounded-full flex items-center justify-center mb-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-gold" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-white">Analisa 5 menit sehari</h3>
+                    <p class="text-gray-400 mb-4">Teknik cepat untuk menganalisa saham tanpa perlu menghabiskan
+                        berjam-jam di depan layar.</p>
+                    <ul class="space-y-2">
+                        <li class="flex items-start">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gold mr-2 mt-0.5"
+                                viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd"
+                                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                            <span class="text-gray-300">Checklist fundamental cepat</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gold mr-2 mt-0.5"
+                                viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd"
+                                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                            <span class="text-gray-300">Screening otomatis</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gold mr-2 mt-0.5"
+                                viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd"
+                                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                            <span class="text-gray-300">Template siap pakai</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="feature-card bg-navy p-8 rounded-xl border border-gold/10 shadow-lg">
+                    <div class="w-16 h-16 bg-gold/10 rounded-full flex items-center justify-center mb-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-gold" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-white">Strategi Big Investor</h3>
+                    <p class="text-gray-400 mb-4">Rahasia bagaimana investor besar menghasilkan return konsisten di atas
+                        rata-rata pasar.</p>
+                    <ul class="space-y-2">
+                        <li class="flex items-start">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gold mr-2 mt-0.5"
+                                viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd"
+                                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                            <span class="text-gray-300">Alokasi portofolio optimal</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gold mr-2 mt-0.5"
+                                viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd"
+                                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                            <span class="text-gray-300">Manajemen risiko profesional</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gold mr-2 mt-0.5"
+                                viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd"
+                                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                            <span class="text-gray-300">Timing entry &amp; exit sempurna</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="mt-16 bg-navy p-8 rounded-xl border border-gold/20 shadow-lg">
+                <div class="flex flex-col md:flex-row items-center">
+                    <div class="w-full md:w-2/3 mb-8 md:mb-0 md:pr-8">
+                        <h3 class="text-2xl font-bold mb-4 text-white">Bonus Spesial: <span class="text-gold">Watchlist
+                                Saham
+                                Potensial</span></h3>
+                        <p class="text-gray-300 mb-6">Dapatkan daftar 10 saham pilihan dengan potensi return 70-80%
+                            dalam 6-12 bulan ke depan. Sudah termasuk analisa lengkap dan rekomendasi harga beli.</p>
+                        <div class="flex flex-wrap gap-3">
+                            <span class="px-3 py-1 bg-gold/10 text-gold rounded-full text-sm">BBCA</span>
+                            <span class="px-3 py-1 bg-gold/10 text-gold rounded-full text-sm">TLKM</span>
+                            <span class="px-3 py-1 bg-gold/10 text-gold rounded-full text-sm">ASII</span>
+                            <span class="px-3 py-1 bg-gold/10 text-gold rounded-full text-sm">BBRI</span>
+                            <span class="px-3 py-1 bg-gold/10 text-gold rounded-full text-sm">UNVR</span>
+                            <span class="px-3 py-1 bg-gold/10 text-gold rounded-full text-sm">+5 lainnya</span>
+                        </div>
+                    </div>
+                    <div class="w-full md:w-1/3">
+                        <div class="bg-darkblue p-6 rounded-xl border border-gold/30">
+                            <div class="flex justify-between items-center mb-4">
+                                <div class="text-xl font-bold text-white">BBCA</div>
+                                <div class="text-green-500">+24.5%</div>
+                            </div>
+                            <div class="h-20 w-full">
+                                <svg viewBox="0 0 200 60" class="w-full h-full">
+                                    <path
+                                        d="M0,50 L20,45 L40,48 L60,40 L80,35 L100,30 L120,25 L140,20 L160,15 L180,10 L200,5"
+                                        fill="none" stroke="#ffc107" stroke-width="2"></path>
+                                </svg>
+                            </div>
+                            <div class="mt-4 grid grid-cols-2 gap-2 text-sm">
+                                <div class="text-gray-400">Harga Beli:</div>
+                                <div class="text-right font-medium">Rp 8.500</div>
+                                <div class="text-gray-400">Target Harga:</div>
+                                <div class="text-right font-medium text-gold">Rp 10.575</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Section -->
+    <section id="video" class="py-20 bg-navy">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <div class="inline-block px-4 py-1 bg-gold/20 rounded-full mb-4">
+                    <span class="text-gold font-medium">Preview Webinar</span>
+                </div>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 text-white">Lihat Bagaimana <span class="text-gold">Jago
+                        Saham</span> Bekerja</h2>
+                <p class="text-gray-300 max-w-2xl mx-auto">Tonton video singkat ini untuk melihat bagaimana metode kami
+                    dapat membantu Anda menghasilkan profit konsisten.</p>
+            </div>
+
+            <div class="max-w-4xl mx-auto">
+                <div
+                    class="relative aspect-video bg-darkblue rounded-xl overflow-hidden shadow-2xl border border-gold/20">
+                    <iframe class="w-full h-full absolute inset-0"
+                        src="https://www.youtube.com/embed/YByqbrDVaqc?si=j3rNDV7mZO5jzVb1" title="YouTube video player"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+
+                <div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div
+                        class="bg-darkblue p-6 rounded-xl border border-gold/10 hover:border-gold/30 transition-all duration-300">
+                        <div class="flex items-center mb-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gold mr-2" viewBox="0 0 20 20"
+                                fill="currentColor">
+                                <path fill-rule="evenodd"
+                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                            <h3 class="font-semibold text-white">Metode Praktis</h3>
+                        </div>
+                        <p class="text-gray-400 text-sm">Lihat bagaimana metode kami dapat diterapkan langsung tanpa
+                            teori rumit.</p>
+                    </div>
+
+                    <div
+                        class="bg-darkblue p-6 rounded-xl border border-gold/10 hover:border-gold/30 transition-all duration-300">
+                        <div class="flex items-center mb-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gold mr-2" viewBox="0 0 20 20"
+                                fill="currentColor">
+                                <path fill-rule="evenodd"
+                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                            <h3 class="font-semibold text-white">Studi Kasus Nyata</h3>
+                        </div>
+                        <p class="text-gray-400 text-sm">Contoh analisa saham dengan potensi return 70-80% dalam 6-12
+                            bulan.</p>
+                    </div>
+
+                    <div
+                        class="bg-darkblue p-6 rounded-xl border border-gold/10 hover:border-gold/30 transition-all duration-300">
+                        <div class="flex items-center mb-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gold mr-2" viewBox="0 0 20 20"
+                                fill="currentColor">
+                                <path fill-rule="evenodd"
+                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                            <h3 class="font-semibold text-white">Testimoni Peserta</h3>
+                        </div>
+                        <p class="text-gray-400 text-sm">Dengar langsung dari peserta yang sudah berhasil menerapkan
+                            metode ini.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonial Section -->
+    <section id="testimoni" class="py-20 bg-darkblue relative">
+        <div
+            class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB4PSIwIiB5PSIwIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIyIiBoZWlnaHQ9IjIiIGZpbGw9IiNmZmMxMDciIG9wYWNpdHk9IjAuMSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNwYXR0ZXJuKSIvPjwvc3ZnPg==')] opacity-20">
+        </div>
+
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="text-center mb-16">
+                <div class="inline-block px-4 py-1 bg-gold/20 rounded-full mb-4">
+                    <span class="text-gold font-medium">Testimoni Peserta</span>
+                </div>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 text-white">Apa Kata Mereka yang Sudah <span
+                        class="text-gold">Sukses</span></h2>
+            </div>
+
+            <div class="relative">
+                <div class="flex overflow-x-auto pb-8 space-x-6 snap-x scrollbar-hide">
+                    <!-- Testimonial 1 -->
+                    <div
+                        class="testimonial-card min-w-[300px] md:min-w-[400px] bg-navy p-8 rounded-xl border border-gold/10 shadow-lg snap-center">
+                        <div class="flex items-center mb-6">
+                            <div class="text-gold">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path
+                                        d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z">
+                                    </path>
+                                </svg>
+                            </div>
+                            <div class="text-gold mx-1">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path
+                                        d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z">
+                                    </path>
+                                </svg>
+                            </div>
+                            <div class="text-gold mx-1">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path
+                                        d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z">
+                                    </path>
+                                </svg>
+                            </div>
+                            <div class="text-gold mx-1">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path
+                                        d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z">
+                                    </path>
+                                </svg>
+                            </div>
+                            <div class="text-gold">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path
+                                        d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z">
+                                    </path>
+                                </svg>
+                            </div>
+                        </div>
+
+                        <p class="text-gray-300 mb-6">"Sebelumnya saya bingung memilih saham dan sering rugi. Setelah
+                            ikut Fundamental Hack, portofolio saya naik 65% dalam 8 bulan terakhir. Metodenya simpel dan
+                            tidak perlu mantau chart terus-menerus."</p>
+
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-gold/20 rounded-full flex items-center justify-center mr-4">
+                                <span class="text-gold font-bold text-xl">BS</span>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-white">Budi Santoso</h4>
+                                <p class="text-gray-400 text-sm">Karyawan Swasta, Jakarta</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 2 -->
+                    <div
+                        class="testimonial-card min-w-[300px] md:min-w-[400px] bg-navy p-8 rounded-xl border border-gold/10 shadow-lg snap-center">
+                        <div class="flex items-center mb-6">
+                            <div class="text-gold">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path
+                                        d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z">
+                                    </path>
+                                </svg>
+                            </div>
+                            <div class="text-gold mx-1">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path
+                                        d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z">
+                                    </path>
+                                </svg>
+                            </div>
+                            <div class="text-gold mx-1">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path
+                                        d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z">
+                                    </path>
+                                </svg>
+                            </div>
+                            <div class="text-gold mx-1">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path
+                                        d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z">
+                                    </path>
+                                </svg>
+                            </div>
+                            <div class="text-gold">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path
+                                        d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z">
+                                    </path>
+                                </svg>
+                            </div>
+                        </div>
+
+                        <p class="text-gray-300 mb-6">"Saya seorang ibu rumah tangga yang ingin investasi tapi tidak
+                            punya waktu untuk analisa. Dengan teknik 5 menit dari Fundamental Hack, saya bisa dapat
+                            return 72% dalam setahun. Sangat direkomendasikan!"</p>
+
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-gold/20 rounded-full flex items-center justify-center mr-4">
+                                <span class="text-gold font-bold text-xl">RA</span>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-white">Ratna Anggraini</h4>
+                                <p class="text-gray-400 text-sm">Ibu Rumah Tangga, Bandung</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 3 -->
+                    <div
+                        class="testimonial-card min-w-[300px] md:min-w-[400px] bg-navy p-8 rounded-xl border border-gold/10 shadow-lg snap-center">
+                        <div class="flex items-center mb-6">
+                            <div class="text-gold">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path
+                                        d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z">
+                                    </path>
+                                </svg>
+                            </div>
+                            <div class="text-gold mx-1">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path
+                                        d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z">
+                                    </path>
+                                </svg>
+                            </div>
+                            <div class="text-gold mx-1">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path
+                                        d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z">
+                                    </path>
+                                </svg>
+                            </div>
+                            <div class="text-gold mx-1">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path
+                                        d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z">
+                                    </path>
+                                </svg>
+                            </div>
+                            <div class="text-gold">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path
+                                        d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z">
+                                    </path>
+                                </svg>
+                            </div>
+                        </div>
+
+                        <p class="text-gray-300 mb-6">"Sebagai mahasiswa dengan modal terbatas, saya ragu ikut webinar
+                            ini. Tapi setelah menerapkan strategi dari Pak Kevin, modal 5 juta saya sudah jadi 8.7 juta
+                            dalam 6 bulan. Worth it banget!"</p>
+
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-gold/20 rounded-full flex items-center justify-center mr-4">
+                                <span class="text-gold font-bold text-xl">DP</span>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-white">Dimas Pratama</h4>
+                                <p class="text-gray-400 text-sm">Mahasiswa, Surabaya</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 4 -->
+                    <div
+                        class="testimonial-card min-w-[300px] md:min-w-[400px] bg-navy p-8 rounded-xl border border-gold/10 shadow-lg snap-center">
+                        <div class="flex items-center mb-6">
+                            <div class="text-gold">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path
+                                        d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z">
+                                    </path>
+                                </svg>
+                            </div>
+                            <div class="text-gold mx-1">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path
+                                        d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z">
+                                    </path>
+                                </svg>
+                            </div>
+                            <div class="text-gold mx-1">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path
+                                        d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z">
+                                    </path>
+                                </svg>
+                            </div>
+                            <div class="text-gold mx-1">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path
+                                        d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z">
+                                    </path>
+                                </svg>
+                            </div>
+                            <div class="text-gold">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path
+                                        d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z">
+                                    </path>
+                                </svg>
+                            </div>
+                        </div>
+
+                        <p class="text-gray-300 mb-6">"Saya sudah coba berbagai kelas trading, tapi baru Fundamental
+                            Hack yang benar-benar mengubah cara saya berinvestasi. Portofolio saya naik 83% dalam 10
+                            bulan. Materinya praktis dan mudah diikuti."</p>
+
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-gold/20 rounded-full flex items-center justify-center mr-4">
+                                <span class="text-gold font-bold text-xl">AW</span>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-white">Andi Wijaya</h4>
+                                <p class="text-gray-400 text-sm">Wiraswasta, Medan</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Scroll indicators -->
+                <div class="flex justify-center mt-6 space-x-2">
+                    <div class="w-3 h-3 rounded-full bg-gold"></div>
+                    <div class="w-3 h-3 rounded-full bg-gold/30"></div>
+                    <div class="w-3 h-3 rounded-full bg-gold/30"></div>
+                    <div class="w-3 h-3 rounded-full bg-gold/30"></div>
+                </div>
+            </div>
+
+            <!-- Results Graph -->
+            <div class="mt-20">
+                <h3 class="text-2xl font-bold mb-8 text-center text-white">Hasil rata-rata peserta <span
+                        class="text-gold">Jago Saham</span></h3>
+
+                <div class="bg-navy p-8 rounded-xl border border-gold/20 shadow-lg">
+                    <div class="h-80">
+                        <svg viewBox="0 0 800 300" class="w-full h-full">
+                            <!-- Background grid -->
+                            <g stroke="#ffffff" stroke-width="0.5" opacity="0.1">
+                                <line x1="100" y1="50" x2="100" y2="250"></line>
+                                <line x1="200" y1="50" x2="200" y2="250"></line>
+                                <line x1="300" y1="50" x2="300" y2="250"></line>
+                                <line x1="400" y1="50" x2="400" y2="250"></line>
+                                <line x1="500" y1="50" x2="500" y2="250"></line>
+                                <line x1="600" y1="50" x2="600" y2="250"></line>
+                                <line x1="700" y1="50" x2="700" y2="250"></line>
+
+                                <line x1="100" y1="50" x2="700" y2="50"></line>
+                                <line x1="100" y1="100" x2="700" y2="100"></line>
+                                <line x1="100" y1="150" x2="700" y2="150"></line>
+                                <line x1="100" y1="200" x2="700" y2="200"></line>
+                                <line x1="100" y1="250" x2="700" y2="250"></line>
+                            </g>
+
+                            <!-- Axis labels -->
+                            <g font-family="Poppins, sans-serif" font-size="12" fill="#ffffff">
+                                <text x="100" y="270" text-anchor="middle">Jan</text>
+                                <text x="200" y="270" text-anchor="middle">Mar</text>
+                                <text x="300" y="270" text-anchor="middle">May</text>
+                                <text x="400" y="270" text-anchor="middle">Jul</text>
+                                <text x="500" y="270" text-anchor="middle">Sep</text>
+                                <text x="600" y="270" text-anchor="middle">Nov</text>
+                                <text x="700" y="270" text-anchor="middle">Jan</text>
+
+                                <text x="90" y="250" text-anchor="end">0%</text>
+                                <text x="90" y="200" text-anchor="end">20%</text>
+                                <text x="90" y="150" text-anchor="end">40%</text>
+                                <text x="90" y="100" text-anchor="end">60%</text>
+                                <text x="90" y="50" text-anchor="end">80%</text>
+                            </g>
+
+                            <!-- IHSG line -->
+                            <path d="M100,230 L200,225 L300,235 L400,220 L500,215 L600,225 L700,210" stroke="#4CAF50"
+                                stroke-width="2" fill="none"></path>
+
+                            <!-- Fundamental Hack line -->
+                            <path d="M100,250 L200,220 L300,190 L400,150 L500,120 L600,90 L700,70" stroke="#ffc107"
+                                stroke-width="3" fill="none"></path>
+
+                            <!-- Area under Fundamental Hack line -->
+                            <path d="M100,250 L200,220 L300,190 L400,150 L500,120 L600,90 L700,70 L700,250 L100,250 Z"
+                                fill="url(#chartGradient)" opacity="0.3"></path>
+
+                            <!-- Legend -->
+                            <g transform="translate(400, 20)">
+                                <rect x="-100" y="-15" width="200" height="30" rx="15" fill="#0a1931" stroke="#ffc107"
+                                    stroke-width="1"></rect>
+                                <line x1="-70" y1="0" x2="-40" y2="0" stroke="#ffc107" stroke-width="3"></line>
+                                <text x="-30" y="5" font-family="Poppins, sans-serif" font-size="12"
+                                    fill="#ffc107">Fundamental Hack (+75%)</text>
+                                <line x1="50" y1="0" x2="80" y2="0" stroke="#4CAF50" stroke-width="2"></line>
+                                <text x="90" y="5" font-family="Poppins, sans-serif" font-size="12" fill="#4CAF50">IHSG
+                                    (+15%)</text>
+                            </g>
+                        </svg>
+                    </div>
+
+                    <div class="text-center mt-4">
+                        <p class="text-gray-300">Rata-rata return peserta Fundamental Hack <span
+                                class="text-gold font-semibold">5x lebih tinggi</span> dibanding IHSG</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mentor Section -->
+    <!-- Mentor Section -->
+<section id="mentor" class="py-20 bg-gold">
+    <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+            <div class="inline-block px-4 py-1 bg-gold text-navy rounded-full mb-4">
+                <span class="text-navy font-semibold">Tentang Pembicara</span>
+            </div>
+            <h2 class="text-3xl font-semibold text-navy md:text-4xl mb-4">Belajar dari <span class="text-navy">Pakar Investasi</span></h2>
+        </div>
+
+        <div class="flex flex-col items-center bg-navy rounded-xl overflow-hidden shadow-xl md:flex-row">
+            <div class="w-full p-8 md:w-1/3">
+                <div class="relative">
+                    <div class="aspect-square bg-navy rounded-xl overflow-hidden border-4 border-gold/30">
+                        <img src="https://jagosaham.id/wp-content/uploads/2025/04/Foto-Kenjo-2.webp" alt="Kevin Jonathan, ST, MBA, CSA" class="object-cover w-full h-full">
+                    </div>
+                    <div class="absolute -bottom-4 -right-4 bg-gold px-4 py-2 rounded-lg shadow-lg">
+                        <span class="text-navy font-bold">CSA Certified</span>
+                    </div>
+                </div>
+            </div>
+            <div class="w-full p-8 md:w-2/3">
+                <h3 class="text-2xl font-bold text-gold mb-2">Kevin Jonathan, ST, MBA, CSA</h3>
+                <p class="text-gold mb-4">Fundamental Analyst & Portfolio Manager</p>
+
+                <p class="text-gray-300 mb-6">Kevin adalah seorang analis fundamental dan portfolio manager dengan pengalaman lebih dari 10 tahun di pasar modal Indonesia. Alumnus MBA dari universitas terkemuka dengan spesialisasi di bidang keuangan dan investasi.</p>
+
+                <div class="grid grid-cols-1 gap-4 mb-6 md:grid-cols-2">
+                    <div class="flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gold mr-2" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                        </svg>
+                        <span class="text-gray-300">10+ tahun pengalaman investasi</span>
+                    </div>
+                    <div class="flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gold mr-2" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                        </svg>
+                        <span class="text-gray-300">Return portofolio 35% p.a</span>
+                    </div>
+                    <div class="flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gold mr-2" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                        </svg>
+                        <span class="text-gray-300">Certified Securities Analyst</span>
+                    </div>
+                    <div class="flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gold mr-2" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                        </svg>
+                        <span class="text-gray-300">Mentor 1000+ investor sukses</span>
+                    </div>
+                </div>
+
+                <div class="flex flex-wrap gap-3">
+                    <div class="px-3 py-1 bg-gold/10 rounded-full">
+                        <span class="text-gold text-sm">Value Investing</span>
+                    </div>
+                    <div class="px-3 py-1 bg-gold/10 rounded-full">
+                        <span class="text-gold text-sm">Fundamental Analysis</span>
+                    </div>
+                    <div class="px-3 py-1 bg-gold/10 rounded-full">
+                        <span class="text-gold text-sm">Portfolio Management</span>
+                    </div>
+                    <div class="px-3 py-1 bg-gold/10 rounded-full">
+                        <span class="text-gold text-sm">Risk Management</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="flex flex-col items-center mt-8">
+            <img src="https://jagosaham.id/wp-content/uploads/2025/04/4.webp" alt="Investment Seminar Image 1" class="h-[500px] w-[500px] object-cover rounded-lg shadow-md mb-5">
+            <img src="https://jagosaham.id/wp-content/uploads/2025/04/5.webp" alt="Investment Seminar Image 2" class="h-[500px] w-[500px] object-cover rounded-lg shadow-md mb-5">
+            <img src="https://jagosaham.id/wp-content/uploads/2025/04/6.webp" alt="Investment Seminar Image 3" class="h-[500px] w-[500px] object-cover rounded-lg shadow-md mb-5">
+            <img src="https://jagosaham.id/wp-content/uploads/2025/04/7.webp" alt="Investment Seminar Image 4" class="h-[500px] w-[500px] object-cover rounded-lg shadow-md mb-5">
+            <img src="https://jagosaham.id/wp-content/uploads/2025/04/8.webp" alt="Investment Seminar Image 5" class="h-[500px] w-[500px] object-cover rounded-lg shadow-md">
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+    <!-- Mentor Benefits Section -->
+    <section id="mentor-benefits" class="py-12 bg-navy">
+        <div class="container mx-auto px-4">
+            <div class="bg-darkblue p-8 rounded-xl border border-gold/10 shadow-lg">
+                <h3 class="text-xl md:text-2xl font-bold mb-6 text-white">Apa yang Akan Anda Dapatkan dari Mentor</h3>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="flex">
+                        <div class="mr-4 mt-1">
+                            <div class="w-8 h-8 bg-gold/10 rounded-full flex items-center justify-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-gold" viewBox="0 0 20 20"
+                                    fill="currentColor">
+                                    <path
+                                        d="M9 4.804A7.968 7.968 0 005.5 4c-1.255 0-2.443.29-3.5.804v10A7.969 7.969 0 015.5 14c1.669 0 3.218.51 4.5 1.385A7.962 7.962 0 0114.5 14c1.255 0 2.443.29 3.5.804v-10A7.968 7.968 0 0014.5 4c-1.255 0-2.443.29-3.5.804V12a1 1 0 11-2 0V4.804z" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold mb-2 text-white">Pengalaman Nyata di Pasar Modal</h4>
+                            <p class="text-gray-400 text-sm">Bukan teori belaka, tapi pengalaman langsung menghadapi
+                                berbagai kondisi pasar selama lebih dari satu dekade.</p>
+                        </div>
+                    </div>
+
+                    <div class="flex">
+                        <div class="mr-4 mt-1">
+                            <div class="w-8 h-8 bg-gold/10 rounded-full flex items-center justify-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-gold" viewBox="0 0 20 20"
+                                    fill="currentColor">
+                                    <path fill-rule="evenodd"
+                                        d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold mb-2 text-white">Metode yang Mudah Dipahami</h4>
+                            <p class="text-gray-400 text-sm">Penjelasan yang sederhana dan praktis, tanpa jargon rumit
+                                sehingga mudah diikuti bahkan untuk pemula.</p>
+                        </div>
+                    </div>
+
+                    <div class="flex">
+                        <div class="mr-4 mt-1">
+                            <div class="w-8 h-8 bg-gold/10 rounded-full flex items-center justify-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-gold" viewBox="0 0 20 20"
+                                    fill="currentColor">
+                                    <path fill-rule="evenodd"
+                                        d="M12.395 2.553a1 1 0 00-1.45-.385c-.345.23-.614.558-.822.88-.214.33-.403.713-.57 1.116-.334.804-.614 1.768-.84 2.734a31.365 31.365 0 00-.613 3.58 2.64 2.64 0 01-.945-1.067c-.328-.68-.398-1.534-.398-2.654A1 1 0 005.05 6.05 6.981 6.981 0 003 11a7 7 0 1011.95-4.95c-.592-.591-.98-.985-1.348-1.467-.363-.476-.724-1.063-1.207-2.03zM12.12 15.12A3 3 0 017 13s.879.5 2.5.5c0-1 .5-4 1.25-4.5.5 1 .786 1.293 1.371 1.879A2.99 2.99 0 0113 13a2.99 2.99 0 01-.879 2.121z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold mb-2 text-white">Tips dan Trik Eksklusif</h4>
+                            <p class="text-gray-400 text-sm">Rahasia yang tidak diajarkan di buku atau kelas investasi
+                                lainnya, langsung dari pengalaman pribadi.</p>
+                        </div>
+                    </div>
+
+                    <div class="flex">
+                        <div class="mr-4 mt-1">
+                            <div class="w-8 h-8 bg-gold/10 rounded-full flex items-center justify-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-gold" viewBox="0 0 20 20"
+                                    fill="currentColor">
+                                    <path
+                                        d="M2 10.5a1.5 1.5 0 113 0v6a1.5 1.5 0 01-3 0v-6zM6 10.333v5.43a2 2 0 001.106 1.79l.05.025A4 4 0 008.943 18h5.416a2 2 0 001.962-1.608l1.2-6A2 2 0 0015.56 8H12V4a2 2 0 00-2-2 1 1 0 00-1 1v.667a4 4 0 01-.8 2.4L6.8 7.933a4 4 0 00-.8 2.4z" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold mb-2 text-white">Dukungan Pasca Webinar</h4>
+                            <p class="text-gray-400 text-sm">Akses ke grup eksklusif untuk konsultasi dan update terbaru
+                                tentang peluang investasi.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Pricing Section -->
+    <section id="harga" class="py-20 bg-darkblue relative">
+        <div
+            class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB4PSIwIiB5PSIwIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIyIiBoZWlnaHQ9IjIiIGZpbGw9IiNmZmMxMDciIG9wYWNpdHk9IjAuMSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNwYXR0ZXJuKSIvPjwvc3ZnPg==')] opacity-20">
+        </div>
+
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="text-center mb-16">
+                <div class="inline-block px-4 py-1 bg-gold/20 rounded-full mb-4">
+                    <span class="text-gold font-medium">Investasi Terbaik</span>
+                </div>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 text-white">Biaya <span
+                        class="text-gold">Pelatihan</span></h2>
+                <p class="text-gray-300 max-w-2xl mx-auto">Investasi kecil untuk hasil yang luar biasa. Bayangkan berapa
+                    banyak yang bisa Anda hasilkan dengan pengetahuan ini.</p>
+            </div>
+
+            <div id="daftar" class="max-w-3xl mx-auto">
+                <div
+                    class="bg-navy rounded-2xl overflow-hidden shadow-2xl border border-gold/30 transform hover:scale-[1.01] transition-transform duration-300">
+                    <div class="bg-gold text-darkblue p-4 text-center">
+                        <span class="font-bold text-lg">EARLY BIRD PROMO - TERBATAS 30 PESERTA</span>
+                    </div>
+
+                    <div class="p-8">
+                        <div class="flex flex-col md:flex-row justify-between items-center mb-8">
+                            <div>
+                                <h3 class="text-2xl font-bold mb-2 text-white">Webinar Fundamental Hack</h3>
+                                <p class="text-gray-300">Strategi Investasi Saham Tanpa Ribet</p>
+                            </div>
+                            <div class="mt-4 md:mt-0 text-center">
+                                <div class="text-gray-400 line-through mb-1">Rp 300.000</div>
+                                <div class="text-gold text-3xl font-bold">Rp 150.000</div>
+                                <div class="text-green-500 text-sm">Hemat 50%</div>
+                            </div>
+                        </div>
+
+                        <div class="mb-8">
+                            <div class="flex items-center mb-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gold mr-3"
+                                    viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd"
+                                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
+                                <span class="text-gray-300">Sabtu, 15 Oktober 2023 (09.00 - 12.00 WIB)</span>
+                            </div>
+                            <div class="flex items-center mb-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gold mr-3"
+                                    viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd"
+                                        d="M10 18a8 8 0 100-16 8 8 0 000 16zM4.332 8.027a6.012 6.012 0 011.912-2.706C6.512 5.73 6.974 6 7.5 6A1.5 1.5 0 019 7.5V8a2 2 0 004 0 2 2 0 011.523-1.943A5.977 5.977 0 0116 10c0 .34-.028.675-.083 1H15a2 2 0 00-2 2v2.197A5.973 5.973 0 0110 16v-2a2 2 0 00-2-2 2 2 0 01-2-2 2 2 0 00-1.668-1.973z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
+                                <span class="text-gray-300">Online via Zoom Meeting</span>
+                            </div>
+                            <div class="flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gold mr-3"
+                                    viewBox="0 0 20 20" fill="currentColor">
+                                    <path
+                                        d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z">
+                                    </path>
+                                </svg>
+                                <span class="text-gray-300">Terbatas untuk 30 peserta</span>
+                            </div>
+                        </div>
+
+                        <div class="mb-8">
+                            <h4 class="font-semibold mb-4 flex items-center text-white">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gold mr-2"
+                                    viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd"
+                                        d="M5 2a1 1 0 011 1v1h1a1 1 0 010 2H6v1a1 1 0 01-2 0V6H3a1 1 0 010-2h1V3a1 1 0 011-1zm0 10a1 1 0 011 1v1h1a1 1 0 110 2H6v1a1 1 0 11-2 0v-1H3a1 1 0 110-2h1v-1a1 1 0 011-1zM12 2a1 1 0 01.967.744L14.146 7.2 17.5 9.134a1 1 0 010 1.732l-3.354 1.935-1.18 4.455a1 1 0 01-1.933 0L9.854 12.8 6.5 10.866a1 1 0 010-1.732l3.354-1.935 1.18-4.455A1 1 0 0112 2z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
+                                Yang Akan Anda Dapatkan:
+                            </h4>
+
+                            <div class="space-y-3">
+                                <div class="flex">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gold mr-3 mt-0.5"
+                                        viewBox="0 0 20 20" fill="currentColor">
+                                        <path fill-rule="evenodd"
+                                            d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                            clip-rule="evenodd"></path>
+                                    </svg>
+                                    <span class="text-gray-300">Akses webinar live selama 3 jam</span>
+                                </div>
+                                <div class="flex">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gold mr-3 mt-0.5"
+                                        viewBox="0 0 20 20" fill="currentColor">
+                                        <path fill-rule="evenodd"
+                                            d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                            clip-rule="evenodd"></path>
+                                    </svg>
+                                    <span class="text-gray-300">Materi presentasi (PDF)</span>
+                                </div>
+                                <div class="flex">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gold mr-3 mt-0.5"
+                                        viewBox="0 0 20 20" fill="currentColor">
+                                        <path fill-rule="evenodd"
+                                            d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                            clip-rule="evenodd"></path>
+                                    </svg>
+                                    <span class="text-gray-300">Template analisa saham siap pakai</span>
+                                </div>
+                                <div class="flex">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gold mr-3 mt-0.5"
+                                        viewBox="0 0 20 20" fill="currentColor">
+                                        <path fill-rule="evenodd"
+                                            d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                            clip-rule="evenodd"></path>
+                                    </svg>
+                                    <span class="text-gray-300">Rekaman webinar (akses 30 hari)</span>
+                                </div>
+                                <div class="flex">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gold mr-3 mt-0.5"
+                                        viewBox="0 0 20 20" fill="currentColor">
+                                        <path fill-rule="evenodd"
+                                            d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                            clip-rule="evenodd"></path>
+                                    </svg>
+                                    <span class="text-gray-300">Sesi tanya jawab langsung</span>
+                                </div>
+                                <div class="flex">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gold mr-3 mt-0.5"
+                                        viewBox="0 0 20 20" fill="currentColor">
+                                        <path fill-rule="evenodd"
+                                            d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                            clip-rule="evenodd"></path>
+                                    </svg>
+                                    <span class="text-gray-300">Sertifikat keikutsertaan</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mb-8 text-white">
+                            <h4 class="font-semibold mb-4 flex items-center text-white">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gold mr-2"
+                                    viewBox="0 0 20 20" fill="currentColor">
+                                    <path d="M5 4a2 2 0 012-2h6a2 2 0 012 2v14l-5-2.5L5 18V4z"></path>
+                                </svg>
+                                Bonus Spesial:
+                            </h4>
+
+                            <div class="space-y-3">
+                                <div class="flex">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-500 mr-3 mt-0.5"
+                                        viewBox="0 0 20 20" fill="currentColor">
+                                        <path fill-rule="evenodd"
+                                            d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                            clip-rule="evenodd"></path>
+                                    </svg>
+                                    <span class="text-gray-300">Watchlist 10 saham potensial (nilai Rp 150.000)</span>
+                                </div>
+                                <div class="flex">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-500 mr-3 mt-0.5"
+                                        viewBox="0 0 20 20" fill="currentColor">
+                                        <path fill-rule="evenodd"
+                                            d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                            clip-rule="evenodd"></path>
+                                    </svg>
+                                    <span class="text-gray-300">E-book "Rahasia Cuan Konsisten" (nilai Rp 99.000)</span>
+                                </div>
+                                <div class="flex">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-500 mr-3 mt-0.5"
+                                        viewBox="0 0 20 20" fill="currentColor">
+                                        <path fill-rule="evenodd"
+                                            d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                            clip-rule="evenodd"></path>
+                                    </svg>
+                                    <span class="text-gray-300">Akses grup Telegram eksklusif selama 1 bulan</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-col items-center">
+                            <a href="https://jagosaham.id/checkout/"
+                                class="cta-button w-full bg-gold text-darkblue font-bold text-lg py-4 rounded-xl text-center mb-4">
+                                DAFTAR SEKARANG
+                            </a>
+
+                            <div class="flex items-center text-sm text-gray-400">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z">
+                                    </path>
+                                </svg>
+                                Pembayaran aman &amp; terjamin
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-darkblue/50 p-4 text-center">
+                        <div class="flex items-center justify-center mb-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gold mr-2" viewBox="0 0 20 20"
+                                fill="currentColor">
+                                <path fill-rule="evenodd"
+                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                            <span class="text-gold font-medium">Kuota terbatas! Tersisa <span class="font-bold">7</span>
+                                dari 30 kursi</span>
+                        </div>
+                        <div class="w-full bg-navy rounded-full h-2.5">
+                            <div class="bg-gold h-2.5 rounded-full" style="width: 77%"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-8 text-center">
+                    <p class="text-gray-300">Ada pertanyaan? Hubungi kami di <a href="mailto:info@fundamentalhack.com"
+                            class="text-gold hover:underline">info@fundamentalhack.com</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-20 bg-navy">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <div class="inline-block px-4 py-1 bg-gold/20 rounded-full mb-4">
+                    <span class="text-gold font-medium">FAQ</span>
+                </div>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 text-white">Pertanyaan yang Sering <span
+                        class="text-gold">Ditanyakan</span></h2>
+                <p class="text-gray-300 max-w-2xl mx-auto">Jawaban untuk pertanyaan umum tentang webinar Fundamental
+                    Hack.</p>
+            </div>
+
+            <div class="max-w-3xl mx-auto">
+                <div class="space-y-6">
+                    <!-- FAQ Item 1 -->
+                    <div class="bg-darkblue rounded-xl overflow-hidden">
+                        <button class="faq-toggle w-full flex justify-between items-center p-6 focus:outline-none"
+                            onclick="toggleFaq(this)">
+                            <span class="font-semibold text-left text-white">Apakah webinar ini cocok untuk
+                                pemula?</span>
+                            <svg xmlns="http://www.w3.org/2000/svg"
+                                class="h-5 w-5 text-gold transform transition-transform" viewBox="0 0 20 20"
+                                fill="currentColor">
+                                <path fill-rule="evenodd"
+                                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                        </button>
+                        <div class="faq-content hidden px-6 pb-6">
+                            <p class="text-gray-400">Ya, webinar ini dirancang untuk semua level investor, termasuk
+                                pemula. Materi akan dijelaskan dengan bahasa yang sederhana dan mudah dipahami. Anda
+                                tidak perlu memiliki pengetahuan khusus tentang saham sebelumnya.</p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 2 -->
+                    <div class="bg-darkblue rounded-xl overflow-hidden">
+                        <button class="faq-toggle w-full flex justify-between items-center p-6 focus:outline-none"
+                            onclick="toggleFaq(this)">
+                            <span class="font-semibold text-left text-white">Berapa modal minimal untuk menerapkan
+                                strategi ini?</span>
+                            <svg xmlns="http://www.w3.org/2000/svg"
+                                class="h-5 w-5 text-gold transform transition-transform" viewBox="0 0 20 20"
+                                fill="currentColor">
+                                <path fill-rule="evenodd"
+                                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                        </button>
+                        <div class="faq-content hidden px-6 pb-6">
+                            <p class="text-gray-400">Strategi ini dapat diterapkan dengan modal mulai dari Rp 1 juta.
+                                Namun, untuk hasil optimal disarankan memiliki modal minimal Rp 5 juta agar dapat
+                                melakukan diversifikasi portofolio dengan baik.</p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 3 -->
+                    <div class="bg-darkblue rounded-xl overflow-hidden">
+                        <button class="faq-toggle w-full flex justify-between items-center p-6 focus:outline-none"
+                            onclick="toggleFaq(this)">
+                            <span class="font-semibold text-left text-white">Apakah benar hanya perlu 5 menit
+                                sehari?</span>
+                            <svg xmlns="http://www.w3.org/2000/svg"
+                                class="h-5 w-5 text-gold transform transition-transform" viewBox="0 0 20 20"
+                                fill="currentColor">
+                                <path fill-rule="evenodd"
+                                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                        </button>
+                        <div class="faq-content hidden px-6 pb-6">
+                            <p class="text-gray-400">Ya, metode yang kami ajarkan memang hanya membutuhkan waktu sekitar
+                                5 menit sehari untuk monitoring portofolio. Ini karena kami fokus pada investasi jangka
+                                menengah-panjang, bukan trading harian yang membutuhkan pantauan terus-menerus.</p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 4 -->
+                    <div class="bg-darkblue rounded-xl overflow-hidden">
+                        <button class="faq-toggle w-full flex justify-between items-center p-6 focus:outline-none"
+                            onclick="toggleFaq(this)">
+                            <span class="font-semibold text-left text-white">Bagaimana jika saya tidak bisa hadir saat
+                                webinar live?</span>
+                            <svg xmlns="http://www.w3.org/2000/svg"
+                                class="h-5 w-5 text-gold transform transition-transform" viewBox="0 0 20 20"
+                                fill="currentColor">
+                                <path fill-rule="evenodd"
+                                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                        </button>
+                        <div class="faq-content hidden px-6 pb-6">
+                            <p class="text-gray-400">Tidak masalah! Semua peserta akan mendapatkan akses rekaman webinar
+                                yang dapat ditonton selama 30 hari setelah acara. Anda juga tetap mendapatkan semua
+                                materi dan bonus yang dijanjikan.</p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 5 -->
+                    <div class="bg-darkblue rounded-xl overflow-hidden">
+                        <button class="faq-toggle w-full flex justify-between items-center p-6 focus:outline-none"
+                            onclick="toggleFaq(this)">
+                            <span class="font-semibold text-left text-white">Apakah ada jaminan return 70-80% per
+                                bulan?</span>
+                            <svg xmlns="http://www.w3.org/2000/svg"
+                                class="h-5 w-5 text-gold transform transition-transform" viewBox="0 0 20 20"
+                                fill="currentColor">
+                                <path fill-rule="evenodd"
+                                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                        </button>
+                        <div class="faq-content hidden px-6 pb-6">
+                            <p class="text-gray-400">Perlu diklarifikasi bahwa potensi return 70-80% yang kami maksud
+                                adalah dalam periode 6-12 bulan, bukan per bulan. Investasi saham selalu memiliki
+                                risiko, dan hasil masa lalu tidak menjamin hasil di masa depan. Namun, metode yang kami
+                                ajarkan telah terbukti menghasilkan return di atas rata-rata pasar secara konsisten.</p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 6 -->
+                    <div class="bg-darkblue rounded-xl overflow-hidden">
+                        <button class="faq-toggle w-full flex justify-between items-center p-6 focus:outline-none"
+                            onclick="toggleFaq(this)">
+                            <span class="font-semibold text-left text-white">Bagaimana metode pembayarannya?</span>
+                            <svg xmlns="http://www.w3.org/2000/svg"
+                                class="h-5 w-5 text-gold transform transition-transform" viewBox="0 0 20 20"
+                                fill="currentColor">
+                                <path fill-rule="evenodd"
+                                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                        </button>
+                        <div class="faq-content hidden px-6 pb-6">
+                            <p class="text-gray-400">Kami menerima pembayaran melalui transfer bank (BCA, Mandiri, BNI,
+                                BRI) dan e-wallet (GoPay, OVO, DANA). Setelah mendaftar, Anda akan diarahkan ke halaman
+                                pembayaran dengan instruksi lengkap.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-darkblue relative">
+        <div
+            class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB4PSIwIiB5PSIwIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIyIiBoZWlnaHQ9IjIiIGZpbGw9IiNmZmMxMDciIG9wYWNpdHk9IjAuMSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNwYXR0ZXJuKSIvPjwvc3ZnPg==')] opacity-20">
+        </div>
+
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="max-w-4xl mx-auto bg-navy rounded-2xl overflow-hidden shadow-2xl border border-gold/30">
+                <div class="p-8 md:p-12">
+                    <div class="text-center mb-8">
+                        <h2 class="text-3xl md:text-4xl font-bold mb-4 text-white">Jangan Tunda Lagi! <span
+                                class="text-gold">Mulai Bangun Masa Depan Finansialmu Hari Ini!</span></h2>
+                        <p class="text-gray-300 max-w-2xl mx-auto">Bergabunglah dengan ratusan investor sukses yang
+                            telah mengubah cara mereka berinvestasi dan mendapatkan hasil yang luar biasa.</p>
+                    </div>
+
+                    <div class="flex flex-col md:flex-row items-center justify-center gap-6 mb-8">
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-gold/10 rounded-full flex items-center justify-center mr-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gold" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-white">Waktu Terbatas</h4>
+                                <p class="text-gray-400 text-sm">Promo early bird segera berakhir</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-gold/10 rounded-full flex items-center justify-center mr-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gold" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z">
+                                    </path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-white">Kuota Terbatas</h4>
+                                <p class="text-gray-400 text-sm">Hanya untuk 30 peserta</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-gold/10 rounded-full flex items-center justify-center mr-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gold" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z">
+                                    </path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-white">Hemat 50%</h4>
+                                <p class="text-gray-400 text-sm">Diskon Rp 150.000</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex justify-center">
+                        <a href="#daftar"
+                            class="cta-button bg-gold text-darkblue font-bold text-lg px-12 py-4 rounded-xl">
+                            DAFTAR SEKARANG
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <!-- <footer class="bg-navy pt-16 pb-8">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between mb-12">
+                <div class="mb-8 md:mb-0">
+                    <div class="text-gold font-bold text-2xl mb-4">Fundamental<span class="text-white">Hack</span></div>
+                    <p class="text-gray-400 max-w-xs mb-6">Strategi investasi saham praktis untuk hasil yang luar biasa dengan waktu analisa minimal.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 bg-darkblue rounded-full flex items-center justify-center hover:bg-gold/20 transition">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="text-gold" viewBox="0 0 16 16">
+                                <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"></path>
+                            </svg>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-darkblue rounded-full flex items-center justify-center hover:bg-gold/20 transition">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="text-gold" viewBox="0 0 16 16">
+                                <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"></path>
+                            </svg>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-darkblue rounded-full flex items-center justify-center hover:bg-gold/20 transition">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="text-gold" viewBox="0 0 16 16">
+                                <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"></path>
+                            </svg>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-darkblue rounded-full flex items-center justify-center hover:bg-gold/20 transition">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="text-gold" viewBox="0 0 16 16">
+                                <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-8">
+                    <div>
+                        <h4 class="text-white font-semibold mb-4">Navigasi</h4>
+                        <ul class="space-y-2">
+                            <li><a href="#" class="text-gray-400 hover:text-gold transition">Beranda</a></li>
+                            <li><a href="#masalah" class="text-gray-400 hover:text-gold transition">Masalah</a></li>
+                            <li><a href="#solusi" class="text-gray-400 hover:text-gold transition">Solusi</a></li>
+                            <li><a href="#testimoni" class="text-gray-400 hover:text-gold transition">Testimoni</a></li>
+                            <li><a href="#mentor" class="text-gray-400 hover:text-gold transition">Mentor</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h4 class="text-white font-semibold mb-4">Informasi</h4>
+                        <ul class="space-y-2">
+                            <li><a href="#" class="text-gray-400 hover:text-gold transition">Syarat &amp; Ketentuan</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-gold transition">Kebijakan Privasi</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-gold transition">Refund Policy</a></li>
+                            <li><a href="#faq" class="text-gray-400 hover:text-gold transition">FAQ</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h4 class="text-white font-semibold mb-4">Kontak</h4>
+                        <ul class="space-y-2">
+                            <li class="flex items-start">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gold mr-2 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
+                                    <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path>
+                                    <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>
+                                </svg>
+                                <span class="text-gray-400">info@fundamentalhack.com</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gold mr-2 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M7 2a2 2 0 00-2 2v12a2 2 0 002 2h6a2 2 0 002-2V4a2 2 0 00-2-2H7zm3 14a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd"></path>
+                                </svg>
+                                <span class="text-gray-400">+62 812 3456 7890</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gold mr-2 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path>
+                                </svg>
+                                <span class="text-gray-400">Jakarta, Indonesia</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-gray-500 text-sm mb-4 md:mb-0">© 2023 Fundamental Hack. All rights reserved.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-500 hover:text-gold text-sm transition">Syarat &amp; Ketentuan</a>
+                        <a href="#" class="text-gray-500 hover:text-gold text-sm transition">Kebijakan Privasi</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer> -->
+
+    <!-- Back to top button -->
+    <button id="backToTop"
+        class="fixed bottom-6 right-6 bg-gold text-darkblue w-12 h-12 rounded-full flex items-center justify-center shadow-lg transform transition-transform hover:scale-110 opacity-0 invisible">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
+        </svg>
+    </button>
+
+    <script>
+        // FAQ Toggle
+        function toggleFaq(element) {
+            const content = element.nextElementSibling;
+            const arrow = element.querySelector('svg');
+
+            if (content.classList.contains('hidden')) {
+                content.classList.remove('hidden');
+                arrow.classList.add('rotate-180');
+            } else {
+                content.classList.add('hidden');
+                arrow.classList.remove('rotate-180');
+            }
+        }
+
+        // Back to top button
+        const backToTopButton = document.getElementById('backToTop');
+
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.remove('opacity-0', 'invisible');
+                backToTopButton.classList.add('opacity-100', 'visible');
+            } else {
+                backToTopButton.classList.add('opacity-0', 'invisible');
+                backToTopButton.classList.remove('opacity-100', 'visible');
+            }
+        });
+
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+
+
+    </path>
+    </path>
+    </path>
+    </path>
+    </path>
+    </path>
+    </path>
+</body>
